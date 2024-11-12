@@ -18,7 +18,7 @@
   {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
-<div
+<!-- <div
   class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
   {{ block.shopify_attributes }}
 >
@@ -27,37 +27,7 @@
       {%- render 'social-icons' -%}
     {%- endif -%}
     {%- if section.blocks.size == 1 -%}
-      <div
-        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
-        role="region"
-        aria-label="{{ 'sections.header.announcement' | t }}"
-        {{ block.shopify_attributes }}
-      >
-        {%- if section.blocks.first.settings.text != blank -%}
-          {%- if section.blocks.first.settings.link != blank -%}
-            <a
-              href="{{ section.blocks.first.settings.link }}"
-              class="announcement-bar__link link link--text focus-inset animate-arrow"
-            >
-          {%- endif -%}
-          <ul class="marcas-announcement">      
-              <li><a href="nike"><img alt="nike" src="{{ 'marca-nike.png' | asset_img_url }}"></a></li>
-              <li><a href="adidas"><img alt="adidas" src="{{ 'marca-adidas.png' | asset_img_url }}"></a></li>
-              <li><a href="jordan"><img alt="jordan" src="{{ 'marca-jordan.png' | asset_img_url }}"></a></li>
-              <li><a href="under-armour"><img alt="under-armour" src="{{ 'marca-under-armour.png' | asset_img_url }}"></a></li>
-              <li><a href="puma"><img alt="puma" src="{{ 'marca-puma.png' | asset_img_url }}"></a></li>
-            </ul>
-          <p class="announcement-bar__message h5">
-            <span>📦 {{ section.blocks.first.settings.text | escape }}</span>
-            {%- if section.blocks.first.settings.link != blank -%}
-              {{- 'icon-arrow.svg' | inline_asset_content -}}
-            {%- endif -%}
-          </p>
-          {%- if section.blocks.first.settings.link != blank -%}
-            </a>
-          {%- endif -%}
-        {%- endif -%}
-      </div>
+      
     {%- elsif section.blocks.size > 1 -%}
       <slideshow-component
         class="announcement-bar"
@@ -167,6 +137,46 @@
           {%- endform -%}
         </localization-form>
       {%- endif -%}
+    </div>
+  </div>
+</div> -->
+
+<div class="utility-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div
+            class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
+            role="region"
+            aria-label="{{ 'sections.header.announcement' | t }}"
+            {{ block.shopify_attributes }}
+          >
+          {%- if section.blocks.first.settings.text != blank -%}
+            {%- if section.blocks.first.settings.link != blank -%}
+              <a
+                href="{{ section.blocks.first.settings.link }}"
+                class="announcement-bar__link link link--text focus-inset animate-arrow"
+              >
+            {%- endif -%}
+            <ul class="marcas-announcement">      
+                <li><a href="nike"><img alt="nike" src="{{ 'marca-nike.png' | asset_img_url }}"></a></li>
+                <li><a href="adidas"><img alt="adidas" src="{{ 'marca-adidas.png' | asset_img_url }}"></a></li>
+                <li><a href="jordan"><img alt="jordan" src="{{ 'marca-jordan.png' | asset_img_url }}"></a></li>
+                <li><a href="under-armour"><img alt="under-armour" src="{{ 'marca-under-armour.png' | asset_img_url }}"></a></li>
+                <li><a href="puma"><img alt="puma" src="{{ 'marca-puma.png' | asset_img_url }}"></a></li>
+              </ul>
+            <p class="announcement-bar__message h5">
+              <span>📦 {{ section.blocks.first.settings.text | escape }}</span>
+              {%- if section.blocks.first.settings.link != blank -%}
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
+              {%- endif -%}
+            </p>
+            {%- if section.blocks.first.settings.link != blank -%}
+              </a>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+      </div>
     </div>
   </div>
 </div>
