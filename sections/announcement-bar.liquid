@@ -41,11 +41,11 @@
             >
           {%- endif -%}
           <ul class="marcas-announcement">      
-              <li><a href="nike"><img alt="nike" src="assets/marca-nike.png"></a></li>
-              <li><a href="adidas"><img alt="adidas" src="assets/marca-adidas.png"></a></li>
-              <li><a href="jordan"><img alt="jordan" src="assets/marca-jordan.png"></a></li>
-              <li><a href="under-armour"><img alt="under-armour" src="assets/marca-under-armour.png"></a></li>
-              <li><a href="puma"><img alt="puma" src="assets/marca-puma.png"></a></li>
+              <li><a href="nike"><img alt="nike" src="{{ 'marca-nike.png' | asset_img_url }}"></a></li>
+              <li><a href="adidas"><img alt="adidas" src="{{ 'marca-adidas.png' | asset_img_url }}"></a></li>
+              <li><a href="jordan"><img alt="jordan" src="{{ 'marca-jordan.png' | asset_img_url }}"></a></li>
+              <li><a href="under-armour"><img alt="under-armour" src="{{ 'marca-under-armour.png' | asset_img_url }}"></a></li>
+              <li><a href="puma"><img alt="puma" src="{{ 'marca-puma.png' | asset_img_url }}"></a></li>
             </ul>
           <p class="announcement-bar__message h5">
             <span>📦 {{ section.blocks.first.settings.text | escape }}</span>
