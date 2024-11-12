@@ -27,6 +27,18 @@ $blanco: #ffffff;
     		color: $blanco;
     	}
     }
+
+    .ayuda-top {
+    	display: flex;
+    	justify-content: flex-end;
+    	align-items: center;
+
+    	a {
+    		color: rgba(255,255,255,0.5);
+    		text-decoration: none;
+    		font-size: 11px;
+    	}
+    }
 }
 
 .marcas-announcement {
@@ -62,7 +74,7 @@ $blanco: #ffffff;
 
 header {
 	width: 100%;
-	margin-top: 60px;
+	margin-top: 70px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -78,9 +90,10 @@ header {
 		backdrop-filter: blur(10px);
   		background: none;
   		justify-content: space-between;
-  		flex-basis: 50%;
-  		padding: 5px 35px;
+  		flex-basis: 60%;
+  		padding: 5px 35px 5px 45px;
   		border-radius: 30px;
+  		background-color: rgba(255, 255, 255, .1);
 
 		.items-navbar {
 			display: flex;
@@ -113,6 +126,12 @@ header {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			.svg-wrapper {
+				.icon {
+					filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+				}
+			}
 		}
 	}
 }

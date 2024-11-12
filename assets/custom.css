@@ -4021,6 +4021,16 @@
 .announcement-bar .announcement-bar__message span {
   color: #ffffff;
 }
+.announcement-bar .ayuda-top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.announcement-bar .ayuda-top a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 11px;
+}
 
 .marcas-announcement {
   display: inline-block;
@@ -4052,7 +4062,7 @@
 
 header {
   width: 100%;
-  margin-top: 60px;
+  margin-top: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -4065,9 +4075,10 @@ header .header-general {
   backdrop-filter: blur(10px);
   background: none;
   justify-content: space-between;
-  flex-basis: 50%;
-  padding: 5px 35px;
+  flex-basis: 60%;
+  padding: 5px 35px 5px 45px;
   border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 header .header-general .items-navbar {
   display: flex;
@@ -4091,6 +4102,9 @@ header .header-general .nav-specials {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+header .header-general .nav-specials .svg-wrapper .icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 /*# sourceMappingURL=custom.css.map */
