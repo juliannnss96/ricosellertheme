@@ -1,0 +1,32 @@
+$grisoscuro: #2c2c2c;
+$grisclaro: #6b6b6b;
+
+.utility-bar {
+	background-color: $grisoscuro;
+}
+
+.announcement-bar {
+	display: grid;
+    grid-template-columns: repeat(3, 1fr); //make 4 cols with size 1fr
+}
+
+.marcas-announcement {
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	li {
+		a {
+			display: inline-block;
+
+			img {
+				width: 30px;
+				margin-bottom: -7px;
+			}
+		}
+	}
+}

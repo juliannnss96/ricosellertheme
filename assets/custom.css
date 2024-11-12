@@ -1,0 +1,27 @@
+.utility-bar {
+  background-color: #2c2c2c;
+}
+
+.announcement-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.marcas-announcement {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.marcas-announcement li a {
+  display: inline-block;
+}
+.marcas-announcement li a img {
+  width: 30px;
+  margin-bottom: -7px;
+}
+
+/*# sourceMappingURL=custom.css.map */
