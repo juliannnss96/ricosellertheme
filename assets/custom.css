@@ -4821,6 +4821,10 @@ h2.h2home, h2.inline-richtext {
 #tipos-jugador .button {
   margin-left: 70px;
   margin-top: 50px;
+  border-radius: 100px;
+}
+#tipos-jugador .button:after {
+  display: none;
 }
 
 #signatures-home {

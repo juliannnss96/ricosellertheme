@@ -879,6 +879,11 @@ h2.h2home, h2.inline-richtext {
 	.button {
 		margin-left: 70px;
 		margin-top: 50px;
+		border-radius: 100px;
+
+		&:after {
+			display: none;
+		}
 	}
 }
 
