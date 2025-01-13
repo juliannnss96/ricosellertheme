@@ -30,9 +30,9 @@
   assign money_price_min = price_min | money
   assign money_price_max = price_max | money
   if settings.currency_code_enabled
-    assign money_price = price | money
-    assign money_price_min = price_min | money
-    assign money_price_max = price_max | money
+    assign money_price = price | money_with_currency
+    assign money_price_min = price_min | money_with_currency
+    assign money_price_max = price_max | money_with_currency
   endif
 
   if target == product and product.price_varies
@@ -51,7 +51,7 @@
       {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
       {%- if show_badges %} price--show-badge{% endif -%}
     "
-  > 
+  >
     <div class="price__container">
       {%- comment -%}
         Explanation of description list:
@@ -68,7 +68,7 @@
               <span>
                 <s class="price-item price-item--regular variant-item__old-price">
                   {% if settings.currency_code_enabled %}
-                    {{ compare_at_price | money }}
+                    {{ compare_at_price | money_with_currency }}
                   {% else %}
                     {{ compare_at_price | money }}
                   {% endif %}
@@ -96,7 +96,7 @@
           <span>
             <s class="price-item price-item--regular">
               {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money }}
+                {{ compare_at_price | money_with_currency }}
               {% else %}
                 {{ compare_at_price | money }}
               {% endif %}

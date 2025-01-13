@@ -1,10 +1,10 @@
-<div class="cont-header">
+<div class="cont-header{% if template.name != "index" %} nothome{% endif %}{% if template.name == "product" %} single-product{% endif %}">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <header>
           <section id="logo-cont">
-            <a href="#">
+            <a href="{{ routes.root_url }}">
               <img src="{{ 'rico-logo.png' | asset_url }}">
             </a>
           </section>
@@ -20,6 +20,7 @@
                 endif
               %}
             </div>
+
 
             <div class="nav-specials">
               {% render 'header-search', input_id: 'Search-In-Modal' %}

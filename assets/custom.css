@@ -4264,6 +4264,10 @@
   min-height: 60px;
   letter-spacing: -2%;
   font-weight: 500;
+  border-radius: 100px;
+}
+.button:after {
+  display: none;
 }
 
 .button--primary {
@@ -4319,6 +4323,30 @@
   left: 0;
   top: 0;
 }
+.cont-header.nothome {
+  position: initial;
+}
+.cont-header.nothome.single-product {
+  position: absolute;
+}
+.cont-header.nothome.single-product header {
+  margin-top: 70px;
+}
+.cont-header.nothome.single-product header .header-general {
+  background-color: #ffffff;
+}
+.cont-header.nothome header {
+  margin-top: 32px;
+}
+.cont-header.nothome header .header-general {
+  background-color: #F6F6F6;
+}
+.cont-header.nothome header .header-general .items-navbar .list-menu li a span {
+  color: #1C1C1C;
+}
+.cont-header.nothome header .header-general .nav-specials .svg-wrapper .icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(28deg) brightness(0%) contrast(0%);
+}
 
 header {
   width: 100%;
@@ -4365,6 +4393,364 @@ header .header-general .nav-specials {
 }
 header .header-general .nav-specials .svg-wrapper .icon {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+/*Carrito*/
+#cart .cart-item__name {
+  color: var(--Black, #1C1C1C);
+  font-family: "PP Neue Montreal";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 123%; /* 22.14px */
+  letter-spacing: -0.36px;
+}
+#cart .global-media-settings img,
+#cart .cart-item__image-container {
+  border-radius: 10px;
+}
+#cart .discounts__discount {
+  color: #128A09;
+  font-family: "PP Neue Montreal";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 15.4px */
+  letter-spacing: -0.14px;
+}
+#cart .discounts__discount svg {
+  display: none;
+}
+
+#main-cart-footer .cart__ctas button {
+  border-radius: 100px;
+}
+#main-cart-footer .cart__ctas button:after {
+  display: none;
+}
+
+.title-wrapper-with-link .title {
+  color: #1C1C1C;
+  font-family: "PP Neue Montreal";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 30.8px */
+}
+
+/*Pages*/
+.main-page-title {
+  color: #1C1C1C;
+  font-family: "PP Neue Montreal";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 30.8px */
+}
+
+/*Product list / Collection page*/
+.collection-hero__title {
+  color: #1C1C1C;
+  font-family: "PP Neue Montreal";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 30.8px */
+}
+
+/*Filtros collection*/
+.facets__heading--vertical {
+  color: #1C1C1C;
+  font-family: "PP Neue Montreal";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 19.8px */
+  letter-spacing: 0.18px;
+}
+
+.facets-vertical .facet-checkbox input[type=checkbox],
+.facet-checkbox > svg,
+.facet-checkbox > input[type=checkbox]:checked ~ .svg-wrapper > .icon-checkmark {
+  display: none;
+}
+
+.facets-wrap {
+  padding: 0;
+  margin: 0;
+}
+
+.active-facets__button-remove {
+  text-decoration-thickness: 0;
+  text-underline-offset: 0;
+  text-decoration: none;
+}
+.active-facets__button-remove:hover, .active-facets__button-remove:focus {
+  text-decoration-thickness: 0;
+}
+.active-facets__button-remove span {
+  color: rgba(28, 28, 28, 0.3);
+  text-decoration-color: rgba(28, 28, 28, 0.3);
+  text-align: right;
+  font-family: "PP Neue Montreal";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 15.4px */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+ul.facets-layout-list--text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+ul.facets-layout-list--text li.facets__item {
+  display: inline-block;
+  flex-basis: calc(33.33% - 4px);
+}
+ul.facets-layout-list--text li.facets__item .facet-checkbox {
+  padding: 13px 0;
+  text-align: center;
+  border-radius: 10px;
+  border: 0.9px solid var(--black-10, rgba(28, 28, 28, 0.1));
+  display: inline-block;
+  width: 100%;
+  transition: all 200ms;
+}
+ul.facets-layout-list--text li.facets__item .facet-checkbox .facet-checkbox__text {
+  display: inline-block;
+  width: 100%;
+}
+ul.facets-layout-list--text li.facets__item .facet-checkbox .facet-checkbox__text .facet-checkbox__text-label {
+  color: #1C1C1C;
+  display: inline-block;
+  padding: 0;
+  text-align: center;
+  font-family: "PP Neue Montreal";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 14.3px */
+}
+ul.facets-layout-list--text li.facets__item .facet-checkbox.active {
+  border-color: #1C1C1C;
+}
+ul.facets-layout-list--text li.facets__item:hover .facet-checkbox, ul.facets-layout-list--text li.facets__item:focus .facet-checkbox {
+  border-color: #1C1C1C;
+}
+ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbox__text-label, ul.facets-layout-list--text li.facets__item:focus .facet-checkbox .facet-checkbox__text-label {
+  text-decoration: none;
+}
+
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 7px;
+}
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item {
+  display: inline-block;
+  flex-basis: 33.33%;
+}
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox {
+  padding: 0;
+}
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper {
+  width: 100%;
+}
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper .swatch-input__label {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  border-radius: 10px;
+  border: 0.9px solid var(--black-10, rgba(28, 28, 28, 0.1));
+  width: 100%;
+  transition: all 200ms;
+}
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper .swatch-input__label:hover {
+  outline: 0;
+}
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper .swatch-input__label .swatch {
+  border: 0;
+  background-size: 37px;
+  background-repeat: no-repeat;
+  --swatch--size: 37px;
+}
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper .swatch-input__input + .swatch-input__label, #FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper .swatch-input__input + .swatch-input__label,
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper .swatch-input__input:active + .swatch-input__label, #FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper .swatch-input__input:checked + .swatch-input__label {
+  outline: 0;
+}
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .facet-checkbox__text {
+  display: none;
+}
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox.active .swatch-input-wrapper .swatch-input__label {
+  border-color: #1C1C1C;
+}
+#FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item:focus .facet-checkbox .swatch-input__label, #FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item:hover .facet-checkbox .swatch-input__label {
+  border-color: #1C1C1C;
+}
+
+/*Single Product*/
+.section-template--18638285603068__main-padding {
+  padding-top: 0 !important;
+}
+
+.product {
+  /*ofert*/
+}
+.product .product__media-wrapper {
+  padding-top: 145px;
+  background-color: #f6f6f6;
+}
+.product .product__info-wrapper {
+  padding-top: 145px !important;
+  max-width: 20% !important;
+}
+.product .product__info-container > :first-child {
+  color: rgba(28, 28, 28, 0.45);
+  font-family: "PP Neue Montreal";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 19.8px */
+  letter-spacing: -0.54px;
+  text-transform: none;
+}
+.product .product__title h1 {
+  font-family: "PP Neue Montreal";
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 113%; /* 47.46px */
+  letter-spacing: -1.26px;
+}
+.product .product__info-container .price--on-sale .price-item--regular {
+  color: rgba(28, 28, 28, 0.45);
+  font-family: "PP Neue Montreal";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 22px */
+  letter-spacing: -0.2px;
+  text-decoration-line: strikethrough;
+}
+.product .price__regular .price-item--regular {
+  color: #1C1C1C;
+  font-family: "PP Neue Montreal";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 22px */
+  letter-spacing: -0.2px;
+}
+.product .price .price__badge-sale {
+  display: none;
+}
+.product #price-template--18638285603068__main {
+  margin-bottom: 0 !important;
+}
+.product .text-envio-gratis {
+  color: #FF7A00;
+  font-family: "PP Neue Montreal";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 123%; /* 19.68px */
+  letter-spacing: -0.32px;
+  margin-top: 0;
+}
+.product .product-form__buttons button {
+  border-radius: 100px;
+}
+.product .product-form__buttons button:after {
+  display: none;
+}
+.product .product-form__input--pill .guia-talles-variantes, .product .product-form__input--pill legend.form__label {
+  width: 50%;
+  display: inline-block;
+  padding: 0;
+  float: left;
+}
+.product .product-form__input--pill .guia-talles-variantes {
+  text-align: right;
+  padding-right: 5px;
+  color: var(--Black, #1C1C1C);
+  font-family: "PP Neue Montreal";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.16px;
+}
+.product .product-form__input--pill legend.form__label {
+  color: #1C1C1C;
+  font-family: "PP Neue Montreal";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+}
+.product .product-form__input--pill label {
+  width: 30.8%;
+}
+.product .product-form__input--pill input[type=radio] + label {
+  border-radius: 10px;
+  text-align: center;
+  font-family: "PP Neue Montreal";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 14.3px */
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-color: rgba(var(--color-foreground), 0.1);
+}
+.product .product-form__input--pill input[type=radio]:disabled + label,
+.product .product-form__input--pill input[type=radio].disabled + label {
+  text-decoration: none;
+  background: rgba(28, 28, 28, 0.05);
+  border-color: transparent;
+  color: var(--black-10, rgba(28, 28, 28, 0.1));
+}
+.product .product-form__input--pill input[type=radio]:checked + label {
+  background-color: transparent;
+  color: #1C1C1C;
+  border-color: #1C1C1C;
+}
+.product .product-form__input--pill input[type=radio].disabled:checked + label,
+.product .product-form__input--pill input[type=radio]:disabled:checked + label {
+  text-decoration: none;
+  background: rgba(28, 28, 28, 0.05);
+  border-color: rgba(28, 28, 28, 0.1) !important;
+  color: var(--black-10, rgba(28, 28, 28, 0.1));
+}
+.product h2.inline-richtext {
+  color: #1C1C1C;
+  font-family: "PP Neue Montreal";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 24.2px */
+  letter-spacing: 0.22px;
+}
+.product .product__accordion .accordion__content {
+  padding: 0;
+}
+.product .rte > p {
+  color: var(--Black, #1C1C1C);
+  font-family: "PP Neue Montreal";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 22.5px */
+  letter-spacing: -0.3px;
 }
 
 /*Footer*/
@@ -4518,6 +4904,9 @@ header .header-general .nav-specials .svg-wrapper .icon {
   margin: 10px 0 25px 0;
   max-width: 355px;
   font-family: "PP Neue Montreal";
+}
+#footer-rico .nav-footer .cont-nav .rico-club-cont .field:after {
+  display: none;
 }
 #footer-rico .nav-footer .cont-nav .rico-club-cont .newsletter-form__field-wrapper .field__input {
   border-radius: 100px;
@@ -4736,6 +5125,8 @@ header .header-general .nav-specials .svg-wrapper .icon {
 
 .page-width {
   max-width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .collection__title {
@@ -4852,6 +5243,9 @@ h2.h2home, h2.inline-richtext {
 }
 
 /*Card product*/
+.product-card-wrapper .card__information {
+  padding-top: 8px;
+}
 .product-card-wrapper .card__inner.gradient {
   border-radius: 8px;
 }
@@ -4859,12 +5253,23 @@ h2.h2home, h2.inline-richtext {
   border-radius: 8px;
 }
 .product-card-wrapper .card__heading a {
+  color: #1C1C1C;
   font-family: "PP Neue Montreal";
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 123%; /* 22.14px */
   letter-spacing: -0.36px;
+}
+.product-card-wrapper .price--on-sale .price-item--regular {
+  color: rgba(28, 28, 28, 0.45);
+  font-family: "PP Neue Montreal";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 17.6px */
+  letter-spacing: -0.16px;
+  text-decoration-line: strikethrough;
 }
 .product-card-wrapper .price__regular .price-item--regular {
   font-family: "PP Neue Montreal";
@@ -4875,7 +5280,18 @@ h2.h2home, h2.inline-richtext {
   letter-spacing: -0.16px;
   color: #1C1C1C;
 }
-
+.product-card-wrapper .card__content .text-envio-gratis {
+  color: #FF7A00;
+  font-family: "PP Neue Montreal";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 123%; /* 19.68px */
+  letter-spacing: -0.32px;
+}
+.product-card-wrapper .card__content .card__badge {
+  display: none;
+}
 #ultimos-contenidos h3 {
   font-size: 42px;
   font-weight: 500;

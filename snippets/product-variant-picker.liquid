@@ -45,6 +45,7 @@
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill">
           <legend class="form__label">{{ option.name }}</legend>
+          <a href="{{ routes.root_url }}pages/ayuda" target="_blank" class="guia-talles-variantes">Guía de talles</a>
           {% render 'product-variant-options',
             product: product,
             option: option,

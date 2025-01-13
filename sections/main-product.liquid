@@ -114,6 +114,11 @@
                     price_class: 'price--large'
                   -%}
                 </div>
+                {% for c in product.collections %}
+                {% if c.handle == "envio-gratis" %}
+                <span class="text-envio-gratis">Envío gratis</span>
+                {% endif %}
+                {% endfor %}
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
