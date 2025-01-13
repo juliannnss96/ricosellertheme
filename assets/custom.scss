@@ -710,7 +710,8 @@ ul.facets-layout-list--text {
 		display: none;
 	}
 
-	#price-template--18638285603068__main {
+	#price-template--18638285603068__main,
+	#price-template--18408382464252__main {
 		margin-bottom: 0 !important;
 	}
 
@@ -799,6 +800,10 @@ ul.facets-layout-list--text {
 			border-color: rgba(28, 28, 28, 0.1) !important;	
 			color: var(--black-10, rgba(28, 28, 28, 0.10));		
 		}
+	}
+
+	.product-form__submit {
+		margin: 45px 0;
 	}
 
 	h2.inline-richtext {

@@ -4654,7 +4654,8 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
 .product .price .price__badge-sale {
   display: none;
 }
-.product #price-template--18638285603068__main {
+.product #price-template--18638285603068__main,
+.product #price-template--18408382464252__main {
   margin-bottom: 0 !important;
 }
 .product .text-envio-gratis {
@@ -4730,6 +4731,9 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   background: rgba(28, 28, 28, 0.05);
   border-color: rgba(28, 28, 28, 0.1) !important;
   color: var(--black-10, rgba(28, 28, 28, 0.1));
+}
+.product .product-form__submit {
+  margin: 45px 0;
 }
 .product h2.inline-richtext {
   color: #1C1C1C;
