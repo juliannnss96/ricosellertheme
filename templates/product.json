@@ -19,16 +19,16 @@
             "text_style": "uppercase"
           }
         },
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
         "caption": {
           "type": "text",
           "settings": {
             "text": "{{ product.metafields.descriptors.subtitle.value }}",
             "text_style": "subtitle"
           }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
         },
         "price": {
           "type": "price",
@@ -78,8 +78,8 @@
       },
       "block_order": [
         "vendor",
-        "title",
         "caption",
+        "title",
         "price",
         "variant_picker",
         "buy_buttons",
