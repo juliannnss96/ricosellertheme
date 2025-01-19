@@ -137,12 +137,10 @@
     },
     "content_for_index": [],
     "blocks": {
-      "4571859552318407796": {
-        "type": "shopify://apps/glo-color-swatch-variant-image/blocks/app-embed-block/4394f710-096c-4021-bbde-8ebb26057c11",
+      "4981902369724952902": {
+        "type": "shopify://apps/vo-product-options/blocks/embed-block/430cbd7b-bd20-4c16-ba41-db6f4c645164",
         "disabled": false,
-        "settings": {
-          "customCssGCW": ""
-        }
+        "settings": {}
       }
     },
     "color_schemes": {
