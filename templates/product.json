@@ -105,6 +105,9 @@
     },
     "related-products": {
       "type": "related-products",
+      "custom_css": [
+        "h2 {margin-top: 50px;}"
+      ],
       "settings": {
         "heading": "También podría gustarte",
         "heading_size": "h2",
@@ -117,7 +120,7 @@
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
-        "padding_top": 36,
+        "padding_top": 60,
         "padding_bottom": 28
       }
     }
