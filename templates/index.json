@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "video_banner_dFgwN3": {
+      "type": "video-banner",
+      "settings": {}
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -42,6 +46,9 @@
         "heading",
         "text",
         "button"
+      ],
+      "custom_css": [
+        "section {display: none;}"
       ],
       "settings": {
         "image": "shopify://shop_images/home-video-desktop-poster_e4e41a60-695d-4e18-9c2a-ad2160d4670c.jpg",
@@ -103,6 +110,7 @@
     }
   },
   "order": [
+    "video_banner_dFgwN3",
     "image_banner",
     "marcas_slider_WwPfzX",
     "categorias_destacadas_home_GQULtC",
