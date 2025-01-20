@@ -19,16 +19,16 @@
             "text_style": "uppercase"
           }
         },
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
         "caption": {
           "type": "text",
           "settings": {
             "text": "{{ product.metafields.descriptors.subtitle.value }}",
             "text_style": "subtitle"
           }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
         },
         "price": {
           "type": "price",
@@ -78,8 +78,8 @@
       },
       "block_order": [
         "vendor",
-        "title",
         "caption",
+        "title",
         "price",
         "variant_picker",
         "buy_buttons",
@@ -105,6 +105,9 @@
     },
     "related-products": {
       "type": "related-products",
+      "custom_css": [
+        "h2 {margin-top: 50px;}"
+      ],
       "settings": {
         "heading": "También podría gustarte",
         "heading_size": "h2",
@@ -117,7 +120,7 @@
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
-        "padding_top": 36,
+        "padding_top": 60,
         "padding_bottom": 28
       }
     }
