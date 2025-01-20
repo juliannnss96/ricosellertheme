@@ -32,7 +32,7 @@
     "featured_collection_JLKP4F": {
       "type": "featured-collection",
       "settings": {
-        "title": "Colección destacada",
+        "title": "Destacados",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
