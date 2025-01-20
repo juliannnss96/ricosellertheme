@@ -4344,6 +4344,9 @@
 .cont-header.nothome header .header-general .items-navbar .list-menu li a span {
   color: #1C1C1C;
 }
+.cont-header.nothome header .header-general .items-navbar .list-menu li a span.header__active-menu-item {
+  text-decoration: underline;
+}
 .cont-header.nothome header .header-general .nav-specials .svg-wrapper .icon {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(28deg) brightness(0%) contrast(0%);
 }
@@ -4458,6 +4461,73 @@ header .header-general .nav-specials .svg-wrapper .icon {
   line-height: 110%; /* 30.8px */
 }
 
+.infinite_next {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.infinite_next a {
+  border-radius: 100px;
+  background: #1C1C1C;
+  padding: 21px 30px;
+  color: #FFF;
+  text-align: center;
+  font-family: "PP Neue Montreal";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+}
+
+#AjaxinatePagination {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 20px;
+}
+#AjaxinatePagination a {
+  padding: 0 100px;
+}
+
+.hasvisto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+}
+.hasvisto .hasvisto-text {
+  color: var(--Black, #1C1C1C);
+  text-align: center;
+  font-family: "PP Neue Montreal";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 17.6px */
+  margin-bottom: 10px;
+}
+.hasvisto progress {
+  border-radius: 7px;
+  width: 270px;
+  height: 11px;
+  transition: all 300ms;
+}
+.hasvisto progress::-webkit-progress-bar {
+  background-color: rgba(28, 28, 28, 0.1);
+  border-radius: 7px;
+}
+.hasvisto progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #1C1C1C 0%, #828282 100%);
+  border-radius: 7px;
+}
+.hasvisto progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #1C1C1C 0%, #828282 100%);
+  border-radius: 7px;
+}
+
 /*Filtros collection*/
 .facets__heading--vertical {
   color: #1C1C1C;
@@ -4550,15 +4620,21 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   text-decoration: none;
 }
 
+#FacetsWrapperDesktop {
+  /*ATLETAS FILTRO */
+}
 #FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch {
-  display: flex;
+  display: inline-block;
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
   gap: 7px;
 }
 #FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item {
   display: inline-block;
-  flex-basis: 33.33%;
+  /*flex-basis: 33.33%;*/
+  width: 32.28%;
+  margin-bottom: 5px;
 }
 #FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item .facet-checkbox {
   padding: 0;
@@ -4597,6 +4673,44 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
 #FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item:focus .facet-checkbox .swatch-input__label, #FacetsWrapperDesktop .facets__display-vertical:nth-child(2) ul.facets-layout-list--swatch li.facets__item:hover .facet-checkbox .swatch-input__label {
   border-color: #1C1C1C;
 }
+#FacetsWrapperDesktop .facets__disclosure-vertical:nth-child(6) ul.facets-layout-list--swatch li.facets__item {
+  width: 100%;
+}
+#FacetsWrapperDesktop .facets__disclosure-vertical:nth-child(6) ul.facets-layout-list--swatch li.facets__item .facet-checkbox {
+  padding: 16px 0;
+  text-align: center;
+  border-radius: 10px;
+  border: 0.9px solid var(--black-10, rgba(28, 28, 28, 0.1));
+  display: inline-block;
+  width: 100%;
+  transition: all 200ms;
+  display: flex;
+  justify-content: flex-start;
+}
+#FacetsWrapperDesktop .facets__disclosure-vertical:nth-child(6) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper {
+  width: auto;
+}
+#FacetsWrapperDesktop .facets__disclosure-vertical:nth-child(6) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper .swatch-input__label {
+  padding: 0;
+  border-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  widht: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#FacetsWrapperDesktop .facets__disclosure-vertical:nth-child(6) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .swatch-input-wrapper .swatch-input__label .swatch {
+  width: 37px;
+  height: 37px;
+  margin-left: 5px;
+}
+#FacetsWrapperDesktop .facets__disclosure-vertical:nth-child(6) ul.facets-layout-list--swatch li.facets__item .facet-checkbox .facet-checkbox__text {
+  display: inline-block;
+  margin-left: 42px;
+}
 
 /*Single Product*/
 .section-template--18638285603068__main-padding {
@@ -4624,6 +4738,9 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   letter-spacing: -0.54px;
   text-transform: none;
 }
+.product .product__title {
+  margin-top: 0;
+}
 .product .product__title h1 {
   font-family: "PP Neue Montreal";
   font-size: 42px;
@@ -4641,21 +4758,25 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   line-height: 110%; /* 22px */
   letter-spacing: -0.2px;
   text-decoration-line: strikethrough;
+  line-height: 27px;
 }
-.product .price__regular .price-item--regular {
+.product .price__regular .price-item--regular,
+.product .price .price-item {
   color: #1C1C1C;
   font-family: "PP Neue Montreal";
   font-size: 20px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 110%; /* 22px */
   letter-spacing: -0.2px;
+  line-height: 27px;
 }
 .product .price .price__badge-sale {
   display: none;
 }
 .product #price-template--18638285603068__main,
-.product #price-template--18408382464252__main {
+.product #price-template--18408382464252__main,
+.product #price-template--18964247609588__main {
   margin-bottom: 0 !important;
 }
 .product .text-envio-gratis {
@@ -5002,10 +5123,25 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
 }
 
 /*Home*/
+.video-home video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  vertical-align: middle;
+  object-fit: cover;
+  background-image: url("home-video-desktop-poster.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
 .banner__buttons .button {
   background-color: #ffffff;
   color: #1C1C1C;
   border-radius: 100px;
+  transition: all 300ms;
+}
+.banner__buttons .button:hover, .banner__buttons .button:focus {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
 }
 
 .banner__buttons .button:after {
@@ -5037,7 +5173,10 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   transition: all 200ms;
 }
 #marcas-home .marcas-cont ul li:hover, #marcas-home .marcas-cont ul li:focus {
-  transform: scale(1.02, 1.02);
+  /*transform: scale(1.02,1.02);*/
+}
+#marcas-home .marcas-cont ul li:hover a figure, #marcas-home .marcas-cont ul li:focus a figure {
+  background-color: #e0e0e0;
 }
 #marcas-home .marcas-cont ul li a {
   display: inline-block;
@@ -5051,6 +5190,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   aspect-ratio: 0.95/1;
   background-repeat: no-repeat;
   background-position: center;
+  transition: all 300ms;
 }
 
 #categorias-home, #signatures-home, #ultimos-contenidos, #amigos-de-la-casa {
@@ -5206,17 +5346,39 @@ h2.h2home, h2.inline-richtext {
 #tipos-jugador ul li.selected:before {
   left: 2px;
 }
-#tipos-jugador .cont-zapa {
+#tipos-jugador .cont-figure {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#tipos-jugador .cont-figure .cont-zapa {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100%;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 300ms;
+}
+#tipos-jugador .cont-figure .cont-zapa.selected {
+  opacity: 1;
 }
 #tipos-jugador .button {
   margin-left: 70px;
   margin-top: 50px;
   border-radius: 100px;
+  border: 1px solid #1C1C1C;
+  background-color: transparent;
+  color: #1C1C1C;
+  transition: all 200ms;
+}
+#tipos-jugador .button:hover, #tipos-jugador .button:focus {
+  background-color: #1C1C1C;
+  color: #ffffff;
 }
 #tipos-jugador .button:after {
   display: none;
@@ -5247,6 +5409,10 @@ h2.h2home, h2.inline-richtext {
 }
 
 /*Card product*/
+.product-card-wrapper {
+  /*tachado oferta*/
+  /*precio vigente*/
+}
 .product-card-wrapper .card__information {
   padding-top: 8px;
 }
@@ -5275,7 +5441,8 @@ h2.h2home, h2.inline-richtext {
   letter-spacing: -0.16px;
   text-decoration-line: strikethrough;
 }
-.product-card-wrapper .price__regular .price-item--regular {
+.product-card-wrapper .price__regular .price-item--regular, .product-card-wrapper .price-item--sale,
+.product-card-wrapper .price__sale .price-item {
   font-family: "PP Neue Montreal";
   font-size: 16px;
   font-style: normal;

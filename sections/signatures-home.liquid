@@ -8,36 +8,16 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="signatures-home-cont">
-					<figure class="categoria-destacada-item" style="background-image: url('{{ 'signature-luka-doncic.jpg' | asset_url }}');">
-						<a href="#">
-							<h3>Luka Doncic</h3>
-							<span class="cta"><img src="{{ 'marca-jordan-bl.svg' | asset_url }}"></span>
+					{% for atleta in shop.metaobjects.atletas.values limit:5 %}
+					<figure class="categoria-destacada-item" style="background-image: url('{{ atleta.foto.value  | image_url }}');">
+						<a href="collections/{{ atleta.nombre.value | replace: " ", "-" | downcase }}">
+							<h3>{{ atleta.nombre.value }}</h3>
+							{% for marca in atleta.marcas_relacionadas limit:1 %}
+								<span class="cta"><img src="{{ marca.imagen.value  | image_url }}"></span>
+							{% endfor %}
 						</a>
 					</figure>
-					<figure class="categoria-destacada-item" style="background-image: url('{{ 'signature-jayson-tatum.jpg' | asset_url }}');">
-						<a href="#">
-							<h3>Jayson Tatum</h3>
-							<span class="cta"><img src="{{ 'marca-jordan-bl.svg' | asset_url }}"></span>
-						</a>
-					</figure>
-					<figure class="categoria-destacada-item" style="background-image: url('{{ 'signature-stephen-curry.jpg' | asset_url }}');">
-						<a href="#">
-							<h3>Stephen Curry</h3>
-							<span class="cta"><img src="{{ 'marca-under-armour-bl.svg' | asset_url }}"></span>
-						</a>
-					</figure>
-					<figure class="categoria-destacada-item" style="background-image: url('{{ 'signature-lebron-james.jpg' | asset_url }}');">
-						<a href="#">
-							<h3>LeBron James</h3>
-							<span class="cta"><img src="{{ 'marca-nike-bl.svg' | asset_url }}"></span>
-						</a>
-					</figure>
-					<figure class="categoria-destacada-item" style="background-image: url('{{ 'signature-devin-booker.jpg' | asset_url }}');">
-						<a href="#">
-							<h3>Devin Booker</h3>
-							<span class="cta"><img src="{{ 'marca-jordan-bl.svg' | asset_url }}"></span>
-						</a>
-					</figure>
+					{% endfor %}
 				</div>
 			</div>
 		</div>

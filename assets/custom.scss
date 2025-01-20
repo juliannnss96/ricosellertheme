@@ -2,6 +2,7 @@ $grisoscuro: #2c2c2c;
 $grisclaro: #6b6b6b;
 $blanco: #ffffff;
 $negro: #1C1C1C;
+$negro10: rgba(28, 28, 28, 0.10);
 $negro45: rgba(28, 28, 28, 0.45);
 $negro30: rgba(28, 28, 28, 0.30);
 $blanco40: rgba(255,255,255,0.4);
@@ -320,6 +321,10 @@ $verde: #128A09;
 							a {
 								span {
 									color: $negro;
+
+									&.header__active-menu-item {
+										text-decoration: underline;
+									}
 								}
 							}
 						}
@@ -474,6 +479,78 @@ header {
 	line-height: 110%; /* 30.8px */
 }
 
+.infinite_next {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+
+	a {
+		border-radius: 100px;
+		background: #1C1C1C;
+		padding: 21px 30px;
+		color: #FFF;
+		text-align: center;
+		font-family: "PP Neue Montreal";
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		text-decoration: none;
+	}
+}
+
+#AjaxinatePagination {
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	margin-top: 20px;
+
+	a {
+		padding: 0 100px;
+	}
+}
+
+.hasvisto {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 30px;
+
+	.hasvisto-text {
+		color: var(--Black, #1C1C1C);
+		text-align: center;
+		font-family: "PP Neue Montreal";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 110%; /* 17.6px */
+		margin-bottom: 10px;
+	}
+
+	progress {
+	  border-radius: 7px; 
+	  width: 270px;
+	  height: 11px;
+	  transition: all 300ms;
+	}
+
+	progress::-webkit-progress-bar {
+	  background-color: $negro10;
+	  border-radius: 7px;
+	}
+	progress::-webkit-progress-value {
+	  background: linear-gradient(90deg, #1C1C1C 0%, #828282 100%);
+	  border-radius: 7px;
+	}
+	progress::-moz-progress-bar {
+	  background: linear-gradient(90deg, #1C1C1C 0%, #828282 100%);
+	  border-radius: 7px;
+	}
+}
+
 /*Filtros collection*/
 
 .facets__heading--vertical {
@@ -579,14 +656,17 @@ ul.facets-layout-list--text {
 #FacetsWrapperDesktop {
 	.facets__display-vertical:nth-child(2) {
 		ul.facets-layout-list--swatch {
-			display: flex;
+			display: inline-block;
+			width: 100%;
 			justify-content: flex-start;
 			align-items: center;
 			gap: 7px;
 
 			li.facets__item {
 				display: inline-block;
-				flex-basis: 33.33%;
+				/*flex-basis: 33.33%;*/
+				width: 32.28%;
+				margin-bottom: 5px;
 
 				.facet-checkbox {
 					padding: 0;
@@ -643,6 +723,54 @@ ul.facets-layout-list--text {
 			}
 		}
 	}
+
+	/*ATLETAS FILTRO */
+	.facets__disclosure-vertical:nth-child(6) {
+		ul.facets-layout-list--swatch {
+			li.facets__item {
+				width: 100%;
+
+				.facet-checkbox {
+					padding: 16px 0;
+					text-align: center;
+					border-radius: 10px;
+					border: 0.9px solid var(--black-10, rgba(28, 28, 28, 0.10));
+					display: inline-block;
+					width: 100%;
+					transition: all 200ms;
+					display: flex;
+					justify-content: flex-start;
+
+					.swatch-input-wrapper {
+						width: auto;
+						.swatch-input__label {
+							padding: 0;
+							border-color: transparent;
+							position: absolute;
+							left: 0;
+							top: 0;
+							height: 100%;
+							widht: 100%;
+							display: flex;
+							justify-content: flex-start;
+							align-items: center;
+
+							.swatch {
+								width: 37px;
+								height: 37px;
+								margin-left: 5px;
+							}
+						}
+					}
+
+					.facet-checkbox__text {
+						display: inline-block;
+						margin-left: 42px;
+					}
+				}
+			}
+		}
+	}
 }
 
 
@@ -675,6 +803,10 @@ ul.facets-layout-list--text {
 		text-transform: none;
 	}
 
+	.product__title {
+		margin-top: 0;
+	}
+
 	.product__title h1 {
 		font-family: "PP Neue Montreal";
 		font-size: 42px;
@@ -694,16 +826,19 @@ ul.facets-layout-list--text {
 		line-height: 110%; /* 22px */
 		letter-spacing: -0.2px;
 		text-decoration-line: strikethrough;
+		line-height: 27px;
 	}
 
-	.price__regular .price-item--regular {
+	.price__regular .price-item--regular,
+	.price .price-item {
 		color: $negro;
 		font-family: "PP Neue Montreal";
 		font-size: 20px;
 		font-style: normal;
-		font-weight: 500;
+		font-weight: 400;
 		line-height: 110%; /* 22px */
 		letter-spacing: -0.2px;
+		line-height: 27px;
 	}
 
 	.price .price__badge-sale {
@@ -711,7 +846,9 @@ ul.facets-layout-list--text {
 	}
 
 	#price-template--18638285603068__main,
-	#price-template--18408382464252__main {
+	#price-template--18408382464252__main,
+	#price-template--18964247609588__main
+	 {
 		margin-bottom: 0 !important;
 	}
 
@@ -1130,10 +1267,26 @@ ul.facets-layout-list--text {
 
 /*Home*/
 
+.video-home video {
+	width: 100%;
+	aspect-ratio: 16/9;
+	vertical-align: middle;
+	object-fit: cover;
+	background-image: url('home-video-desktop-poster.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
 .banner__buttons .button {
 	background-color: $blanco;
 	color: $negro;
 	border-radius: 100px;
+	transition: all 300ms;
+	
+	&:hover, &:focus {
+		background-color: rgba(0,0,0,.85);
+		color: $blanco;
+	}
 }
 
 .banner__buttons .button:after {
@@ -1166,7 +1319,13 @@ ul.facets-layout-list--text {
 				transition: all 200ms;
 
 				&:hover, &:focus {
-					transform: scale(1.02,1.02);
+					/*transform: scale(1.02,1.02);*/
+
+					a {
+						figure {
+							background-color: #e0e0e0;
+						}
+					}
 				}
 
 				a {
@@ -1181,6 +1340,7 @@ ul.facets-layout-list--text {
 						aspect-ratio: 0.95/1;
 						background-repeat: no-repeat;
 						background-position: center;
+						transition: all 300ms;
 					}
 				}
 			}
@@ -1356,18 +1516,44 @@ h2.h2home, h2.inline-richtext {
 		}
 	}
 
-	.cont-zapa {
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
+	.cont-figure {
 		width: 100%;
 		height: 100%;
+		position: relative;
+
+		.cont-zapa {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			transition: all 300ms;
+
+			&.selected {
+				opacity: 1;
+			}
+		}
 	}
 
 	.button {
 		margin-left: 70px;
 		margin-top: 50px;
 		border-radius: 100px;
+
+		border: 1px solid $negro;
+		background-color: transparent;
+		color: $negro;
+		transition: all 200ms;
+
+		&:hover, &:focus {
+			background-color: $negro;
+			color: $blanco;
+		}
 
 		&:after {
 			display: none;
@@ -1435,6 +1621,7 @@ h2.h2home, h2.inline-richtext {
 		}
 	}
 
+	/*tachado oferta*/
 	.price--on-sale .price-item--regular {
 		color: $negro45;
 		font-family: "PP Neue Montreal";
@@ -1446,7 +1633,9 @@ h2.h2home, h2.inline-richtext {
 		text-decoration-line: strikethrough;
 	}
 
-	.price__regular .price-item--regular {
+	/*precio vigente*/
+	.price__regular .price-item--regular, .price-item--sale,
+	.price__sale .price-item {
 		font-family: "PP Neue Montreal";
 		font-size: 16px;
 		font-style: normal;

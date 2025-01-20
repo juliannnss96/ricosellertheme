@@ -80,16 +80,22 @@ class FacetFiltersForm extends HTMLElement {
   }
 
   static renderProductGridContainer(html) {
-    document.getElementById('ProductGridContainer').innerHTML = new DOMParser()
-      .parseFromString(html, 'text/html')
-      .getElementById('ProductGridContainer').innerHTML;
+    document.getElementById("ProductGridContainer").innerHTML = new DOMParser()
+      .parseFromString(html, "text/html")
+      .getElementById("ProductGridContainer").innerHTML;
 
     document
-      .getElementById('ProductGridContainer')
-      .querySelectorAll('.scroll-trigger')
+      .getElementById("ProductGridContainer")
+      .querySelectorAll(".scroll-trigger")
       .forEach((element) => {
-        element.classList.add('scroll-trigger--cancel');
+        element.classList.add("scroll-trigger--cancel");
       });
+
+    const endlessCollection = new Ajaxinate({
+      container: "#product-grid",
+      pagination: "#AjaxinatePagination",
+      method: "click",
+    });
   }
 
   static renderProductCount(html) {

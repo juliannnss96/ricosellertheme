@@ -186,9 +186,23 @@
                     {%- endfor -%}
                   </ul>
 
-                  {%- if paginate.pages > 1 -%}
-                    {% render 'pagination', paginate: paginate, anchor: '' %}
+                  <!-- Calculo "has visto" -->
+                  {% if paginate.pages > 1 %}
+                    {%- assign hasvisto = paginate.page_size -%}
+                  {% else %}
+                    {%- assign hasvisto = paginate.items -%}
+                  {% endif %}
+
+                  <div class="hasvisto">
+                    <span class="hasvisto-text">Has visto <span>{{ hasvisto }}</span> de {{ paginate.items }} productos</span>
+                    <progress class="barra-carga" value="{{ hasvisto }}" max="{{ paginate.items }}"></progress>
+                  </div>
+                  {%- if paginate.next -%}
+                    <div id="AjaxinatePagination">
+                      <a href="{{ paginate.next.url }}" class="button button--primary paginate-button">Ver más</a>
+                    </div>
                   {%- endif -%}
+
                 </div>
               {%- endif -%}
             </div>
@@ -202,6 +216,18 @@
     </div>
   </div>
 </div>
+
+{{ 'ajaxinate.min.js' | asset_url | script_tag }}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const endlessCollection = new Ajaxinate({
+      container: '#product-grid',
+      pagination: '#AjaxinatePagination',
+      method: "click"
+    });
+  });
+</script>
 
 {% schema %}
 {
