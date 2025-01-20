@@ -12,6 +12,7 @@
 					<figure class="categoria-destacada-item" style="background-image: url('{{ atleta.foto.value  | image_url }}');">
 						<a href="collections/{{ atleta.nombre.value | replace: " ", "-" | downcase }}">
 							<h3>{{ atleta.nombre.value }}</h3>
+							{{ atleta.marcas_relacionadas | value }}
 							{% for marca in atleta.marcas_relacionadas limit:1 %}
 								<span class="cta"><img src="{{ marca.imagen.value  | image_url }}"></span>
 							{% endfor %}

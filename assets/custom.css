@@ -5468,6 +5468,7 @@ h2.h2home, h2.inline-richtext {
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 20px;
+  font-family: "PP Neue Montreal";
 }
 #ultimos-contenidos .categorias-home-cont, #ultimos-contenidos .signatures-home-cont {
   display: flex;
