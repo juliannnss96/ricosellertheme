@@ -8,31 +8,15 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <div class="signatures-home-cont">
-            <figure class="categoria-destacada-item">
-              <div class="cont-img" style="background-image: url('{{ 'ultimos-contenidos.jpg' | asset_url }}');"></div>
-              <a href="#">
-                <span class="cta"></span>
-              </a>
+          <div class="signatures-home-cont scrollblanco-h">
+            {% for contenido in shop.metaobjects.contenido_redessociales.values %}
+            <figure class="categoria-destacada-item open-iframe-redes" data-iframe="{{contenido.id_de_reel.value}}">
+              <div class="cont-img" style="background-image: url('{{ contenido.imagen.value | image_url }}');"></div>
+                <div class="cont-cta">
+                  <span class="cta"></span>
+                </div>
             </figure>
-            <figure class="categoria-destacada-item">
-              <div class="cont-img" style="background-image: url('{{ 'ultimos-contenidos.jpg' | asset_url }}');"></div>
-              <a href="#">
-                <span class="cta"></span>
-              </a>
-            </figure>
-            <figure class="categoria-destacada-item">
-              <div class="cont-img" style="background-image: url('{{ 'ultimos-contenidos.jpg' | asset_url }}');"></div>
-              <a href="#">
-                <span class="cta"></span>
-              </a>
-            </figure>
-            <figure class="categoria-destacada-item">
-              <div class="cont-img" style="background-image: url('{{ 'ultimos-contenidos.jpg' | asset_url }}');"></div>
-              <a href="#">
-                <span class="cta"></span>
-              </a>
-            </figure>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -48,34 +32,18 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <div class="signatures-home-cont">
+          <div class="signatures-home-cont scrollblanco-h">
+            {% for amigo in shop.metaobjects.amigos_de_la_casa.values %}
             <figure class="categoria-destacada-item">
-              <div class="cont-img" style="background-image: url('{{ 'amigos03.jpg' | asset_url }}');"></div>
-              <a href="#">
+              <div class="cont-img" style="background-image: url('{{ amigo.foto.value | image_url }}');"></div>
+              <div class="cont-cta">
                 <div class="cont-text">
-                  <p>“Sus productos tienen la calidad que busco”</p>
-                  <span class="autor">Al Thornton Jugador profesional (ex NBA)</span>
+                  <p>“{{ amigo.resena.value }}”</p>
+                  <span class="autor">{{ amigo.nombre.value }}</span>
                 </div>
-              </a>
+              </div>
             </figure>
-            <figure class="categoria-destacada-item">
-              <div class="cont-img" style="background-image: url('{{ 'amigos02.jpg' | asset_url }}');"></div>
-              <a href="#">
-                <div class="cont-text">
-                  <p>“Increíble, no se puede creer la variedad y calidad”</p>
-                  <span class="autor">Agustín Caffaro Jugador profesional</span>
-                </div>
-              </a>
-            </figure>
-            <figure class="categoria-destacada-item">
-              <div class="cont-img" style="background-image: url('{{ 'amigos04.jpg' | asset_url }}');"></div>
-              <a href="#">
-                <div class="cont-text">
-                  <p>“Su atención fue la mejor que he recibido, recomiendo”</p>
-                  <span class="autor">Bautista Lugarini Jugador profesional</span>
-                </div>
-              </a>
-            </figure>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -244,7 +212,13 @@
   </div>
 </footer>
 
-
+<div class="modal-default modal-iframe-redes">
+  <div class="modal">
+    <div class="cerrar"></div>
+    <div class="content scrollnegro">
+    </div>
+  </div>
+</div>
 
 
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}

@@ -1014,7 +1014,7 @@ ul.facets-layout-list--text {
 	}
 }
 
-.modal-guia-de-talles {
+.modal-default {
 	display: flex;
 	position: fixed;
 	left: 0;
@@ -1101,7 +1101,13 @@ ul.facets-layout-list--text {
 				color: $negro;
 				margin-bottom: 0;
 			}
+		}
+	}
+}
 
+.modal-guia-de-talles {
+	.modal {
+		.content {
 			table {
 				width: 95%;
 				text-align: center;
@@ -1115,6 +1121,33 @@ ul.facets-layout-list--text {
 						background-color: #F6F6F6;
 					}
 				}
+			}
+		}
+	}
+}
+
+.modal-iframe-redes {
+	.modal {
+		padding: 10px;
+		max-width: 400px;
+  		max-height: 680px;
+  		aspect-ratio: 16/9;
+
+  		.cerrar {
+  			top: -10px;
+  			right: -10px;
+  			background-color: $blanco;
+  		}
+
+		.content {
+			padding: 0;
+			padding-right: 5px;
+			padding-left: 5px;
+			overflow: hidden;
+
+			iframe {
+				width: 100%;
+				height: 100%;
 			}
 		}
 	}
@@ -1464,64 +1497,86 @@ ul.facets-layout-list--text {
 	max-width: 1300px;
 }
 
-.scrollnegro-h::-webkit-scrollbar {
+.scrollnegro-h::-webkit-scrollbar,
+.scrollnegro::-webkit-scrollbar  {
   display: block;
   height: 6px;
   border-radius: 20px;
 }
 
-.scrollnegro-h::-webkit-scrollbar-track {
+.scrollnegro::-webkit-scrollbar {
+	height: initial;
+	width: 7px;
+}
+
+.scrollnegro-h::-webkit-scrollbar-track,
+.scrollnegro::-webkit-scrollbar-track {
   background: $negro10;
 }
     
-.scrollnegro-h::-webkit-scrollbar-thumb {
+.scrollnegro-h::-webkit-scrollbar-thumb,
+.scrollnegro::-webkit-scrollbar-thumb {
   background-color: $negro;
   border-radius: 20px;
   border-right: none;
   border-left: none;
 }
 
-.scrollnegro-h::-webkit-scrollbar-thumb:hover {
+.scrollnegro-h::-webkit-scrollbar-thumb:hover,
+.scrollnegro::-webkit-scrollbar-thumb:hover {
   background-color: $negro;
 }
 
-.scrollnegro-h::-webkit-scrollbar-track-piece:end {
+.scrollnegro-h::-webkit-scrollbar-track-piece:end,
+.scrollnegro::-webkit-scrollbar-track-piece:end {
   background: transparent;
   margin-bottom: 5px; 
 }
 
-.scrollnegro-h::-webkit-scrollbar-track-piece:start {
+.scrollnegro-h::-webkit-scrollbar-track-piece:start,
+.scrollnegro::-webkit-scrollbar-track-piece:start {
   background: transparent;
   margin-top: 5px;
 }
 
-.scrollblanco-h::-webkit-scrollbar {
+.scrollblanco-h::-webkit-scrollbar,
+.scrollblanco::-webkit-scrollbar {
   display: block;
   height: 7px;
   border-radius: 20px;
 }
 
-.scrollblanco-h::-webkit-scrollbar-track {
+.scrollblanco::-webkit-scrollbar {
+	height: initial;
+	width: 7px;
+}
+
+.scrollblanco-h::-webkit-scrollbar-track,
+.scrollblanco::-webkit-scrollbar-track {
   background: rgba(255,255,255,.10);
 }
     
-.scrollblanco-h::-webkit-scrollbar-thumb {
+.scrollblanco-h::-webkit-scrollbar-thumb,
+.scrollblanco::-webkit-scrollbar-thumb {
   background-color: $blanco;
   border-radius: 20px;
   border-right: none;
   border-left: none;
 }
 
-.scrollblanco-h::-webkit-scrollbar-thumb:hover {
+.scrollblanco-h::-webkit-scrollbar-thumb:hover,
+.scrollblanco::-webkit-scrollbar-thumb:hover {
   background-color: $blanco;
 }
 
-.scrollblanco-h::-webkit-scrollbar-track-piece:end {
+.scrollblanco-h::-webkit-scrollbar-track-piece:end,
+.scrollblanco::-webkit-scrollbar-track-piece:end {
   background: transparent;
   margin-bottom: 5px; 
 }
 
-.scrollblanco-h::-webkit-scrollbar-track-piece:start {
+.scrollblanco-h::-webkit-scrollbar-track-piece:start,
+.scrollblanco::-webkit-scrollbar-track-piece:start {
   background: transparent;
   margin-top: 5px;
 }
@@ -1837,7 +1892,7 @@ h2.h2home, h2.inline-richtext {
 				margin-right: 23px;
 			}
 
-			a {
+			a, .cont-cta {
 				h3 {
 					font-family: "PP Neue Montreal";
 					font-size: 22px;
@@ -1950,10 +2005,12 @@ h2.h2home, h2.inline-richtext {
 	}
 
 	.categorias-home-cont, .signatures-home-cont {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 20px;
+		list-style-type: none;
+		white-space: nowrap;
+		overflow-x: auto;
+		padding-bottom: 30px;
+		display: inline-block;
+		width: 100%;
 
 		figure {
 			flex-basis: 25%;
@@ -1962,6 +2019,13 @@ h2.h2home, h2.inline-richtext {
 			position: relative;
 			border-radius: 23px;
 			overflow: hidden;
+			cursor: pointer;
+			width: calc(25% - 19px);
+			margin-right: 23px;
+
+			&:last-child {
+				margin-right: 0;
+			}
 
 			&:hover, &:focus {
 				.cont-img {
@@ -1977,15 +2041,35 @@ h2.h2home, h2.inline-richtext {
 				top: 0;
 				display: inline-block !important;
 				transition: 300ms;
+				border-radius: 23px;
+				background-size: cover;
+				background-position: center;
 			}
 
 			&:before {
 				display: none;
 			}
 
-			a {
+			.cont-cta {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			a, .cont-cta {
 				span {
 					background-image: url('cta-play.svg');
+					background-size: cover;
+					background-repeat: no-repeat;
+					width: 47px;
+					height: 47px;
+					bottom: 25px;
+					right: 25px;
+					display: inline-block;
+					z-index: 10;
+					position: absolute;
 				}
 			}
 		}
@@ -2001,18 +2085,27 @@ h2.h2home, h2.inline-richtext {
 	}
 
 	.categorias-home-cont, .signatures-home-cont {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 20px;
+		list-style-type: none;
+		white-space: nowrap;
+		overflow-x: auto;
+		padding-bottom: 30px;
+		display: inline-block;
+		width: 100%;
 
 		figure {
-			flex-basis: 33.33%;
 			display: inline-block;
-			aspect-ratio: 0.85/1;
+			aspect-ratio: 0.78/1;
 			position: relative;
 			border-radius: 23px;
 			overflow: hidden;
+			width: calc(33.33% - 19px);
+			margin-right: 23px;
+			white-space: initial;
+			cursor: default;
+
+			&:last-child {
+				margin-right: 0;
+			}
 
 			&:hover, &:focus {
 				.cont-img {
@@ -2028,36 +2121,42 @@ h2.h2home, h2.inline-richtext {
 				top: 0;
 				display: inline-block !important;
 				transition: 300ms;
+				background-size: cover;
+				background-position: center;
+			cursor: default;
 			}
 
 			&:before {
 				background: linear-gradient(180deg, transparent 0%, rgba(28,28,28,0.6) 100%);
 			}
 
-			a {
+			a, .cont-cta {
+			cursor: default;
 				.cont-text {
 					padding: 20px;
 					position: absolute;
 					left: 0;
 					bottom: -10px;
 
-					p, span.autor {
-						width: 100%;
-						display: inline-block;
-						margin: 0;
-						color: $blanco;
-					}
-
 					p {
+						font-family: "PP Neue Montreal";
+						color: $blanco;
 						font-size: 28px;
-						line-height: 28px;
-						margin-bottom: 10px;
+						font-style: normal;
 						font-weight: 500;
+						line-height: normal;
+						letter-spacing: -0.28px;
+						margin-bottom: 10px;
 					}
 
 					span.autor {
+						font-family: "PP Neue Montreal";
 						font-size: 20px;
+						font-style: normal;
 						font-weight: 400;
+						line-height: normal;
+						color: $blanco;
+						width: 100%;
 					}
 
 					span {

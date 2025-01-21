@@ -4915,7 +4915,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   letter-spacing: -0.3px;
 }
 
-.modal-guia-de-talles {
+.modal-default {
   display: flex;
   position: fixed;
   left: 0;
@@ -4929,14 +4929,14 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   opacity: 0;
   transition: all 200ms;
 }
-.modal-guia-de-talles.abierto {
+.modal-default.abierto {
   opacity: 1;
   z-index: 100;
 }
-.modal-guia-de-talles.abierto .modal {
+.modal-default.abierto .modal {
   opacity: 1;
 }
-.modal-guia-de-talles .modal {
+.modal-default .modal {
   width: calc(100% - 30px);
   height: calc(100% - 30px);
   max-width: 700px;
@@ -4948,7 +4948,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   transition: all 400ms;
   opacity: 0;
 }
-.modal-guia-de-talles .modal .cerrar {
+.modal-default .modal .cerrar {
   position: absolute;
   top: 48px;
   right: 48px;
@@ -4964,13 +4964,13 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   background-repeat: no-repeat;
   background-size: 24px;
 }
-.modal-guia-de-talles .modal .content {
+.modal-default .modal .content {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
   padding: 0 8px 8px 8px;
 }
-.modal-guia-de-talles .modal .content h3 {
+.modal-default .modal .content h3 {
   color: #1C1C1C;
   font-family: "PP Neue Montreal";
   font-size: 24px;
@@ -4980,7 +4980,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   margin-top: 0;
   margin-bottom: 20px;
 }
-.modal-guia-de-talles .modal .content p {
+.modal-default .modal .content p {
   color: #1C1C1C;
   font-family: "PP Neue Montreal";
   font-size: 16px;
@@ -4988,7 +4988,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   font-weight: 400;
   line-height: 150%; /* 24px */
 }
-.modal-guia-de-talles .modal .content h4 {
+.modal-default .modal .content h4 {
   font-family: "PP Neue Montreal";
   font-size: 19px;
   font-style: normal;
@@ -4997,6 +4997,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   color: #1C1C1C;
   margin-bottom: 0;
 }
+
 .modal-guia-de-talles .modal .content table {
   width: 95%;
   text-align: center;
@@ -5008,6 +5009,28 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
 }
 .modal-guia-de-talles .modal .content table th:nth-child(even), .modal-guia-de-talles .modal .content table td:nth-child(even) {
   background-color: #F6F6F6;
+}
+
+.modal-iframe-redes .modal {
+  padding: 10px;
+  max-width: 400px;
+  max-height: 680px;
+  aspect-ratio: 16/9;
+}
+.modal-iframe-redes .modal .cerrar {
+  top: -10px;
+  right: -10px;
+  background-color: #ffffff;
+}
+.modal-iframe-redes .modal .content {
+  padding: 0;
+  padding-right: 5px;
+  padding-left: 5px;
+  overflow: hidden;
+}
+.modal-iframe-redes .modal .content iframe {
+  width: 100%;
+  height: 100%;
 }
 
 /*Footer*/
@@ -5298,64 +5321,86 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   max-width: 1300px;
 }
 
-.scrollnegro-h::-webkit-scrollbar {
+.scrollnegro-h::-webkit-scrollbar,
+.scrollnegro::-webkit-scrollbar {
   display: block;
   height: 6px;
   border-radius: 20px;
 }
 
-.scrollnegro-h::-webkit-scrollbar-track {
+.scrollnegro::-webkit-scrollbar {
+  height: initial;
+  width: 7px;
+}
+
+.scrollnegro-h::-webkit-scrollbar-track,
+.scrollnegro::-webkit-scrollbar-track {
   background: rgba(28, 28, 28, 0.1);
 }
 
-.scrollnegro-h::-webkit-scrollbar-thumb {
+.scrollnegro-h::-webkit-scrollbar-thumb,
+.scrollnegro::-webkit-scrollbar-thumb {
   background-color: #1C1C1C;
   border-radius: 20px;
   border-right: none;
   border-left: none;
 }
 
-.scrollnegro-h::-webkit-scrollbar-thumb:hover {
+.scrollnegro-h::-webkit-scrollbar-thumb:hover,
+.scrollnegro::-webkit-scrollbar-thumb:hover {
   background-color: #1C1C1C;
 }
 
-.scrollnegro-h::-webkit-scrollbar-track-piece:end {
+.scrollnegro-h::-webkit-scrollbar-track-piece:end,
+.scrollnegro::-webkit-scrollbar-track-piece:end {
   background: transparent;
   margin-bottom: 5px;
 }
 
-.scrollnegro-h::-webkit-scrollbar-track-piece:start {
+.scrollnegro-h::-webkit-scrollbar-track-piece:start,
+.scrollnegro::-webkit-scrollbar-track-piece:start {
   background: transparent;
   margin-top: 5px;
 }
 
-.scrollblanco-h::-webkit-scrollbar {
+.scrollblanco-h::-webkit-scrollbar,
+.scrollblanco::-webkit-scrollbar {
   display: block;
   height: 7px;
   border-radius: 20px;
 }
 
-.scrollblanco-h::-webkit-scrollbar-track {
+.scrollblanco::-webkit-scrollbar {
+  height: initial;
+  width: 7px;
+}
+
+.scrollblanco-h::-webkit-scrollbar-track,
+.scrollblanco::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.scrollblanco-h::-webkit-scrollbar-thumb {
+.scrollblanco-h::-webkit-scrollbar-thumb,
+.scrollblanco::-webkit-scrollbar-thumb {
   background-color: #ffffff;
   border-radius: 20px;
   border-right: none;
   border-left: none;
 }
 
-.scrollblanco-h::-webkit-scrollbar-thumb:hover {
+.scrollblanco-h::-webkit-scrollbar-thumb:hover,
+.scrollblanco::-webkit-scrollbar-thumb:hover {
   background-color: #ffffff;
 }
 
-.scrollblanco-h::-webkit-scrollbar-track-piece:end {
+.scrollblanco-h::-webkit-scrollbar-track-piece:end,
+.scrollblanco::-webkit-scrollbar-track-piece:end {
   background: transparent;
   margin-bottom: 5px;
 }
 
-.scrollblanco-h::-webkit-scrollbar-track-piece:start {
+.scrollblanco-h::-webkit-scrollbar-track-piece:start,
+.scrollblanco::-webkit-scrollbar-track-piece:start {
   background: transparent;
   margin-top: 5px;
 }
@@ -5633,7 +5678,7 @@ h2.h2home, h2.inline-richtext {
 #signatures-home .signatures-home-cont figure:last-child {
   margin-right: 23px;
 }
-#signatures-home .signatures-home-cont figure a h3 {
+#signatures-home .signatures-home-cont figure a h3, #signatures-home .signatures-home-cont figure .cont-cta h3 {
   font-family: "PP Neue Montreal";
   font-size: 22px;
   font-style: normal;
@@ -5646,7 +5691,7 @@ h2.h2home, h2.inline-richtext {
   display: inline-block;
   white-space: initial;
 }
-#signatures-home .signatures-home-cont figure a span.cta {
+#signatures-home .signatures-home-cont figure a span.cta, #signatures-home .signatures-home-cont figure .cont-cta span.cta {
   width: 35px;
   height: 35px;
   background-image: none;
@@ -5654,7 +5699,7 @@ h2.h2home, h2.inline-richtext {
   justify-content: center;
   align-items: center;
 }
-#signatures-home .signatures-home-cont figure a span.cta img {
+#signatures-home .signatures-home-cont figure a span.cta img, #signatures-home .signatures-home-cont figure .cont-cta span.cta img {
   width: 35px;
 }
 
@@ -5721,10 +5766,12 @@ h2.h2home, h2.inline-richtext {
   font-family: "PP Neue Montreal";
 }
 #ultimos-contenidos .categorias-home-cont, #ultimos-contenidos .signatures-home-cont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  list-style-type: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding-bottom: 30px;
+  display: inline-block;
+  width: 100%;
 }
 #ultimos-contenidos .categorias-home-cont figure, #ultimos-contenidos .signatures-home-cont figure {
   flex-basis: 25%;
@@ -5733,6 +5780,12 @@ h2.h2home, h2.inline-richtext {
   position: relative;
   border-radius: 23px;
   overflow: hidden;
+  cursor: pointer;
+  width: calc(25% - 19px);
+  margin-right: 23px;
+}
+#ultimos-contenidos .categorias-home-cont figure:last-child, #ultimos-contenidos .signatures-home-cont figure:last-child {
+  margin-right: 0;
 }
 #ultimos-contenidos .categorias-home-cont figure:hover .cont-img, #ultimos-contenidos .categorias-home-cont figure:focus .cont-img, #ultimos-contenidos .signatures-home-cont figure:hover .cont-img, #ultimos-contenidos .signatures-home-cont figure:focus .cont-img {
   transform: scale(1.1, 1.1);
@@ -5745,12 +5798,31 @@ h2.h2home, h2.inline-richtext {
   top: 0;
   display: inline-block !important;
   transition: 300ms;
+  border-radius: 23px;
+  background-size: cover;
+  background-position: center;
 }
 #ultimos-contenidos .categorias-home-cont figure:before, #ultimos-contenidos .signatures-home-cont figure:before {
   display: none;
 }
-#ultimos-contenidos .categorias-home-cont figure a span, #ultimos-contenidos .signatures-home-cont figure a span {
+#ultimos-contenidos .categorias-home-cont figure .cont-cta, #ultimos-contenidos .signatures-home-cont figure .cont-cta {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+#ultimos-contenidos .categorias-home-cont figure a span, #ultimos-contenidos .categorias-home-cont figure .cont-cta span, #ultimos-contenidos .signatures-home-cont figure a span, #ultimos-contenidos .signatures-home-cont figure .cont-cta span {
   background-image: url("cta-play.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 47px;
+  height: 47px;
+  bottom: 25px;
+  right: 25px;
+  display: inline-block;
+  z-index: 10;
+  position: absolute;
 }
 
 #amigos-de-la-casa h3 {
@@ -5760,18 +5832,26 @@ h2.h2home, h2.inline-richtext {
   margin-bottom: 20px;
 }
 #amigos-de-la-casa .categorias-home-cont, #amigos-de-la-casa .signatures-home-cont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  list-style-type: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding-bottom: 30px;
+  display: inline-block;
+  width: 100%;
 }
 #amigos-de-la-casa .categorias-home-cont figure, #amigos-de-la-casa .signatures-home-cont figure {
-  flex-basis: 33.33%;
   display: inline-block;
-  aspect-ratio: 0.85/1;
+  aspect-ratio: 0.78/1;
   position: relative;
   border-radius: 23px;
   overflow: hidden;
+  width: calc(33.33% - 19px);
+  margin-right: 23px;
+  white-space: initial;
+  cursor: default;
+}
+#amigos-de-la-casa .categorias-home-cont figure:last-child, #amigos-de-la-casa .signatures-home-cont figure:last-child {
+  margin-right: 0;
 }
 #amigos-de-la-casa .categorias-home-cont figure:hover .cont-img, #amigos-de-la-casa .categorias-home-cont figure:focus .cont-img, #amigos-de-la-casa .signatures-home-cont figure:hover .cont-img, #amigos-de-la-casa .signatures-home-cont figure:focus .cont-img {
   transform: scale(1.1, 1.1);
@@ -5784,33 +5864,42 @@ h2.h2home, h2.inline-richtext {
   top: 0;
   display: inline-block !important;
   transition: 300ms;
+  background-size: cover;
+  background-position: center;
+  cursor: default;
 }
 #amigos-de-la-casa .categorias-home-cont figure:before, #amigos-de-la-casa .signatures-home-cont figure:before {
   background: linear-gradient(180deg, transparent 0%, rgba(28, 28, 28, 0.6) 100%);
 }
-#amigos-de-la-casa .categorias-home-cont figure a .cont-text, #amigos-de-la-casa .signatures-home-cont figure a .cont-text {
+#amigos-de-la-casa .categorias-home-cont figure a, #amigos-de-la-casa .categorias-home-cont figure .cont-cta, #amigos-de-la-casa .signatures-home-cont figure a, #amigos-de-la-casa .signatures-home-cont figure .cont-cta {
+  cursor: default;
+}
+#amigos-de-la-casa .categorias-home-cont figure a .cont-text, #amigos-de-la-casa .categorias-home-cont figure .cont-cta .cont-text, #amigos-de-la-casa .signatures-home-cont figure a .cont-text, #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text {
   padding: 20px;
   position: absolute;
   left: 0;
   bottom: -10px;
 }
-#amigos-de-la-casa .categorias-home-cont figure a .cont-text p, #amigos-de-la-casa .categorias-home-cont figure a .cont-text span.autor, #amigos-de-la-casa .signatures-home-cont figure a .cont-text p, #amigos-de-la-casa .signatures-home-cont figure a .cont-text span.autor {
-  width: 100%;
-  display: inline-block;
-  margin: 0;
+#amigos-de-la-casa .categorias-home-cont figure a .cont-text p, #amigos-de-la-casa .categorias-home-cont figure .cont-cta .cont-text p, #amigos-de-la-casa .signatures-home-cont figure a .cont-text p, #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text p {
+  font-family: "PP Neue Montreal";
   color: #ffffff;
-}
-#amigos-de-la-casa .categorias-home-cont figure a .cont-text p, #amigos-de-la-casa .signatures-home-cont figure a .cont-text p {
   font-size: 28px;
-  line-height: 28px;
-  margin-bottom: 10px;
+  font-style: normal;
   font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.28px;
+  margin-bottom: 10px;
 }
-#amigos-de-la-casa .categorias-home-cont figure a .cont-text span.autor, #amigos-de-la-casa .signatures-home-cont figure a .cont-text span.autor {
+#amigos-de-la-casa .categorias-home-cont figure a .cont-text span.autor, #amigos-de-la-casa .categorias-home-cont figure .cont-cta .cont-text span.autor, #amigos-de-la-casa .signatures-home-cont figure a .cont-text span.autor, #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text span.autor {
+  font-family: "PP Neue Montreal";
   font-size: 20px;
+  font-style: normal;
   font-weight: 400;
+  line-height: normal;
+  color: #ffffff;
+  width: 100%;
 }
-#amigos-de-la-casa .categorias-home-cont figure a .cont-text span, #amigos-de-la-casa .signatures-home-cont figure a .cont-text span {
+#amigos-de-la-casa .categorias-home-cont figure a .cont-text span, #amigos-de-la-casa .categorias-home-cont figure .cont-cta .cont-text span, #amigos-de-la-casa .signatures-home-cont figure a .cont-text span, #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text span {
   position: initial;
   background-image: none;
 }
