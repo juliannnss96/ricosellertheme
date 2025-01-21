@@ -2137,6 +2137,7 @@ h2.h2home, h2.inline-richtext {
 					position: absolute;
 					left: 0;
 					bottom: -10px;
+					z-index: 10;
 
 					p {
 						font-family: "PP Neue Montreal";

@@ -5879,6 +5879,7 @@ h2.h2home, h2.inline-richtext {
   position: absolute;
   left: 0;
   bottom: -10px;
+  z-index: 10;
 }
 #amigos-de-la-casa .categorias-home-cont figure a .cont-text p, #amigos-de-la-casa .categorias-home-cont figure .cont-cta .cont-text p, #amigos-de-la-casa .signatures-home-cont figure a .cont-text p, #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text p {
   font-family: "PP Neue Montreal";
