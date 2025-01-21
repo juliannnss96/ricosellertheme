@@ -65,12 +65,14 @@ $(document).ready(function() {
 	});
 
 	$('.modal-iframe-redes .modal .cerrar').click(function() {
+		$('.modal-iframe-redes .modal .content').html('');
 		$('.modal-iframe-redes').removeClass('abierto');
 	});
 
 	$('.modal-iframe-redes').on('click', function(e) {
 	  if (e.target !== this)
 	    return;
+	 	$('.modal-iframe-redes .modal .content').html('');
 	 	$('.modal-iframe-redes').removeClass('abierto');
 	});
 
