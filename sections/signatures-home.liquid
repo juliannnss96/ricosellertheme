@@ -8,13 +8,15 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="signatures-home-cont">
-					{% for atleta in shop.metaobjects.atletas.values limit:5 %}
-					<figure class="categoria-destacada-item" style="background-image: url('{{ atleta.foto.value  | image_url }}');">
+					{% for atleta in shop.metaobjects.atletas.values %}
+					<figure class="categoria-destacada-item">
+						<div class="cont-img" style="background-image: url('{{ atleta.foto.value  | image_url }}');">
+						</div>
 						<a href="collections/{{ atleta.nombre.value | replace: " ", "-" | downcase }}">
 							<h3>{{ atleta.nombre.value }}</h3>
-							{{ atleta.marcas_relacionadas | value }}
-							{% for marca in atleta.marcas_relacionadas limit:1 %}
-								<span class="cta"><img src="{{ marca.imagen.value  | image_url }}"></span>
+							
+							{% for marca in atleta.marcas_relacionadas.value limit:1 %}
+								<span class="cta"><img src="{{ marca.imagen_b.value  | image_url }}"></span>
 							{% endfor %}
 						</a>
 					</figure>

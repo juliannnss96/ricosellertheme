@@ -36,4 +36,24 @@ $(document).ready(function() {
 	  $('.hasvisto-text > span').html(total);
 	  $('.hasvisto progress').val(total);
 	});
+
+	/*img métodos de pago product*/
+	var link_img = $('.product .product__title').attr('data-img-met');
+	$('#ProductAccordion-collapsible-row-3-template--18638285603068__main').html('<img src="'+link_img+'">').children('img').css('border', '0');
+
+	/*Modal guia de talles single product*/
+	$(document).on('click', '.open-guia-talles-variantes', function() {
+		console.log('a ve');
+		$('.modal-guia-de-talles').addClass('abierto');
+	});
+
+	$('.modal-guia-de-talles .modal .cerrar').click(function() {
+		$('.modal-guia-de-talles').removeClass('abierto');
+	});
+
+	$('.modal-guia-de-talles').on('click', function(e) {
+	  if (e.target !== this)
+	    return;
+	 	$('.modal-guia-de-talles').removeClass('abierto');
+	});
 });

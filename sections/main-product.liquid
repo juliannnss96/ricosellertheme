@@ -97,7 +97,7 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                <div class="product__title" {{ block.shopify_attributes }}>
+                <div class="product__title" data-img-met="{{ 'metodos.png' | asset_url }}" {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
@@ -105,6 +105,14 @@
                     </h2>
                   </a>
                 </div>
+                {% for c in product.collections %}
+                  {% if c.handle == "envio-gratis" %}
+                  {% assign envio_gratis = true %}
+                  {% endif %}
+                  {% if c.handle == "descuento-de-20" %}
+                  {% assign descuento_20 = true %}
+                  {% endif %}
+                {% endfor %}
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -113,12 +121,23 @@
                     show_badges: true,
                     price_class: 'price--large'
                   -%}
+                  {% if descuento_20 == true %}
+                  <span class="texto-descuento">20% de descuento</span>
+                  {% endif %}
                 </div>
-                {% for c in product.collections %}
-                {% if c.handle == "envio-gratis" %}
+                {% if envio_gratis == true %}
                 <span class="text-envio-gratis">Envío gratis</span>
                 {% endif %}
-                {% endfor %}
+                
+                <div class="variables_color">
+                  {% assign relacionados_ordenados = product.metafields.custom.productos_relacionados.value | sort: "title" %}
+                  {% for relacionado in relacionados_ordenados %}
+                  <a class="producto_variable {% if product.id == relacionado.id %}selected{% endif %} {%- if relacionado.available == false %}disabled{% endif %}" href="{{relacionado.url}}">
+                    {{relacionado.featured_image  | img_tag}}
+                  </a>
+                  {% endfor %}
+                </div>
+                
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
@@ -728,6 +747,156 @@
     </script>
   </div>
 </product-info>
+
+<div class="modal-guia-de-talles">
+  <div class="modal">
+    <div class="cerrar"></div>
+    <div class="content">
+      <h3>Guía de talles</h3>
+      <p>Encuentra tu talla en la tabla de abajo. Si no sabes cuál es, sigue las instrucciones para tomar las medidas del pie que hay al final de la guía de tallas y encuentra tu talla perfecta. Ten en cuenta que la talla en centímetros que se muestra en las cajas de zapatillas y etiquetas es diferente de la longitud del pie (en centímetros).</p>
+      <table>
+        <tbody><tr>
+          <th>USA</th>
+          <th>CM</th>
+          <th>Argentina</th>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>21.5</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td>3.5</td>
+          <td>22</td>
+          <td>35</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>22.5</td>
+          <td>35.5</td>
+        </tr>
+        <tr>
+          <td>4.5</td>
+          <td>23</td>
+          <td>36</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>23.5</td>
+          <td>37</td>
+        </tr>
+        <tr>
+          <td>5.5</td>
+          <td>24</td>
+          <td>37.5</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>24</td>
+          <td>38</td>
+        </tr>
+        <tr>
+          <td>6.5</td>
+          <td>24.5</td>
+          <td>38.5</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>25</td>
+          <td>39</td>
+        </tr>
+        <tr>
+          <td>7.5</td>
+          <td>25.5</td>
+          <td>39.5</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>26</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>8.5</td>
+          <td>26.5</td>
+          <td>41</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>27</td>
+          <td>41.5</td>
+        </tr>
+        <tr>
+          <td>9.5</td>
+          <td>27.5</td>
+          <td>42</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>28</td>
+          <td>43</td>
+        </tr>
+        <tr>
+          <td>10.5</td>
+          <td>28.5</td>
+          <td>43.5</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>29</td>
+          <td>44</td>
+        </tr>
+        <tr>
+          <td>11.5</td>
+          <td>29.5</td>
+          <td>44.5</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>30</td>
+          <td>45</td>
+        </tr>
+        <tr>
+          <td>12.5</td>
+          <td>30.5</td>
+          <td>45.5</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>31</td>
+          <td>46</td>
+        </tr>
+        <tr>
+          <td>13.5</td>
+          <td>31.5</td>
+          <td>46.5</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>32</td>
+          <td>47</td>
+        </tr>
+        <tr>
+          <td>14.5</td>
+          <td>32.5</td>
+          <td>47.5</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>33</td>
+          <td>48</td>
+        </tr>
+        <tr>
+          <td>15.5</td>
+          <td>33.5</td>
+          <td>48.5</td>
+        </tr>
+      </tbody></table>
+
+      <h4>Cómo tomar las medidas de la longitud del pie</h4>
+      <p>Pega un trozo de papel a una superficie plana y resistente y asegúrate de que el papel no se mueve. Coloca un pie sobre el papel, con los pies separados a la altura de los hombros y el peso distribuido de manera uniforme. Con un boli o lápiz en posición completamente vertical, pide ayuda a otra persona para que marque la punta del dedo gordo y la parte más saliente del talón. Cuando estén las marcas hechas, quita el pie del papel y mide la distancia entre ambos puntos con una regla o cinta métrica. Esta medida es la longitud del pie. Repite el proceso con el otro pie. Es habitual que la longitud de cada pie sea ligeramente diferente. Consulta la guía de tallas y busca la talla correspondiente a la medida más larga entre las dos que has tomado. Si está entre dos tallas, te recomendamos pedir la más grande.</p>
+    </div>
+  </div>
+</div>
 
 {% schema %}
 {

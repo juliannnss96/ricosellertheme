@@ -3,49 +3,15 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="marcas-cont">
-					<ul>
-						<li class="marca-item nike">
-							<a href="{{ routes.root_url }}collections/nike">
-								<figure style="background-image: url('{{ 'marca-nike-b.svg' | asset_url }}');">
+					<ul class="scrollnegro-h">
+						{% for marca in shop.metaobjects.marcas.values %}
+						<li class="marca-item {{ marca.nombre.value | replace: " ", "-" | downcase }}">
+							<a href="{{ routes.root_url }}collections/{{ marca.nombre.value | replace: " ", "-" | downcase }}">
+								<figure style="background-image: url('{{ marca.imagen | img_url }}');">
 								</figure>
 							</a>
 						</li>
-						<li class="marca-item adidas">
-							<a href="{{ routes.root_url }}collections/adidas">
-								<figure style="background-image: url('{{ 'marca-adidas-b.svg' | asset_url }}');">
-								</figure>
-							</a>
-						</li>
-						<li class="marca-item jordan">
-							<a href="{{ routes.root_url }}collections/jordan">
-								<figure style="background-image: url('{{ 'marca-jordan-b.svg' | asset_url }}');">
-								</figure>
-							</a>
-						</li>
-						<li class="marca-item under-armour">
-							<a href="{{ routes.root_url }}collections/under-armour">
-								<figure style="background-image: url('{{ 'marca-under-armour-b.svg' | asset_url }}');">
-								</figure>
-							</a>
-						</li>
-						<li class="marca-item puma">
-							<a href="{{ routes.root_url }}collections/puma">
-								<figure style="background-image: url('{{ 'marca-puma-b.svg' | asset_url }}');">
-								</figure>
-							</a>
-						</li>
-						<li class="marca-item nb">
-							<a href="{{ routes.root_url }}collections/new-balance">
-								<figure style="background-image: url('{{ 'marca-nb-b.svg' | asset_url }}');">
-								</figure>
-							</a>
-						</li>
-						<li class="marca-item converse">
-							<a href="{{ routes.root_url }}collections/converse">
-								<figure style="background-image: url('{{ 'marca-converse-b.svg' | asset_url }}');">
-								</figure>
-							</a>
-						</li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
