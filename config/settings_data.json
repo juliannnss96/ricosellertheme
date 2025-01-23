@@ -9,7 +9,8 @@
  */
 {
   "current": {
-    "logo_width": 90,
+    "logo": "shopify://shop_images/rico-logo.png",
+    "logo_width": 50,
     "favicon": "shopify://shop_images/Favicon-Ricoseller-Basket.png",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
