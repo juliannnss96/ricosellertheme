@@ -310,7 +310,7 @@
       },
       "update": "Actualizar",
       "login": {
-        "title": "¿Tienes una cuenta?",
+        "title": "¿Tenés una cuenta?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Inicia sesión</a> para finalizar tus compras con mayor rapidez."
       },
       "estimated_total": "Total estimado",
@@ -368,7 +368,7 @@
     },
     "quick_order_list": {
       "product_total": "Subtotal de productos",
-      "view_cart": "Ver carrito",
+      "view_cart": "Ver bolso",
       "each": "{{ money }}/unidad",
       "product": "Producto",
       "variant": "Variante",
