@@ -4359,17 +4359,37 @@
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
 }
-
-.search-modal__form .field:after, .search-modal__form .field:hover:after, .search .field:after, .search .field:hover:after {
-  border-radius: 25px;
+.cont-header .header__search #predictive-search-products, .cont-header .header__search .field__label {
+  font-family: "PP Neue Montreal";
 }
-.search-modal__form .field__input:focus, .search-modal__form .field__input:hover, .search .field__input:focus, .search .field__input:hover {
-  box-shadow: none;
+.cont-header .header__search .predictive-search__item-heading {
+  font-family: "PP Neue Montreal";
+  font-weight: 500;
 }
 
-.predictive-search {
-  border-radius: 5px;
-  margin-top: 5px;
+.header__search .search-modal__content {
+  padding-left: 7px;
+}
+.header__search .field__input {
+  border-radius: 20px;
+}
+
+.header__search .modal__content {
+  left: 0;
+}
+
+.header__search .modal-overlay:after {
+  display: none;
+}
+
+.cont-header .header__search .search-modal {
+  border-radius: 40px;
+}
+.cont-header .header__search .search-modal .svg-wrapper .icon {
+  filter: none;
+}
+.cont-header .header__search .search-modal .field::after {
+  display: none;
 }
 
 header {
@@ -4530,6 +4550,18 @@ header .header-general .hamburger-mobile {
 }
 #cart .quantity::after {
   border-radius: 25px;
+}
+
+.cart-items tr th {
+  font-family: "PP Neue Montreal";
+}
+
+h2.totals__total {
+  font-family: "PP Neue Montreal";
+}
+
+.bcpo-cart-original-total {
+  font-weight: 500;
 }
 
 #main-cart-footer .cart__ctas button {
@@ -5265,7 +5297,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   font-family: "PP Neue Montreal";
   font-size: 18px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24px; /* 133.333% */
   letter-spacing: -0.36px;
 }
@@ -5705,6 +5737,7 @@ h2.h2home, h2.inline-richtext {
   font-size: 23px;
   font-weight: 400;
   margin-top: 0;
+  font-family: "PP Neue Montreal";
 }
 #tipos-jugador ul {
   margin-top: 50px;
@@ -6329,12 +6362,13 @@ h2.h2home, h2.inline-richtext {
   ul.facets-layout-list--text .mobile-facets__item .mobile-facets__label > svg {
     margin-top: 5px;
   }
-  .menu-mobile {
-    right: 15px;
-  }
-  .menu-mobile .contenedor {
-    right: 15px;
-  }
+  /*.menu-mobile {
+  	right: 15px;
+
+  	.contenedor {
+  		right: 15px;
+  	}
+  }*/
 }
 @media (max-width: 575px) {
   .container {
