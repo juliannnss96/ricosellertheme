@@ -16,36 +16,6 @@
         "padding_bottom": 28
       }
     },
-    "rich_text_rk7wih": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_N996cX": {
-          "type": "heading",
-          "settings": {
-            "heading": "Guía de talles",
-            "heading_size": "h1"
-          }
-        },
-        "text_nfEGGL": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Comparte información sobre tu marca con los clientes. Describe un producto, comparte anuncios o da la bienvenida a los clientes a tu tienda.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_N996cX",
-        "text_nfEGGL"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "collapsible_content_GyyDMd": {
       "type": "collapsible-content",
       "blocks": {
@@ -244,7 +214,6 @@
   },
   "order": [
     "main",
-    "rich_text_rk7wih",
     "collapsible_content_GyyDMd",
     "collapsible_content_PNkfBX",
     "collapsible_content_MN647J",
