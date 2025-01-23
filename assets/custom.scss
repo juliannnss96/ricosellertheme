@@ -248,6 +248,7 @@ $verde: #128A09;
     .announcement-bar__message {
     	span {
     		color: $blanco;
+    		font-family: 'PP Neue Montreal';
     	}
     }
 
@@ -305,6 +306,10 @@ $verde: #128A09;
 
 				.header-general {
 					background-color: $blanco;
+
+					.hamburger-mobile {
+						background-image: url('hamburger-black.svg');
+					}
 				}
 			}
 		}
@@ -341,6 +346,29 @@ $verde: #128A09;
 			}
 		}
 	}
+
+	/*buscador*/
+	.header__search {
+		.search-modal {
+			border-top-left-radius: 35px;
+			border-top-right-radius: 35px;
+		}
+	}
+}
+
+.search-modal__form, .search {
+	.field:after, .field:hover:after {
+		border-radius: 25px;
+	}
+
+	.field__input:focus, .field__input:hover {
+		box-shadow: none;
+	}
+}
+
+.predictive-search {
+	border-radius: 5px;
+  	margin-top: 5px;
 }
 
 header {
@@ -403,6 +431,100 @@ header {
 					filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 				}
 			}
+		}
+
+		.hamburger-mobile {
+			width: 44px;
+			height: 44px;
+			display: inline-block;
+			background-image: url('hamburger.svg');
+			background-repeat: no-repeat;
+			background-size: 28px;
+			background-position: center;
+			margin-left: 17px;
+			cursor: pointer;
+			opacity: 0.90;
+			display: none;
+		}
+	}
+}
+
+.menu-mobile {
+	width: 100vw;
+	height: 100vh;
+	display: inline-block;
+	position: fixed;
+	right: 0;
+	top: 0;
+	background-color: rgba(0,0,0,.4);
+	opacity: 0;
+	z-index: -1;
+	transition: all 300ms;
+	display: none;
+
+	&.active {
+		opacity: 1;
+		z-index: 10;
+
+		.contenedor {
+			transform: translateX(0);
+		}
+	}
+
+	.contenedor {
+		width: 80vw;
+		height: 100vh;
+		display: inline-block;
+		position: fixed;
+		right: 0;
+		top: 0;
+		transform: translateX(100vw);
+		background-color: $blanco;
+		transition: all 300ms;
+
+		.nav-mobile {
+			padding: 0;
+			width: 100%;
+			display: inline-block;
+			margin-top: 70px;
+
+			li {
+				list-style: none;
+				width: 100%;
+				padding: 5px 0px 5px 20px;
+				margin-bottom: 5px;
+
+				&:hover, &:focus {
+					a {
+						text-decoration: underline;
+					}
+				}
+
+				a {
+					text-decoration: none;
+					color: #1C1C1C;
+					font-family: "PP Neue Montreal";
+					font-size: 26.853px;
+					font-style: normal;
+					font-weight: 500;
+					line-height: normal;
+					letter-spacing: -0.671px;
+				}
+			}
+		}
+
+		.cerrar {
+			width: 35px;
+			height: 35px;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url('ico-cerrar-modal.svg');
+			cursor: pointer;
+			display: inline-block;
+			position: absolute;
+			right: 10px;
+			top: 10px;
 		}
 	}
 }
@@ -1463,6 +1585,20 @@ ul.facets-layout-list--text {
 	}
 }
 
+.barra-autor {
+	background: rgba(28, 28, 28, 0.90);
+	padding: 10px 0 14px 0;
+
+	span {
+		color: #707070;
+		font-family: "PP Neue Montreal";
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+	}
+}
+
 /*Home*/
 
 .video-home video {
@@ -1671,9 +1807,24 @@ ul.facets-layout-list--text {
 			background-size: cover;
 			transition: all 200ms;
 			position: relative;
+			overflow: hidden;
+
+			&:hover {
+				.cont-img {
+					transform: scale(1.05,1.05);
+				}
+			}
 
 			.cont-img {
 				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				display: inline-block;
+				background-position: center;
+				background-size: cover;
+				transition: all 300ms;
 			}
 
 			&:after {
@@ -1843,9 +1994,8 @@ h2.h2home, h2.inline-richtext {
 		margin-left: 70px;
 		margin-top: 50px;
 		border-radius: 100px;
-
 		border: 1px solid $negro;
-		background-color: transparent;
+		background-color: #d9d9d9;
 		color: $negro;
 		transition: all 200ms;
 
@@ -2083,6 +2233,7 @@ h2.h2home, h2.inline-richtext {
 		font-weight: 500;
 		color: $blanco;
 		margin-bottom: 20px;
+		font-family: "PP Neue Montreal";
 	}
 
 	.categorias-home-cont, .signatures-home-cont {
@@ -2168,6 +2319,596 @@ h2.h2home, h2.inline-richtext {
 						background-image: none;
 					}
 				}
+			}
+		}
+	}
+}
+
+/*Password Page*/
+.banner__content {
+	h2.email-signup-banner__heading {
+		font-family: 'PP Neue Montreal';
+	}
+}
+
+/*MEDIA QUERIES MOBILE*/
+
+@media(max-width: 1200px) {
+	#amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text {
+		p {
+			font-size: 18px;
+		}
+		
+		span.autor {
+			font-size: 	15px;
+			line-height: 17px;
+			display: inline-block;
+		}	
+	} 
+
+	#signatures-home .signatures-home-cont figure a h3 {
+		font-size: 17px;
+	}
+}
+
+@media(max-width: 992px) {
+	.shopify-section-group-header-group {
+		z-index: 5;
+	}
+
+	header {
+		.header-general {
+			flex-basis: auto;
+			padding: 5px 25px 5px 15px;
+
+			.items-navbar {
+				display: none;
+			}
+
+			.hamburger-mobile {
+				display: inline-block;
+			}
+		}
+	}
+
+	.section-header.shopify-section-group-header-group {
+		z-index: 4;
+	}
+
+	.menu-mobile {
+		display: inline-block;
+	}
+
+	#marcas-home {
+		.marcas-cont {
+			ul {
+
+				li {
+					width: 16.66%;
+				}
+			}
+		}
+	}
+
+	#tipos-jugador {
+		ul {
+			padding-left: 0;
+
+			li {
+				font-size: 30px;
+				line-height: 35px;
+			}
+		}
+
+		a.button {
+			margin-left: 0;
+		}
+	}
+
+	#categorias-home .categorias-home-cont figure a span.cta {
+		width: 35px;
+		height: 35px;
+		right: 14px;
+	}
+
+	#footer-rico {
+		padding-bottom: 140px;
+
+		.logo-footer {
+			display: none;
+		}
+
+		.por-que-elegirnos {
+			ul {
+				li {
+					figure {
+						width: 110px;
+					}
+				}
+
+				h4 {
+					font-size: 15px !important;
+					line-height: 16px !important;
+
+					br {
+						display: none;
+					}
+
+					strong {
+						font-size: 15px !important;
+						line-height: 16px !important;
+					}
+				}
+			}
+		}
+
+		.nav-footer {
+			margin-top: 35px;
+
+			.cont-nav {
+				flex-wrap: wrap;
+
+				.rico-club-cont {
+					flex-basis: 100%;
+					padding: 0 0 65px 0;
+					border-bottom: 1px solid rgba(255,255,255,.15);
+
+					p {
+						max-width: 100%;
+					}
+				}
+
+				.lista-cont, .redes-cont {
+					flex-basis: 33.33%;
+					margin-top: 65px;
+				}
+			}
+		}
+	}
+
+	.barra-autor {
+		text-align: center;
+	}
+
+	#signatures-home {
+		.signatures-home-cont {
+			figure {
+				width: 25%;
+			}
+		}
+	}
+}
+
+@media(max-width: 810px) {
+	#marcas-home, #signatures-home, #ultimos-contenidos, #amigos-de-la-casa {
+		.marcas-cont, .cont-cont-signatures {
+			position: relative;
+
+			&:after {
+				content: '';
+				height: 100%;
+				width: 40px;
+				position: absolute;
+				right: 0;
+				top: 0;
+				background: rgb(255,255,255);
+				background: -moz-linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(252,252,254,0) 100%);
+				background: -webkit-linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(252,252,254,0) 100%);
+				background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(252,252,254,0) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#fcfcfe",GradientType=1);
+			}
+
+			ul li:last-child, figure:last-child {
+				margin-right: 25px;
+			}
+		}
+	}
+
+	#ultimos-contenidos, #amigos-de-la-casa {
+		.cont-cont-signatures {
+			&:after {
+				background: rgb(28,28,28);
+				background: -moz-linear-gradient(270deg, rgba(28,28,28,1) 0%, rgba(252,254,253,0) 100%);
+				background: -webkit-linear-gradient(270deg, rgba(28,28,28,1) 0%, rgba(252,254,253,0) 100%);
+				background: linear-gradient(270deg, rgba(28,28,28,1) 0%, rgba(252,254,253,0) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c1c1c",endColorstr="#fcfefd",GradientType=1);
+			}
+		}
+	}
+
+	#marcas-home {
+		.marcas-cont {
+			ul {
+
+				li {
+					width: 20%;
+				}
+			}
+		}
+	}
+
+	#signatures-home {
+		.signatures-home-cont {
+			figure {
+				width: 25%;
+			}
+		}
+	}
+}
+
+@media(max-width: 767px) {
+	.announcement-bar {
+		grid-template-columns: repeat(2, 1fr);
+
+		.announcement-bar__message {
+			display: none;
+		}
+	}
+
+	.banner .banner__content {
+		align-items: flex-end;
+	}
+
+	#categorias-home .categorias-home-cont figure a h3 {
+		font-size: 17px;
+	}
+
+	#categorias-home .categorias-home-cont figure a span.cta {
+		width: 28px;
+		height: 28px;
+	}
+
+	#tipos-jugador {
+		padding-bottom: 0;
+
+		.listado-tipos-jugador, a.button {
+			position: relative;
+			z-index: 2;
+		}
+
+		a.button {
+			margin-top: 20px;
+		}
+
+		.cont-figure {
+			height: 440px;
+			z-index: 0;
+			margin-top: -155px;
+		}
+	}
+
+	#marcas-home {
+		.marcas-cont {
+			ul {
+
+				li {
+					width: 25%;
+				}
+			}
+		}
+	}
+
+	#signatures-home {
+		.signatures-home-cont {
+			figure {
+				width: 33.33%;
+			}
+		}
+	}
+
+	#ultimos-contenidos {
+		h3 {
+			font-size: 30px;
+			margin-top: 10px;
+		}
+
+		.signatures-home-cont {
+			figure {
+				width: 33.33%;
+			}
+		}
+	}
+
+	#amigos-de-la-casa {
+		h3 {
+			font-size: 30px;
+			margin-top: 10px;
+		}
+
+		.signatures-home-cont {
+			figure {
+				width: 40%;
+			}
+		}
+	}
+
+	#footer-rico {
+		.newsletter-form__field-wrapper {
+			max-width: 100%;
+		}
+
+		.por-que-elegirnos {
+			ul {
+				flex-wrap: wrap;
+
+				li {
+					flex-basis: 50%;
+
+					h4 {
+						max-width: 85%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media(max-width: 749px) {
+	#marcas-home {
+		.marcas-cont {
+			ul {
+
+				li {
+					width: 25%;
+				}
+			}
+		}
+	}
+}
+
+@media(max-width: 575px) {
+	.container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	#marcas-home {
+		.marcas-cont {
+			ul {
+				li {
+					margin-right: 7px;
+				}
+			}
+		}
+	}
+
+	#categorias-home {
+		.categorias-home-cont {
+			flex-wrap: wrap;
+			gap: 10px;
+
+			figure:nth-child(1), figure:nth-child(2) {
+				flex-basis: calc(50% - 5px);
+			} 
+
+			figure:last-child {
+				flex-basis: 100%;
+				aspect-ratio: 1.9/1;
+
+				.cont-img {
+					background-position: top center;
+				}
+			}
+		}
+	}
+
+	#tipos-jugador {
+		ul {
+			margin-top: 30px;
+		}
+
+		.listado-tipos-jugador, a.button {
+			margin-left: 25px;
+			padding-top: 0;
+		}
+
+		.cont-figure {
+			height: 350px;
+
+			.cont-zapa {
+				top: 35px;
+				background-size: contain;
+			}
+		}
+	}
+
+	#signatures-home {
+		.signatures-home-cont {
+			figure {
+				margin-right: 7px;
+			}
+		}
+	}
+
+	#shopify-section-template--18638285832444__featured_collection_JLKP4F {
+		ul.product-grid {
+			column-gap: 10px;
+
+			li:last-child {
+				display: none;
+			}
+		}
+	}
+
+	.banner--large:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
+		min-height: 60vh !important;
+	}
+}
+
+@media(max-width: 530px) {
+	#footer-rico {
+		padding-bottom: 120px;
+
+		.nav-footer {
+			.cont-nav {
+				.rico-club-cont {
+					padding-bottom: 42px;
+				}
+
+				.lista-cont {
+					flex-basis: 50%;
+					margin-top: 35px;
+				}
+
+				.redes-cont {
+					flex-basis: 100%;
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+
+	#signatures-home {
+		.signatures-home-cont {
+			figure {
+				width: 42%;
+			}
+		}
+	}
+
+	#amigos-de-la-casa {
+		.signatures-home-cont {
+			figure {
+				width: 50%;
+			}
+		}
+	}
+}
+
+@media(max-width: 470px) {
+	#marcas-home {
+		.marcas-cont {
+			ul {
+				li {
+					width: 28%;
+				}
+			}
+		}
+	}
+}
+
+@media(max-width: 450px) {
+	#marcas-home {
+		margin-top: 30px;
+	}
+
+	#categorias-home {
+		margin-top: 25px;
+	}
+
+	#tipos-jugador {
+		margin-top: 45px;
+	}
+
+	#signatures-home {
+		margin-top: 30px;
+		margin-bottom: 0px;
+	}
+
+	#footer-rico {
+		margin-top: 45px;
+
+		#ultimos-contenidos {
+			margin-bottom: 15px;
+
+			.signatures-home-cont {
+				figure {
+					width: 40%;
+				}
+			}
+		}
+
+		#amigos-de-la-casa {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+@media(max-width: 420px) {
+	#marcas-home {
+		.marcas-cont {
+			ul {
+				li {
+					width: 32%;
+				}
+			}
+		}
+	}
+
+	#tipos-jugador {
+		.cont-figure {
+			height: 350px;
+
+			.cont-zapa {
+				top: 35px;
+			}
+		}
+	}
+
+	#signatures-home {
+		.signatures-home-cont {
+			figure {
+				width: 55%;
+			}
+		}
+	}
+
+	#ultimos-contenidos {
+		.signatures-home-cont {
+			figure {
+				width: 50%;
+			}
+		}
+	}
+
+	#amigos-de-la-casa {
+		.signatures-home-cont {
+			figure {
+				width: 57%;
+			}
+		}
+	}
+}
+
+@media(max-width: 400px) {
+	.announcement-bar {
+		grid-template-columns: repeat(1, 1fr);
+
+		.announcement-bar__message {
+			display: none;
+		}
+
+		.ayuda-top {
+			display: none;
+		}
+
+		.marcas-announcement {
+			justify-content: center;
+			padding: 5px 0;
+		}
+	}
+
+	.cont-header {
+		&.nothome {
+			header {
+				margin-top: 28px;
+			}
+		}
+	}
+
+	#tipos-jugador {
+		.button {
+			min-height: 50px;
+		}
+
+		ul li {
+			font-size: 25px;
+			line-height: 26px;
+
+			&:before {
+				width: 30px;
+				height: 22px;
 			}
 		}
 	}

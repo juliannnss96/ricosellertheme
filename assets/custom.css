@@ -4284,6 +4284,7 @@
 }
 .announcement-bar .announcement-bar__message span {
   color: #ffffff;
+  font-family: "PP Neue Montreal";
 }
 .announcement-bar .ayuda-top {
   display: flex;
@@ -4322,6 +4323,7 @@
   width: 100%;
   left: 0;
   top: 0;
+  /*buscador*/
 }
 .cont-header.nothome {
   position: initial;
@@ -4334,6 +4336,9 @@
 }
 .cont-header.nothome.single-product header .header-general {
   background-color: #ffffff;
+}
+.cont-header.nothome.single-product header .header-general .hamburger-mobile {
+  background-image: url("hamburger-black.svg");
 }
 .cont-header.nothome header {
   margin-top: 32px;
@@ -4349,6 +4354,22 @@
 }
 .cont-header.nothome header .header-general .nav-specials .svg-wrapper .icon {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(28deg) brightness(0%) contrast(0%);
+}
+.cont-header .header__search .search-modal {
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+}
+
+.search-modal__form .field:after, .search-modal__form .field:hover:after, .search .field:after, .search .field:hover:after {
+  border-radius: 25px;
+}
+.search-modal__form .field__input:focus, .search-modal__form .field__input:hover, .search .field__input:focus, .search .field__input:hover {
+  box-shadow: none;
+}
+
+.predictive-search {
+  border-radius: 5px;
+  margin-top: 5px;
 }
 
 header {
@@ -4396,6 +4417,89 @@ header .header-general .nav-specials {
 }
 header .header-general .nav-specials .svg-wrapper .icon {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+header .header-general .hamburger-mobile {
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  background-image: url("hamburger.svg");
+  background-repeat: no-repeat;
+  background-size: 28px;
+  background-position: center;
+  margin-left: 17px;
+  cursor: pointer;
+  opacity: 0.9;
+  display: none;
+}
+
+.menu-mobile {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  z-index: -1;
+  transition: all 300ms;
+  display: none;
+}
+.menu-mobile.active {
+  opacity: 1;
+  z-index: 10;
+}
+.menu-mobile.active .contenedor {
+  transform: translateX(0);
+}
+.menu-mobile .contenedor {
+  width: 80vw;
+  height: 100vh;
+  display: inline-block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(100vw);
+  background-color: #ffffff;
+  transition: all 300ms;
+}
+.menu-mobile .contenedor .nav-mobile {
+  padding: 0;
+  width: 100%;
+  display: inline-block;
+  margin-top: 70px;
+}
+.menu-mobile .contenedor .nav-mobile li {
+  list-style: none;
+  width: 100%;
+  padding: 5px 0px 5px 20px;
+  margin-bottom: 5px;
+}
+.menu-mobile .contenedor .nav-mobile li:hover a, .menu-mobile .contenedor .nav-mobile li:focus a {
+  text-decoration: underline;
+}
+.menu-mobile .contenedor .nav-mobile li a {
+  text-decoration: none;
+  color: #1C1C1C;
+  font-family: "PP Neue Montreal";
+  font-size: 26.853px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.671px;
+}
+.menu-mobile .contenedor .cerrar {
+  width: 35px;
+  height: 35px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("ico-cerrar-modal.svg");
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 /*Carrito*/
@@ -5289,6 +5393,19 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   background-image: url("redes-instagram.svg");
 }
 
+.barra-autor {
+  background: rgba(28, 28, 28, 0.9);
+  padding: 10px 0 14px 0;
+}
+.barra-autor span {
+  color: #707070;
+  font-family: "PP Neue Montreal";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 /*Home*/
 .video-home video {
   width: 100%;
@@ -5483,9 +5600,21 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   background-size: cover;
   transition: all 200ms;
   position: relative;
+  overflow: hidden;
+}
+#categorias-home .categorias-home-cont figure:hover .cont-img, #categorias-home .signatures-home-cont figure:hover .cont-img, #signatures-home .categorias-home-cont figure:hover .cont-img, #signatures-home .signatures-home-cont figure:hover .cont-img, #ultimos-contenidos .categorias-home-cont figure:hover .cont-img, #ultimos-contenidos .signatures-home-cont figure:hover .cont-img, #amigos-de-la-casa .categorias-home-cont figure:hover .cont-img, #amigos-de-la-casa .signatures-home-cont figure:hover .cont-img {
+  transform: scale(1.05, 1.05);
 }
 #categorias-home .categorias-home-cont figure .cont-img, #categorias-home .signatures-home-cont figure .cont-img, #signatures-home .categorias-home-cont figure .cont-img, #signatures-home .signatures-home-cont figure .cont-img, #ultimos-contenidos .categorias-home-cont figure .cont-img, #ultimos-contenidos .signatures-home-cont figure .cont-img, #amigos-de-la-casa .categorias-home-cont figure .cont-img, #amigos-de-la-casa .signatures-home-cont figure .cont-img {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  background-position: center;
+  background-size: cover;
+  transition: all 300ms;
 }
 #categorias-home .categorias-home-cont figure:after, #categorias-home .signatures-home-cont figure:after, #signatures-home .categorias-home-cont figure:after, #signatures-home .signatures-home-cont figure:after, #ultimos-contenidos .categorias-home-cont figure:after, #ultimos-contenidos .signatures-home-cont figure:after, #amigos-de-la-casa .categorias-home-cont figure:after, #amigos-de-la-casa .signatures-home-cont figure:after {
   position: absolute;
@@ -5639,7 +5768,7 @@ h2.h2home, h2.inline-richtext {
   margin-top: 50px;
   border-radius: 100px;
   border: 1px solid #1C1C1C;
-  background-color: transparent;
+  background-color: #d9d9d9;
   color: #1C1C1C;
   transition: all 200ms;
 }
@@ -5831,6 +5960,7 @@ h2.h2home, h2.inline-richtext {
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 20px;
+  font-family: "PP Neue Montreal";
 }
 #amigos-de-la-casa .categorias-home-cont, #amigos-de-la-casa .signatures-home-cont {
   list-style-type: none;
@@ -5905,6 +6035,366 @@ h2.h2home, h2.inline-richtext {
 #amigos-de-la-casa .categorias-home-cont figure a .cont-text span, #amigos-de-la-casa .categorias-home-cont figure .cont-cta .cont-text span, #amigos-de-la-casa .signatures-home-cont figure a .cont-text span, #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text span {
   position: initial;
   background-image: none;
+}
+
+/*Password Page*/
+.banner__content h2.email-signup-banner__heading {
+  font-family: "PP Neue Montreal";
+}
+
+/*MEDIA QUERIES MOBILE*/
+@media (max-width: 1200px) {
+  #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text p {
+    font-size: 18px;
+  }
+  #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text span.autor {
+    font-size: 15px;
+    line-height: 17px;
+    display: inline-block;
+  }
+  #signatures-home .signatures-home-cont figure a h3 {
+    font-size: 17px;
+  }
+}
+@media (max-width: 992px) {
+  .shopify-section-group-header-group {
+    z-index: 5;
+  }
+  header .header-general {
+    flex-basis: auto;
+    padding: 5px 25px 5px 15px;
+  }
+  header .header-general .items-navbar {
+    display: none;
+  }
+  header .header-general .hamburger-mobile {
+    display: inline-block;
+  }
+  .section-header.shopify-section-group-header-group {
+    z-index: 4;
+  }
+  .menu-mobile {
+    display: inline-block;
+  }
+  #marcas-home .marcas-cont ul li {
+    width: 16.66%;
+  }
+  #tipos-jugador ul {
+    padding-left: 0;
+  }
+  #tipos-jugador ul li {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  #tipos-jugador a.button {
+    margin-left: 0;
+  }
+  #categorias-home .categorias-home-cont figure a span.cta {
+    width: 35px;
+    height: 35px;
+    right: 14px;
+  }
+  #footer-rico {
+    padding-bottom: 140px;
+  }
+  #footer-rico .logo-footer {
+    display: none;
+  }
+  #footer-rico .por-que-elegirnos ul li figure {
+    width: 110px;
+  }
+  #footer-rico .por-que-elegirnos ul h4 {
+    font-size: 15px !important;
+    line-height: 16px !important;
+  }
+  #footer-rico .por-que-elegirnos ul h4 br {
+    display: none;
+  }
+  #footer-rico .por-que-elegirnos ul h4 strong {
+    font-size: 15px !important;
+    line-height: 16px !important;
+  }
+  #footer-rico .nav-footer {
+    margin-top: 35px;
+  }
+  #footer-rico .nav-footer .cont-nav {
+    flex-wrap: wrap;
+  }
+  #footer-rico .nav-footer .cont-nav .rico-club-cont {
+    flex-basis: 100%;
+    padding: 0 0 65px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  #footer-rico .nav-footer .cont-nav .rico-club-cont p {
+    max-width: 100%;
+  }
+  #footer-rico .nav-footer .cont-nav .lista-cont, #footer-rico .nav-footer .cont-nav .redes-cont {
+    flex-basis: 33.33%;
+    margin-top: 65px;
+  }
+  .barra-autor {
+    text-align: center;
+  }
+  #signatures-home .signatures-home-cont figure {
+    width: 25%;
+  }
+}
+@media (max-width: 810px) {
+  #marcas-home .marcas-cont, #marcas-home .cont-cont-signatures, #signatures-home .marcas-cont, #signatures-home .cont-cont-signatures, #ultimos-contenidos .marcas-cont, #ultimos-contenidos .cont-cont-signatures, #amigos-de-la-casa .marcas-cont, #amigos-de-la-casa .cont-cont-signatures {
+    position: relative;
+  }
+  #marcas-home .marcas-cont:after, #marcas-home .cont-cont-signatures:after, #signatures-home .marcas-cont:after, #signatures-home .cont-cont-signatures:after, #ultimos-contenidos .marcas-cont:after, #ultimos-contenidos .cont-cont-signatures:after, #amigos-de-la-casa .marcas-cont:after, #amigos-de-la-casa .cont-cont-signatures:after {
+    content: "";
+    height: 100%;
+    width: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(252, 252, 254, 0) 100%);
+    background: -webkit-linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(252, 252, 254, 0) 100%);
+    background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(252, 252, 254, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#fcfcfe",GradientType=1);
+  }
+  #marcas-home .marcas-cont ul li:last-child, #marcas-home .marcas-cont figure:last-child, #marcas-home .cont-cont-signatures ul li:last-child, #marcas-home .cont-cont-signatures figure:last-child, #signatures-home .marcas-cont ul li:last-child, #signatures-home .marcas-cont figure:last-child, #signatures-home .cont-cont-signatures ul li:last-child, #signatures-home .cont-cont-signatures figure:last-child, #ultimos-contenidos .marcas-cont ul li:last-child, #ultimos-contenidos .marcas-cont figure:last-child, #ultimos-contenidos .cont-cont-signatures ul li:last-child, #ultimos-contenidos .cont-cont-signatures figure:last-child, #amigos-de-la-casa .marcas-cont ul li:last-child, #amigos-de-la-casa .marcas-cont figure:last-child, #amigos-de-la-casa .cont-cont-signatures ul li:last-child, #amigos-de-la-casa .cont-cont-signatures figure:last-child {
+    margin-right: 25px;
+  }
+  #ultimos-contenidos .cont-cont-signatures:after, #amigos-de-la-casa .cont-cont-signatures:after {
+    background: rgb(28, 28, 28);
+    background: -moz-linear-gradient(270deg, rgb(28, 28, 28) 0%, rgba(252, 254, 253, 0) 100%);
+    background: -webkit-linear-gradient(270deg, rgb(28, 28, 28) 0%, rgba(252, 254, 253, 0) 100%);
+    background: linear-gradient(270deg, rgb(28, 28, 28) 0%, rgba(252, 254, 253, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c1c1c",endColorstr="#fcfefd",GradientType=1);
+  }
+  #marcas-home .marcas-cont ul li {
+    width: 20%;
+  }
+  #signatures-home .signatures-home-cont figure {
+    width: 25%;
+  }
+}
+@media (max-width: 767px) {
+  .announcement-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .announcement-bar .announcement-bar__message {
+    display: none;
+  }
+  .banner .banner__content {
+    align-items: flex-end;
+  }
+  #categorias-home .categorias-home-cont figure a h3 {
+    font-size: 17px;
+  }
+  #categorias-home .categorias-home-cont figure a span.cta {
+    width: 28px;
+    height: 28px;
+  }
+  #tipos-jugador {
+    padding-bottom: 0;
+  }
+  #tipos-jugador .listado-tipos-jugador, #tipos-jugador a.button {
+    position: relative;
+    z-index: 2;
+  }
+  #tipos-jugador a.button {
+    margin-top: 20px;
+  }
+  #tipos-jugador .cont-figure {
+    height: 440px;
+    z-index: 0;
+    margin-top: -155px;
+  }
+  #marcas-home .marcas-cont ul li {
+    width: 25%;
+  }
+  #signatures-home .signatures-home-cont figure {
+    width: 33.33%;
+  }
+  #ultimos-contenidos h3 {
+    font-size: 30px;
+    margin-top: 10px;
+  }
+  #ultimos-contenidos .signatures-home-cont figure {
+    width: 33.33%;
+  }
+  #amigos-de-la-casa h3 {
+    font-size: 30px;
+    margin-top: 10px;
+  }
+  #amigos-de-la-casa .signatures-home-cont figure {
+    width: 40%;
+  }
+  #footer-rico .newsletter-form__field-wrapper {
+    max-width: 100%;
+  }
+  #footer-rico .por-que-elegirnos ul {
+    flex-wrap: wrap;
+  }
+  #footer-rico .por-que-elegirnos ul li {
+    flex-basis: 50%;
+  }
+  #footer-rico .por-que-elegirnos ul li h4 {
+    max-width: 85%;
+  }
+}
+@media (max-width: 749px) {
+  #marcas-home .marcas-cont ul li {
+    width: 25%;
+  }
+}
+@media (max-width: 575px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #marcas-home .marcas-cont ul li {
+    margin-right: 7px;
+  }
+  #categorias-home .categorias-home-cont {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #categorias-home .categorias-home-cont figure:nth-child(1), #categorias-home .categorias-home-cont figure:nth-child(2) {
+    flex-basis: calc(50% - 5px);
+  }
+  #categorias-home .categorias-home-cont figure:last-child {
+    flex-basis: 100%;
+    aspect-ratio: 1.9/1;
+  }
+  #categorias-home .categorias-home-cont figure:last-child .cont-img {
+    background-position: top center;
+  }
+  #tipos-jugador ul {
+    margin-top: 30px;
+  }
+  #tipos-jugador .listado-tipos-jugador, #tipos-jugador a.button {
+    margin-left: 25px;
+    padding-top: 0;
+  }
+  #tipos-jugador .cont-figure {
+    height: 350px;
+  }
+  #tipos-jugador .cont-figure .cont-zapa {
+    top: 35px;
+    background-size: contain;
+  }
+  #signatures-home .signatures-home-cont figure {
+    margin-right: 7px;
+  }
+  #shopify-section-template--18638285832444__featured_collection_JLKP4F ul.product-grid {
+    column-gap: 10px;
+  }
+  #shopify-section-template--18638285832444__featured_collection_JLKP4F ul.product-grid li:last-child {
+    display: none;
+  }
+  .banner--large:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
+    min-height: 60vh !important;
+  }
+}
+@media (max-width: 530px) {
+  #footer-rico {
+    padding-bottom: 120px;
+  }
+  #footer-rico .nav-footer .cont-nav .rico-club-cont {
+    padding-bottom: 42px;
+  }
+  #footer-rico .nav-footer .cont-nav .lista-cont {
+    flex-basis: 50%;
+    margin-top: 35px;
+  }
+  #footer-rico .nav-footer .cont-nav .redes-cont {
+    flex-basis: 100%;
+    margin-top: 20px;
+  }
+  #signatures-home .signatures-home-cont figure {
+    width: 42%;
+  }
+  #amigos-de-la-casa .signatures-home-cont figure {
+    width: 50%;
+  }
+}
+@media (max-width: 470px) {
+  #marcas-home .marcas-cont ul li {
+    width: 28%;
+  }
+}
+@media (max-width: 450px) {
+  #marcas-home {
+    margin-top: 30px;
+  }
+  #categorias-home {
+    margin-top: 25px;
+  }
+  #tipos-jugador {
+    margin-top: 45px;
+  }
+  #signatures-home {
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+  #footer-rico {
+    margin-top: 45px;
+  }
+  #footer-rico #ultimos-contenidos {
+    margin-bottom: 15px;
+  }
+  #footer-rico #ultimos-contenidos .signatures-home-cont figure {
+    width: 40%;
+  }
+  #footer-rico #amigos-de-la-casa {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 420px) {
+  #marcas-home .marcas-cont ul li {
+    width: 32%;
+  }
+  #tipos-jugador .cont-figure {
+    height: 350px;
+  }
+  #tipos-jugador .cont-figure .cont-zapa {
+    top: 35px;
+  }
+  #signatures-home .signatures-home-cont figure {
+    width: 55%;
+  }
+  #ultimos-contenidos .signatures-home-cont figure {
+    width: 50%;
+  }
+  #amigos-de-la-casa .signatures-home-cont figure {
+    width: 57%;
+  }
+}
+@media (max-width: 400px) {
+  .announcement-bar {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .announcement-bar .announcement-bar__message {
+    display: none;
+  }
+  .announcement-bar .ayuda-top {
+    display: none;
+  }
+  .announcement-bar .marcas-announcement {
+    justify-content: center;
+    padding: 5px 0;
+  }
+  .cont-header.nothome header {
+    margin-top: 28px;
+  }
+  #tipos-jugador .button {
+    min-height: 50px;
+  }
+  #tipos-jugador ul li {
+    font-size: 25px;
+    line-height: 26px;
+  }
+  #tipos-jugador ul li:before {
+    width: 30px;
+    height: 22px;
+  }
 }
 
 /*# sourceMappingURL=custom.css.map */

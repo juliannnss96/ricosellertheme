@@ -8,15 +8,17 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <div class="signatures-home-cont scrollblanco-h">
-            {% for contenido in shop.metaobjects.contenido_redes_sociales.values %}
-            <figure class="categoria-destacada-item open-iframe-redes" data-iframe="{{contenido.id_de_reel.value}}">
-              <div class="cont-img" style="background-image: url('{{ contenido.imagen.value | image_url }}');"></div>
-                <div class="cont-cta">
-                  <span class="cta"></span>
-                </div>
-            </figure>
-            {% endfor %}
+          <div class="cont-cont-signatures">
+            <div class="signatures-home-cont scrollblanco-h">
+              {% for contenido in shop.metaobjects.contenido_redes_sociales.values %}
+              <figure class="categoria-destacada-item open-iframe-redes" data-iframe="{{contenido.id_de_reel.value}}">
+                <div class="cont-img" style="background-image: url('{{ contenido.imagen.value | image_url }}');"></div>
+                  <div class="cont-cta">
+                    <span class="cta"></span>
+                  </div>
+              </figure>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
@@ -32,18 +34,20 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <div class="signatures-home-cont scrollblanco-h">
-            {% for amigo in shop.metaobjects.amigos_de_la_casa.values %}
-            <figure class="categoria-destacada-item">
-              <div class="cont-img" style="background-image: url('{{ amigo.foto.value | image_url }}');"></div>
-              <div class="cont-cta">
-                <div class="cont-text">
-                  <p>“{{ amigo.resena.value }}”</p>
-                  <span class="autor">{{ amigo.nombre.value }}</span>
+          <div class="cont-cont-signatures">
+            <div class="signatures-home-cont scrollblanco-h">
+              {% for amigo in shop.metaobjects.amigos_de_la_casa.values %}
+              <figure class="categoria-destacada-item">
+                <div class="cont-img" style="background-image: url('{{ amigo.foto.value | image_url }}');"></div>
+                <div class="cont-cta">
+                  <div class="cont-text">
+                    <p>“{{ amigo.resena.value }}”</p>
+                    <span class="autor">{{ amigo.nombre.value }}</span>
+                  </div>
                 </div>
-              </div>
-            </figure>
-            {% endfor %}
+              </figure>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
@@ -161,11 +165,11 @@
             <div class="lista-cont">
               <h3>¿Necesitás ayuda?</h3>
               <ul class="necesitas-ayuda">
-                <li><a href="pages/ayuda">Guía de talles</a></li>
-                <li><a href="pages/ayuda">Envío y entrega</a></li>
-                <li><a href="pages/ayuda">Devoluciones</a></li>
-                <li><a href="pages/ayuda">Opciones de pago</a></li>
-                <li><a href="pages/ayuda">Necesito ayuda</a></li>
+                <li><a href="pages/ayuda#shopify-section-template--18978566963444__rich_text_rk7wih">Guía de talles</a></li>
+                <li><a href="pages/ayuda#shopify-section-template--18978566963444__collapsible_content_GyyDMd">Envío y entrega</a></li>
+                <li><a href="pages/ayuda#shopify-section-template--18978566963444__rich_text_YwGKm3">Devoluciones</a></li>
+                <li><a href="pages/ayuda#shopify-section-template--18978566963444__collapsible_content_PNkfBX">Opciones de pago</a></li>
+                <li><a href="pages/ayuda#shopify-section-template--18978566963444__rich_text_YwGKm3">Necesito ayuda</a></li>
               </ul>
             </div>
             <div class="lista-cont">
@@ -178,9 +182,9 @@
               </ul>
             </div>
             <div class="redes-cont">
-              <a href="#"><i class="facebook"></i></a>
-              <a href="#"><i class="tiktok"></i></a>
-              <a href="#"><i class="instagram"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100091335592720" target="_blank"><i class="facebook"></i></a>
+              <a href="https://www.tiktok.com/@ricoseller" target="_blank"><i class="tiktok"></i></a>
+              <a href="https://www.instagram.com/ricoseller" target="_blank"><i class="instagram"></i></a>
             </div>
           </div>
         </div>
@@ -203,8 +207,8 @@
             <p>© 2024 Ricoseller. Todos los derechos reservados</p>
           </div>
           <div>
-            <a href="#">Políticas de privacidad</a>
-            <a href="#">Términos de uso</a>
+            <a href="pages/politicas-de-privacidad">Políticas de privacidad</a>
+            <a href="pages/terminos-de-uso">Términos de uso</a>
           </div>
         </div>
       </div>
@@ -212,11 +216,183 @@
   </div>
 </footer>
 
+<div class="barra-autor">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <span>Rico x Muta Studio 🐷</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal-default modal-iframe-redes">
   <div class="modal">
     <div class="cerrar"></div>
     <div class="content scrollnegro">
     </div>
+  </div>
+</div>
+
+<div class="modal-default modal-guia-de-talles">
+  <div class="modal">
+    <div class="cerrar"></div>
+    <div class="content">
+      <h3>Guía de talles</h3>
+      <p>Encuentra tu talla en la tabla de abajo. Si no sabes cuál es, sigue las instrucciones para tomar las medidas del pie que hay al final de la guía de tallas y encuentra tu talla perfecta. Ten en cuenta que la talla en centímetros que se muestra en las cajas de zapatillas y etiquetas es diferente de la longitud del pie (en centímetros).</p>
+      <table>
+        <tbody><tr>
+          <th>USA</th>
+          <th>CM</th>
+          <th>Argentina</th>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>21.5</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td>3.5</td>
+          <td>22</td>
+          <td>35</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>22.5</td>
+          <td>35.5</td>
+        </tr>
+        <tr>
+          <td>4.5</td>
+          <td>23</td>
+          <td>36</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>23.5</td>
+          <td>37</td>
+        </tr>
+        <tr>
+          <td>5.5</td>
+          <td>24</td>
+          <td>37.5</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>24</td>
+          <td>38</td>
+        </tr>
+        <tr>
+          <td>6.5</td>
+          <td>24.5</td>
+          <td>38.5</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>25</td>
+          <td>39</td>
+        </tr>
+        <tr>
+          <td>7.5</td>
+          <td>25.5</td>
+          <td>39.5</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>26</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>8.5</td>
+          <td>26.5</td>
+          <td>41</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>27</td>
+          <td>41.5</td>
+        </tr>
+        <tr>
+          <td>9.5</td>
+          <td>27.5</td>
+          <td>42</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>28</td>
+          <td>43</td>
+        </tr>
+        <tr>
+          <td>10.5</td>
+          <td>28.5</td>
+          <td>43.5</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>29</td>
+          <td>44</td>
+        </tr>
+        <tr>
+          <td>11.5</td>
+          <td>29.5</td>
+          <td>44.5</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>30</td>
+          <td>45</td>
+        </tr>
+        <tr>
+          <td>12.5</td>
+          <td>30.5</td>
+          <td>45.5</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>31</td>
+          <td>46</td>
+        </tr>
+        <tr>
+          <td>13.5</td>
+          <td>31.5</td>
+          <td>46.5</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>32</td>
+          <td>47</td>
+        </tr>
+        <tr>
+          <td>14.5</td>
+          <td>32.5</td>
+          <td>47.5</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>33</td>
+          <td>48</td>
+        </tr>
+        <tr>
+          <td>15.5</td>
+          <td>33.5</td>
+          <td>48.5</td>
+        </tr>
+      </tbody></table>
+
+      <h4>Cómo tomar las medidas de la longitud del pie</h4>
+      <p>Pega un trozo de papel a una superficie plana y resistente y asegúrate de que el papel no se mueve. Coloca un pie sobre el papel, con los pies separados a la altura de los hombros y el peso distribuido de manera uniforme. Con un boli o lápiz en posición completamente vertical, pide ayuda a otra persona para que marque la punta del dedo gordo y la parte más saliente del talón. Cuando estén las marcas hechas, quita el pie del papel y mide la distancia entre ambos puntos con una regla o cinta métrica. Esta medida es la longitud del pie. Repite el proceso con el otro pie. Es habitual que la longitud de cada pie sea ligeramente diferente. Consulta la guía de tallas y busca la talla correspondiente a la medida más larga entre las dos que has tomado. Si está entre dos tallas, te recomendamos pedir la más grande.</p>
+    </div>
+  </div>
+</div>
+
+<div class="menu-mobile">
+  <div class="contenedor">
+    <span class="cerrar"></span>
+    <ul class="nav-mobile">
+      {% for link in linklists.main-menu.links %}
+      <li {%- if link.child_active %} class="header__active-menu-item"{% endif %}>
+        <a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
   </div>
 </div>
 
