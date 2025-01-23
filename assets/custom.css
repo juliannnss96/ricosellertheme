@@ -4337,14 +4337,14 @@
 .cont-header.nothome.single-product header .header-general {
   background-color: #ffffff;
 }
-.cont-header.nothome.single-product header .header-general .hamburger-mobile {
-  background-image: url("hamburger-black.svg");
-}
 .cont-header.nothome header {
   margin-top: 32px;
 }
 .cont-header.nothome header .header-general {
   background-color: #F6F6F6;
+}
+.cont-header.nothome header .header-general .hamburger-mobile {
+  background-image: url("hamburger-black.svg");
 }
 .cont-header.nothome header .header-general .items-navbar .list-menu li a span {
   color: #1C1C1C;
@@ -6055,6 +6055,17 @@ h2.h2home, h2.inline-richtext {
   #signatures-home .signatures-home-cont figure a h3 {
     font-size: 17px;
   }
+  .product .product__info-wrapper {
+    max-width: calc(40% - 4rem) !important;
+  }
+}
+@media (max-width: 1010px) {
+  .product .product__media-wrapper {
+    max-width: 40% !important;
+  }
+  .product .product__info-wrapper {
+    max-width: calc(60% - 4rem) !important;
+  }
 }
 @media (max-width: 992px) {
   .shopify-section-group-header-group {
@@ -6138,6 +6149,13 @@ h2.h2home, h2.inline-richtext {
   #signatures-home .signatures-home-cont figure {
     width: 25%;
   }
+  .product .product__title h1 {
+    font-size: 36px;
+    line-height: 115%;
+  }
+  .product-grid .grid__item {
+    width: calc(50% - 15px);
+  }
 }
 @media (max-width: 810px) {
   #marcas-home .marcas-cont, #marcas-home .cont-cont-signatures, #signatures-home .marcas-cont, #signatures-home .cont-cont-signatures, #ultimos-contenidos .marcas-cont, #ultimos-contenidos .cont-cont-signatures, #amigos-de-la-casa .marcas-cont, #amigos-de-la-casa .cont-cont-signatures {
@@ -6176,6 +6194,9 @@ h2.h2home, h2.inline-richtext {
 @media (max-width: 767px) {
   .announcement-bar {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .announcement-bar .marcas-announcement {
+    padding: 5px 0;
   }
   .announcement-bar .announcement-bar__message {
     display: none;
@@ -6241,6 +6262,23 @@ h2.h2home, h2.inline-richtext {
 @media (max-width: 749px) {
   #marcas-home .marcas-cont ul li {
     width: 25%;
+  }
+  .product .product__media-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-top: 0;
+  }
+  .product .product__media-wrapper .product__media-icon {
+    display: none;
+  }
+  .product .product__info-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 15px;
+    padding-top: 0 !important;
+  }
+  ul.facets-layout-list--text .mobile-facets__item .mobile-facets__label > svg {
+    margin-top: 5px;
   }
 }
 @media (max-width: 575px) {

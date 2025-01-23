@@ -306,10 +306,6 @@ $verde: #128A09;
 
 				.header-general {
 					background-color: $blanco;
-
-					.hamburger-mobile {
-						background-image: url('hamburger-black.svg');
-					}
 				}
 			}
 		}
@@ -319,6 +315,10 @@ $verde: #128A09;
 
 			.header-general {
 				background-color: #F6F6F6;
+
+				.hamburger-mobile {
+					background-image: url('hamburger-black.svg');
+				}
 
 				.items-navbar {
 					.list-menu {
@@ -2349,6 +2349,24 @@ h2.h2home, h2.inline-richtext {
 	#signatures-home .signatures-home-cont figure a h3 {
 		font-size: 17px;
 	}
+
+	.product {
+		.product__info-wrapper {
+			max-width: calc(40% - 4rem) !important;
+		}
+	}
+}
+
+@media(max-width: 1010px) {
+	.product {
+		.product__media-wrapper {
+			max-width: 40% !important;
+		}
+
+		.product__info-wrapper {
+			max-width: calc(60% - 4rem) !important;
+		}
+	}
 }
 
 @media(max-width: 992px) {
@@ -2477,6 +2495,21 @@ h2.h2home, h2.inline-richtext {
 			}
 		}
 	}
+
+	.product {
+		.product__title {
+			h1 {
+				font-size: 36px;
+				line-height: 115%;
+			}
+		}
+	}
+
+	.product-grid {
+		.grid__item {
+			width: calc(50% - 15px);
+		}
+	}
 }
 
 @media(max-width: 810px) {
@@ -2539,6 +2572,10 @@ h2.h2home, h2.inline-richtext {
 @media(max-width: 767px) {
 	.announcement-bar {
 		grid-template-columns: repeat(2, 1fr);
+
+		.marcas-announcement {
+			padding: 5px 0;
+		}
 
 		.announcement-bar__message {
 			display: none;
@@ -2651,6 +2688,33 @@ h2.h2home, h2.inline-richtext {
 				li {
 					width: 25%;
 				}
+			}
+		}
+	}
+
+	.product {
+		.product__media-wrapper {
+			width: 100% !important;
+			max-width: 100% !important;
+			padding-top: 0;
+
+			.product__media-icon {
+				display: none;
+			}
+		}
+
+		.product__info-wrapper {
+			width: 100% !important;
+			max-width: 100% !important;
+			padding: 0 15px;
+			padding-top: 0 !important;
+		}
+	}
+
+	ul.facets-layout-list--text {
+		.mobile-facets__item {
+			.mobile-facets__label > svg {
+				margin-top: 5px;
 			}
 		}
 	}
