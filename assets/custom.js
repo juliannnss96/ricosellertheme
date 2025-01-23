@@ -39,7 +39,8 @@ $(document).ready(function() {
 
 	/*img métodos de pago product*/
 	var link_img = $('.product .product__title').attr('data-img-met');
-	$('#ProductAccordion-collapsible-row-3-template--18964247609588__main').html('<img src="'+link_img+'">').children('img').css('border', '0');
+	$('#ProductAccordion-collapsible-row-3-template--18978849489140__main').html('<img src="'+link_img+'">').children('img').css('border', '0');
+	$('#ProductAccordion-collapsible-row-3-template--18638285603068__main').html('<img src="'+link_img+'">').children('img').css('border', '0');	
 
 	/*Modal guia de talles single product*/
 	$(document).on('click', '.open-guia-talles-variantes', function() {

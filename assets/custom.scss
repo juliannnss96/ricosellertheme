@@ -1068,7 +1068,7 @@ ul.facets-layout-list--text {
 		}
 
 		label {
-			width: 22.9%;
+			width: 22.3%;
 		}
 
 		input[type="radio"] + label {
@@ -2526,9 +2526,8 @@ h2.h2home, h2.inline-richtext {
 	}
 
 	.header__search .modal__content {
-		left: -43vw;
-
-
+		left: auto;
+    	width: calc(100vw - 30px);
 	}
 
 	.header__search .modal-overlay:after {
@@ -2547,7 +2546,8 @@ h2.h2home, h2.inline-richtext {
 @media(max-width: 990px) {
 	#shopify-section-template--18638285832444__featured_collection_JLKP4F,
 	#shopify-section-template--18978849095924__featured_collection_JLKP4F,
-	#shopify-section-template--18638281343228__featured-collection {
+	#shopify-section-template--18638281343228__featured-collection,
+	.related-products {
 		ul.product-grid {
 			column-gap: 10px;
 
@@ -2780,6 +2780,14 @@ h2.h2home, h2.inline-richtext {
 			}
 		}
 	}
+
+	.menu-mobile {
+		right: 15px;
+
+		.contenedor {
+			right: 15px;
+		}
+	}
 }
 
 @media(max-width: 575px) {
@@ -2851,6 +2859,12 @@ h2.h2home, h2.inline-richtext {
 	}
 }
 
+@media(max-width: 572px) {
+	.product .product-form__input--pill label {
+		width: calc(24% - 6px);
+	}
+}
+
 @media(max-width: 530px) {
 	#footer-rico {
 		padding-bottom: 120px;
@@ -2888,6 +2902,21 @@ h2.h2home, h2.inline-richtext {
 				width: 50%;
 			}
 		}
+	}
+}
+
+@media(max-width: 474px) {
+	.product .product-form__input--pill label {
+		width: calc(24% - 7px);
+	}
+
+	.modal-default .modal {
+		padding-right: 36px;
+	}
+
+	.modal-default .modal .cerrar {
+		top: 13px;
+  		right: 13px;
 	}
 }
 
@@ -3027,5 +3056,11 @@ h2.h2home, h2.inline-richtext {
 				height: 22px;
 			}
 		}
+	}
+}
+
+@media(max-width: 374px) {
+	.product .product-form__input--pill label {
+		width: calc(24% - 8px);
 	}
 }

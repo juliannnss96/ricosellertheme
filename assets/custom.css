@@ -4961,7 +4961,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   letter-spacing: 0.16px;
 }
 .product .product-form__input--pill label {
-  width: 22.9%;
+  width: 22.3%;
 }
 .product .product-form__input--pill input[type=radio] + label {
   border-radius: 10px;
@@ -6166,7 +6166,8 @@ h2.h2home, h2.inline-richtext {
     border-radius: 20px;
   }
   .header__search .modal__content {
-    left: -43vw;
+    left: auto;
+    width: calc(100vw - 30px);
   }
   .header__search .modal-overlay:after {
     display: none;
@@ -6181,12 +6182,14 @@ h2.h2home, h2.inline-richtext {
 @media (max-width: 990px) {
   #shopify-section-template--18638285832444__featured_collection_JLKP4F ul.product-grid,
   #shopify-section-template--18978849095924__featured_collection_JLKP4F ul.product-grid,
-  #shopify-section-template--18638281343228__featured-collection ul.product-grid {
+  #shopify-section-template--18638281343228__featured-collection ul.product-grid,
+  .related-products ul.product-grid {
     column-gap: 10px;
   }
   #shopify-section-template--18638285832444__featured_collection_JLKP4F ul.product-grid li:last-child,
   #shopify-section-template--18978849095924__featured_collection_JLKP4F ul.product-grid li:last-child,
-  #shopify-section-template--18638281343228__featured-collection ul.product-grid li:last-child {
+  #shopify-section-template--18638281343228__featured-collection ul.product-grid li:last-child,
+  .related-products ul.product-grid li:last-child {
     display: none;
   }
 }
@@ -6326,6 +6329,12 @@ h2.h2home, h2.inline-richtext {
   ul.facets-layout-list--text .mobile-facets__item .mobile-facets__label > svg {
     margin-top: 5px;
   }
+  .menu-mobile {
+    right: 15px;
+  }
+  .menu-mobile .contenedor {
+    right: 15px;
+  }
 }
 @media (max-width: 575px) {
   .container {
@@ -6370,6 +6379,11 @@ h2.h2home, h2.inline-richtext {
     min-height: 60vh !important;
   }
 }
+@media (max-width: 572px) {
+  .product .product-form__input--pill label {
+    width: calc(24% - 6px);
+  }
+}
 @media (max-width: 530px) {
   #footer-rico {
     padding-bottom: 120px;
@@ -6390,6 +6404,18 @@ h2.h2home, h2.inline-richtext {
   }
   #amigos-de-la-casa .signatures-home-cont figure {
     width: 50%;
+  }
+}
+@media (max-width: 474px) {
+  .product .product-form__input--pill label {
+    width: calc(24% - 7px);
+  }
+  .modal-default .modal {
+    padding-right: 36px;
+  }
+  .modal-default .modal .cerrar {
+    top: 13px;
+    right: 13px;
   }
 }
 @media (max-width: 470px) {
@@ -6472,6 +6498,11 @@ h2.h2home, h2.inline-richtext {
   #tipos-jugador ul li:before {
     width: 30px;
     height: 22px;
+  }
+}
+@media (max-width: 374px) {
+  .product .product-form__input--pill label {
+    width: calc(24% - 8px);
   }
 }
 
