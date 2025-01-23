@@ -6156,6 +6156,39 @@ h2.h2home, h2.inline-richtext {
   .product-grid .grid__item {
     width: calc(50% - 15px);
   }
+  header .header-general {
+    margin-top: -7px;
+  }
+  .header__search .search-modal__content {
+    padding-left: 7px;
+  }
+  .header__search .field__input {
+    border-radius: 20px;
+  }
+  .header__search .modal__content {
+    left: -43vw;
+  }
+  .header__search .modal-overlay:after {
+    display: none;
+  }
+  .cont-header .header__search .search-modal {
+    border-radius: 40px;
+  }
+  .cont-header .header__search .search-modal .svg-wrapper .icon {
+    filter: none;
+  }
+}
+@media (max-width: 990px) {
+  #shopify-section-template--18638285832444__featured_collection_JLKP4F ul.product-grid,
+  #shopify-section-template--18978849095924__featured_collection_JLKP4F ul.product-grid,
+  #shopify-section-template--18638281343228__featured-collection ul.product-grid {
+    column-gap: 10px;
+  }
+  #shopify-section-template--18638285832444__featured_collection_JLKP4F ul.product-grid li:last-child,
+  #shopify-section-template--18978849095924__featured_collection_JLKP4F ul.product-grid li:last-child,
+  #shopify-section-template--18638281343228__featured-collection ul.product-grid li:last-child {
+    display: none;
+  }
 }
 @media (max-width: 810px) {
   #marcas-home .marcas-cont, #marcas-home .cont-cont-signatures, #signatures-home .marcas-cont, #signatures-home .cont-cont-signatures, #ultimos-contenidos .marcas-cont, #ultimos-contenidos .cont-cont-signatures, #amigos-de-la-casa .marcas-cont, #amigos-de-la-casa .cont-cont-signatures {
@@ -6267,6 +6300,7 @@ h2.h2home, h2.inline-richtext {
     width: 100% !important;
     max-width: 100% !important;
     padding-top: 0;
+    background-color: #f6f6f6;
   }
   .product .product__media-wrapper .product__media-icon {
     display: none;
@@ -6276,6 +6310,18 @@ h2.h2home, h2.inline-richtext {
     max-width: 100% !important;
     padding: 0 15px;
     padding-top: 0 !important;
+  }
+  .product .product-form__input--pill {
+    font-size: 0;
+  }
+  .product .product-form__input--pill input[type=radio] {
+    display: none;
+  }
+  .product .product-form__input--pill label {
+    margin: 0;
+    width: calc(24% - 5px);
+    margin-right: 10px !important;
+    margin-bottom: 10px !important;
   }
   ul.facets-layout-list--text .mobile-facets__item .mobile-facets__label > svg {
     margin-top: 5px;
@@ -6319,12 +6365,6 @@ h2.h2home, h2.inline-richtext {
   }
   #signatures-home .signatures-home-cont figure {
     margin-right: 7px;
-  }
-  #shopify-section-template--18638285832444__featured_collection_JLKP4F ul.product-grid {
-    column-gap: 10px;
-  }
-  #shopify-section-template--18638285832444__featured_collection_JLKP4F ul.product-grid li:last-child {
-    display: none;
   }
   .banner--large:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
     min-height: 60vh !important;
