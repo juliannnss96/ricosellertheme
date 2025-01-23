@@ -219,7 +219,7 @@
           "type": "button",
           "settings": {
             "button_label": "Escribinos al Whatsapp",
-            "button_link": "",
+            "button_link": "https://web.whatsapp.com/send?phone=5493413800272&text=Hola%20Rico%20Seller%2C%20ten%C3%ADa%20una%20duda%20con%20respecto%20a",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
