@@ -556,7 +556,7 @@
         "optional_company_label": "DNI (opcional)"
       },
       "field_errors": {
-        "address_company_blank": "Introduce tu Documento"
+        "address_company_blank": "Introduce tu documento"
       }
     }
   }
