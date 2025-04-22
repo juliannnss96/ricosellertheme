@@ -47,7 +47,7 @@
           "settings": {
             "show_outline_box": true,
             "header_text": "Método de pago",
-            "deposit_option_text": "Transferencia 10%OFF (pagás el [AMOUNT])",
+            "deposit_option_text": "Transferencia 10%OFF (transferís el [AMOUNT])",
             "fullpay_option_label": "Tarjeta o Mercado Pago",
             "show_help_text": "never",
             "customer_help_text": "<p>You will be charged a deposit today and the remaining balance before delivery.</p>",
