@@ -41,21 +41,6 @@
             "swatch_shape": "circle"
           }
         },
-        "pay_later_split_pay_cypher_plw_block_nXmrHe": {
-          "type": "shopify://apps/pay-later-split-pay-cypher/blocks/PLW_block/8f174a88-79ab-40b7-90f6-b72d8ebf429e",
-          "disabled": true,
-          "settings": {
-            "show_outline_box": true,
-            "header_text": "Método de pago",
-            "deposit_option_text": "Transferencia 10%OFF (transferís el [AMOUNT])",
-            "fullpay_option_label": "Tarjeta o Mercado Pago",
-            "show_help_text": "never",
-            "customer_help_text": "<p>You will be charged a deposit today and the remaining balance before delivery.</p>",
-            "show_release_date": "never",
-            "release_date_text": "Fecha de pago",
-            "custom_css": ""
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -97,7 +82,6 @@
         "title",
         "price",
         "variant_picker",
-        "pay_later_split_pay_cypher_plw_block_nXmrHe",
         "buy_buttons",
         "collapsible-row-0",
         "collapsible-row-1",
