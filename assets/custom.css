@@ -6878,6 +6878,9 @@ h2.h2home, h2.inline-richtext {
     margin-right: 10px !important;
     margin-bottom: 10px !important;
   }
+  .product .slider.slider--mobile {
+    margin-top: 14vh;
+  }
   ul.facets-layout-list--text .mobile-facets__item .mobile-facets__label > svg {
     margin-top: 5px;
   }
