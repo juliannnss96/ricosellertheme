@@ -17,8 +17,8 @@
         "subtitulo": "",
         "texto_boton": "",
         "url_boton": "",
-        "imagen_desktop": "https://cdn.shopify.com/s/files/1/0738/4547/3524/files/Hero_Desktop_Hot_Seller.jpg?v=1747016223",
-        "imagen_mobile": "https://cdn.shopify.com/s/files/1/0738/4547/3524/files/Hero_Mobile_Hot_Seller.jpg?v=1747016176",
+        "imagen_desktop": "https://cdn.shopify.com/s/files/1/0738/4547/3524/files/Hero_Desktop_Hot_Seller.jpg",
+        "imagen_mobile": "https://cdn.shopify.com/s/files/1/0738/4547/3524/files/Hero_Mobile_Hot_Seller.jpg",
         "video_desktop": "",
         "video_mobile": ""
       }
