@@ -34,14 +34,6 @@
           "type": "price",
           "settings": {}
         },
-        "disclaimer_product_UHqeyy": {
-          "type": "disclaimer_product",
-          "settings": {
-            "titulo": "",
-            "subtitulo": "",
-            "svg": ""
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -89,7 +81,6 @@
         "caption",
         "title",
         "price",
-        "disclaimer_product_UHqeyy",
         "variant_picker",
         "buy_buttons",
         "collapsible-row-0",
