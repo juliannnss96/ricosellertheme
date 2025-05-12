@@ -9,9 +9,19 @@
  */
 {
   "sections": {
-    "video_banner_dFgwN3": {
-      "type": "video-banner",
-      "settings": {}
+    "banner_home_bdJnbz": {
+      "type": "banner-home",
+      "name": "Banner home",
+      "settings": {
+        "titulo": "HOTSELLER ESTÁ<br> PRENDIDO",
+        "subtitulo": "",
+        "texto_boton": "",
+        "url_boton": "",
+        "imagen_desktop": "",
+        "imagen_mobile": "",
+        "video_desktop": "",
+        "video_mobile": ""
+      }
     },
     "marcas_slider_WwPfzX": {
       "type": "marcas-slider",
@@ -24,6 +34,18 @@
     "tipos_jugador_4ak4XL": {
       "type": "tipos-jugador",
       "settings": {}
+    },
+    "bloque_flash_9gMcMW": {
+      "type": "bloque-flash",
+      "name": "Bloque Flash",
+      "settings": {
+        "titulo": "Ofertas flash ⚡",
+        "collection_selected": "hot-sale",
+        "texto_cat1": "Ver Zapatillas",
+        "collection_cat1": "calzado",
+        "texto_cat2": "Ver Ropa",
+        "collection_cat2": "indumentaria"
+      }
     },
     "signatures_home_JfjYKd": {
       "type": "signatures-home",
@@ -59,10 +81,11 @@
     }
   },
   "order": [
-    "video_banner_dFgwN3",
+    "banner_home_bdJnbz",
     "marcas_slider_WwPfzX",
     "categorias_destacadas_home_GQULtC",
     "tipos_jugador_4ak4XL",
+    "bloque_flash_9gMcMW",
     "signatures_home_JfjYKd",
     "featured_collection_JLKP4F"
   ]
