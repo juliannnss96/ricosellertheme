@@ -1211,6 +1211,16 @@ ul.facets-layout-list--text {
 		margin-top: 0;
 	}
 
+	.text-descuento {
+		color: #128A09;
+		font-family: "PP Neue Montreal";
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 110%; /* 22px */
+		letter-spacing: -0.2px;
+	}
+
 	.product-form__buttons button {
 		border-radius: 8px;
 
@@ -1261,6 +1271,7 @@ ul.facets-layout-list--text {
 			line-height: 110%; /* 14.3px */
 			padding-top: 14px;
 			padding-bottom: 14px;
+			letter-spacing: 0;
 			border-color: rgba(var(--color-foreground), 0.1);
 		}
 
@@ -2650,6 +2661,17 @@ h2.h2home, h2.inline-richtext {
 			line-height: 123%; /* 19.68px */
 			letter-spacing: -0.32px;
 		}
+		
+		.text-descuento {
+			color: #128A09;
+			font-family: "PP Neue Montreal";
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 110%; /* 17.6px */
+			letter-spacing: -0.16px;
+		}
+		
 		.card__badge {
 			display: none;
 

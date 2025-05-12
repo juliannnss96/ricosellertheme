@@ -5073,6 +5073,15 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   letter-spacing: -0.32px;
   margin-top: 0;
 }
+.product .text-descuento {
+  color: #128A09;
+  font-family: "PP Neue Montreal";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 22px */
+  letter-spacing: -0.2px;
+}
 .product .product-form__buttons button {
   border-radius: 8px;
 }
@@ -5116,6 +5125,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   line-height: 110%; /* 14.3px */
   padding-top: 14px;
   padding-bottom: 14px;
+  letter-spacing: 0;
   border-color: rgba(var(--color-foreground), 0.1);
 }
 .product .product-form__input--pill input[type=radio]:disabled + label,
@@ -6318,6 +6328,15 @@ h2.h2home, h2.inline-richtext {
   font-weight: 500;
   line-height: 123%; /* 19.68px */
   letter-spacing: -0.32px;
+}
+.product-card-wrapper .card__content .text-descuento {
+  color: #128A09;
+  font-family: "PP Neue Montreal";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 17.6px */
+  letter-spacing: -0.16px;
 }
 .product-card-wrapper .card__content .card__badge {
   display: none;
