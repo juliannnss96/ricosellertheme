@@ -9,9 +9,19 @@
  */
 {
   "sections": {
-    "video_banner_dFgwN3": {
-      "type": "video-banner",
-      "settings": {}
+    "banner_home_bdJnbz": {
+      "type": "banner-home",
+      "name": "Banner home",
+      "settings": {
+        "titulo": "HOT SELLER ON",
+        "subtitulo": "Acumulá hasta un 50% off",
+        "texto_boton": "Ver ofertas",
+        "url_boton": "shopify://collections/hot-sale",
+        "imagen_desktop": "https://cdn.shopify.com/s/files/1/0738/4547/3524/files/Hero_Desktop_Hot_Seller.jpg?v=1747016223",
+        "imagen_mobile": "https://cdn.shopify.com/s/files/1/0738/4547/3524/files/Hero_Mobile_Hot_Seller.jpg?v=1747016176",
+        "video_desktop": "",
+        "video_mobile": ""
+      }
     },
     "marcas_slider_WwPfzX": {
       "type": "marcas-slider",
@@ -25,21 +35,61 @@
       "type": "tipos-jugador",
       "settings": {}
     },
+    "bloque_flash_9gMcMW": {
+      "type": "bloque-flash",
+      "name": "Bloque Flash",
+      "settings": {
+        "titulo": "Ofertas flash ⚡",
+        "collection_selected": "hot-sale",
+        "texto_cat1": "Ver Zapatillas",
+        "collection_cat1": "calzado",
+        "texto_cat2": "Ver Ropa",
+        "collection_cat2": "indumentaria"
+      }
+    },
+    "bloque_ofertas_pAAPAy": {
+      "type": "bloque-ofertas",
+      "name": "Descuentos por porcentaje",
+      "settings": {
+        "texto_card_1": "Kelme hasta",
+        "porcentaje_card_1": "25",
+        "collection_card_1": "",
+        "texto_card_2": "Deuce hasta",
+        "porcentaje_card_2": "25",
+        "collection_card_2": "",
+        "texto_card_3": "Zapatillas hasta",
+        "porcentaje_card_3": "50",
+        "collection_card_3": ""
+      }
+    },
     "signatures_home_JfjYKd": {
       "type": "signatures-home",
       "settings": {}
     },
-    "featured_collection_JLKP4F": {
-      "type": "featured-collection",
+    "destacados_home_rG4cNh": {
+      "type": "destacados-home",
+      "name": "Bloque destacados",
       "settings": {
-        "title": "Destacados",
+        "titulo": "Los más vistos",
+        "collection_selected": "frontpage",
+        "limite": "8"
+      }
+    },
+    "featured_collection_LQAmHE": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".collection {display: none;}"
+      ],
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Colección destacada",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "frontpage",
-        "products_to_show": 3,
-        "columns_desktop": 3,
+        "collection": "accesorios",
+        "products_to_show": 4,
+        "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
@@ -59,11 +109,14 @@
     }
   },
   "order": [
-    "video_banner_dFgwN3",
+    "banner_home_bdJnbz",
     "marcas_slider_WwPfzX",
     "categorias_destacadas_home_GQULtC",
     "tipos_jugador_4ak4XL",
+    "bloque_flash_9gMcMW",
+    "bloque_ofertas_pAAPAy",
     "signatures_home_JfjYKd",
-    "featured_collection_JLKP4F"
+    "destacados_home_rG4cNh",
+    "featured_collection_LQAmHE"
   ]
 }

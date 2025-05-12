@@ -34,6 +34,14 @@
           "type": "price",
           "settings": {}
         },
+        "disclaimer_product_aBMUzJ": {
+          "type": "disclaimer_product",
+          "settings": {
+            "titulo": "20% extra con Transferencia",
+            "subtitulo": "Aplicá el cupón HOT TRANSFER",
+            "svg": ""
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -81,6 +89,7 @@
         "caption",
         "title",
         "price",
+        "disclaimer_product_aBMUzJ",
         "variant_picker",
         "buy_buttons",
         "collapsible-row-0",
