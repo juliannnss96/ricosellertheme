@@ -22,6 +22,12 @@ $(document).ready(function() {
 		$('#tipos-jugador .button').attr('href', 'collections/'+selected);
 	});
 
+	/* Bloque flash home */
+	$("#flash-home").on("change", "input[name='categoria_flash']", function () {
+		$('#flash-home .flash-home-cont').removeClass('visible');
+		$('#flash-home .'+$(this).val()).addClass('visible');
+	});
+
 	/*FACETS, filtros*/
 	$('.facet-checkbox').click(function() {
 		var inputID = $(this).children('.swatch-input-wrapper').children('.swatch-input__label').attr("for");

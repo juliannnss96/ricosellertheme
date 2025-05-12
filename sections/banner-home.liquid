@@ -1,0 +1,96 @@
+<section id="shopify-section-template--18638285832444__image_banner" class="video-home shopify-section section">
+  {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+  <style data-shopify="">
+    #banner-home::after {
+      opacity: 0.4;
+    }
+  </style>
+  <div id="banner-home" class="banner banner--content-align-left banner--content-align-mobile-center banner--large banner--desktop-transparent scroll-trigger animate--fade-in">
+    <div class="banner__media media scroll-trigger animate--fade-in">
+    
+    {% if section.settings.video_desktop != '' and section.settings.video_mobile != '' %}
+      <img src="{{ section.settings.imagen_desktop }}" alt="" srcset="{{ section.settings.imagen_mobile }} 480w" width="1920" height="1080.0" sizes="100vw" fetchpriority="high">
+    {% endif %}
+
+    {% if section.settings.video_desktop != '' and section.settings.video_mobile != '' %}
+      <video id="video-home" playsinline="" autoplay="" loop="" muted="" data-desktop="{{ section.settings.video_desktop }}" data-mobile="{{ section.settings.video_mobile }}" src="{{ section.settings.video_desktop }}">
+      </video>
+    {% endif %}
+    
+    </div>
+    <div class="banner__content banner__content--bottom-left page-width scroll-trigger animate--slide-in">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="banner__box content-container content-container--full-width-mobile color-scheme-3 gradient">
+              <div class="banner__buttons">
+                {% if section.settings.titulo != '' %}<h2>{{ section.settings.titulo }}</h2>{% endif %}
+                {% if section.settings.subtitulo != '' %}<p>{{ section.settings.subtitulo }}</p>{% endif %}
+                {% if section.settings.url != '' %}<a href="{{ section.settings.url_boton }}" class="button button--secondary">{{ section.settings.texto_boton }}</a>{% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- break a 678px -->
+<script>
+
+</script>
+
+{% schema %}
+{
+  "name": "Banner home",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título"
+    },
+    {
+      "type": "text",
+      "id": "subtitulo",
+      "label": "Subtítulo"
+    },
+    {
+      "type": "text",
+      "id": "texto_boton",
+      "label": "Texto botón"
+    },
+    {
+      "type": "url",
+      "id": "url_boton",
+      "label": "Url botón"
+    },
+    {
+      "type": "text",
+      "id": "imagen_desktop",
+      "label": "Url imagen desktop"
+    },
+    {
+      "type": "text",
+      "id": "imagen_mobile",
+      "label": "Url imagen mobile"
+    },
+    {
+      "type": "text",
+      "id": "video_desktop",
+      "label": "Url video desktop"
+    },
+    {
+      "type": "text",
+      "id": "video_mobile",
+      "label": "Url video mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner home"
+    }
+  ]
+
+}
+{% endschema %}

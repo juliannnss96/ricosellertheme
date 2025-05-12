@@ -146,10 +146,15 @@
       <div class="card__content">
         <div class="card__information">
           {% for c in card_product.collections %}
-          {% if c.handle == "envio-gratis" %}
-          <span class="text-envio-gratis">Envío gratis</span>
-          {% endif %}
+            {% if c.handle == "hot-sale" %}
+              {% assign hot-sale = true %}
+            {% endif %}
+            {% if c.handle == "envio-gratis" %}
+              {% assign envio-gratis = true %}
+            {% endif %}
           {% endfor %}
+          {% if hot-sale == true %}<span class="text-envio-gratis">Hot Sale</span>{% assign dot = true %}{% endif %}
+          {% if envio-gratis == true %}<span class="text-envio-gratis">{% if dot == true %} · {% endif %}Envío gratis</span>{% endif %}
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}

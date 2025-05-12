@@ -13,6 +13,11 @@ $verde: #128A09;
 
 @import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
 
+@font-face {
+  font-family: 'Futura PT Cond';
+  src: url(font-FuturaPTCondExtraBold.otf);
+}
+
 * {
 	font-family: 'PP Neue Montreal', sans-serif;
 } 
@@ -222,19 +227,25 @@ $verde: #128A09;
 
 ///////////////////////////////////////////////////////
 
+
 .button {
-	min-height: 60px;
+	padding: 12px 10px;
 	letter-spacing: -2%;
 	font-weight: 500;
-	border-radius: 100px;
+	border-radius: 8px;
 
 	&:after {
 		display: none;
 	}
+
+	&.blanco {
+		background-color: $blanco;
+		color: $negro;
+	}
 }
 
 .button--primary {
-	border-radius: 100px;
+	border-radius: 8px;
 }
 
 .utility-bar {
@@ -338,13 +349,42 @@ $verde: #128A09;
 
 				.nav-specials {
 					.svg-wrapper {
+						height: 25px;
+						width: 25px;
+
+						svg {
+							filter: none;
+						}
+
 						.icon {
 							filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(28deg) brightness(0%) contrast(0%);
+						}
+					}
+					#cart-icon-bubble {
+						.svg-wrapper {
+							height: 26px;
+							width: 26px;
 						}
 					}
 				}
 			}
 		}
+	}
+
+	header {
+		.header-general {
+			.nav-specials {
+				.svg-wrapper {
+					height: 25px;
+					width: 25px;
+
+					svg {
+						filter: invert(99%) sepia(4%) saturate(53%) hue-rotate(110deg) brightness(120%) contrast(100%);
+					}
+				}
+			}
+		}
+			
 	}
 
 	/*buscador*/
@@ -361,6 +401,15 @@ $verde: #128A09;
 		.predictive-search__item-heading {
 			font-family: "PP Neue Montreal";
 			font-weight: 500;
+		}
+
+		.reset__button.field__button {
+			display:none;
+		}
+
+		.predictive-search {
+			margin-top: 5px;
+			border-radius: 20px;
 		}
 	}
 }
@@ -556,6 +605,8 @@ header {
 /*Carrito*/
 
 #cart {
+	font-family: 'PP Neue Montreal' !important;
+
 	.cart-item__name {
 		color: var(--Black, #1C1C1C);
 		font-family: "PP Neue Montreal";
@@ -590,10 +641,28 @@ header {
 	}
 }
 
+.cart__warnings .cart__empty-text {
+	letter-spacing: 0;
+}
+
+.cart__login-title {
+	letter-spacing: 0;
+}
+
 .cart-items {
+	.caption-with-letter-spacing, .caption-with-letter-spacing {
+		display: none;
+	}
+	
 	tr {
 		th {
 			font-family: "PP Neue Montreal";
+		}
+	}
+
+	.product-option {
+		.bcpo-cart-item-original-price, dt {
+			letter-spacing: 0;
 		}
 	}
 }
@@ -608,7 +677,7 @@ h2.totals__total {
 
 #main-cart-footer {
 	.cart__ctas button {
-		border-radius: 100px;
+		border-radius: 8px;
 
 		&:after {
 			display: none;
@@ -645,13 +714,35 @@ h2.totals__total {
 	line-height: 110%; /* 30.8px */
 }
 
+.button-label, .text-body, .mobile-facets__heading {
+	letter-spacing: 0;
+	font-family: 'PP Neue Montreal';
+}
+
+.facet-filters__sort {
+	text-align: right;
+}
+
+.mobile-facets__summary {
+	span {
+		font-weight: 500;
+		letter-spacing: 0;
+	}
+}
+
+.mobile-facets__sort .select__select {
+	font-family: 'PP Neue Montreal';
+	font-size: 15px;
+	text-align: right;
+}
+
 .infinite_next {
 	display: inline-block;
 	width: 100%;
 	text-align: center;
 
 	a {
-		border-radius: 100px;
+		border-radius: 8px;
 		background: #1C1C1C;
 		padding: 21px 30px;
 		color: #FFF;
@@ -945,7 +1036,7 @@ ul.facets-layout-list--text {
 	padding-top: 0 !important;
 }
 .product {
-	.product__media-wrapper, {
+	.product__media-wrapper {
 		padding-top: 145px;
 		background-color: #f6f6f6;
 		max-width: 60% !important;
@@ -987,6 +1078,55 @@ ul.facets-layout-list--text {
 		font-weight: 500;
 		line-height: 113%; /* 47.46px */
 		letter-spacing: -1.26px;
+	}
+
+	.disclaimer_product {
+		padding: 22px 20px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 14px;
+		background-color: #F0F1F4;
+		border-radius: 10px;
+		margin-bottom: 35px;
+
+		.ico {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			svg {
+				width: 40px;
+				height: 40px;
+			}
+		}
+
+		.cont-texto {
+			h3, p {
+				margin: 0;
+			}
+
+			h3 {
+				color: $negro;
+				font-family: "PP Neue Montreal";
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 110%; /* 15.4px */
+				letter-spacing: -0.14px;
+				margin-bottom: 3px;
+			}
+
+			p {
+				color: $negro;
+				font-family: "PP Neue Montreal";
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 150%; /* 21px */
+				letter-spacing: -0.14px;
+			}
+		}
 	}
 
 	/*variables producto*/
@@ -1043,7 +1183,7 @@ ul.facets-layout-list--text {
 		font-family: "PP Neue Montreal";
 		font-size: 20px;
 		font-style: normal;
-		font-weight: 400;
+		font-weight: 500;
 		line-height: 110%; /* 22px */
 		letter-spacing: -0.2px;
 		line-height: 27px;
@@ -1072,7 +1212,7 @@ ul.facets-layout-list--text {
 	}
 
 	.product-form__buttons button {
-		border-radius: 100px;
+		border-radius: 8px;
 
 		&:after {
 			display: none;
@@ -1507,18 +1647,24 @@ ul.facets-layout-list--text {
 					display: none;
 				}
 
-				.newsletter-form__field-wrapper .field__input {
-					border-radius: 100px;
-					border: 1px solid var(--White, #FFF);
-					background: rgba(255, 255, 255, 0.10);
-					backdrop-filter: blur(3.5px);
-					padding: 30px;
-					color: $blanco;
+				.newsletter-form__field-wrapper {
+					button {
+						border-radius: 32px;
+					}
+					
+					.field__input {
+						border-radius: 32px;
+						border: 1px solid var(--White, #FFF);
+						background: rgba(255, 255, 255, 0.10);
+						backdrop-filter: blur(3.5px);
+						padding: 30px;
+						color: $blanco;
 
-					&:focus {
-						& ~ .field__label {
-							font-size: 11px;
-							line-height: 22px;
+						&:focus {
+							& ~ .field__label {
+								font-size: 11px;
+								line-height: 22px;
+							}
 						}
 					}
 				}
@@ -1540,7 +1686,7 @@ ul.facets-layout-list--text {
 				}
 
 				button {
-					border-radius: 100px;
+					border-radius: 8px;
 					background: $blanco;
 
 					.svg-wrapper {
@@ -1641,6 +1787,11 @@ ul.facets-layout-list--text {
 
 /*Home*/
 
+#banner-home {
+	height: calc(100vh - 38px);
+	min-height: auto;
+}
+
 .video-home video {
 	width: 100%;
 	aspect-ratio: 16/9;
@@ -1651,15 +1802,49 @@ ul.facets-layout-list--text {
 	background-size: cover;
 }
 
-.banner__buttons .button {
-	background-color: $blanco;
-	color: $negro;
-	border-radius: 100px;
-	transition: all 300ms;
-	
-	&:hover, &:focus {
-		background-color: rgba(0,0,0,.85);
+.banner__buttons {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+
+	h2 {
 		color: $blanco;
+		text-align: center;
+		font-family: "Futura PT Cond";
+		font-size: 64px;
+		font-style: normal;
+		font-weight: 800;
+		line-height: 100%; /* 70.4px */
+		letter-spacing: -0.64px;
+		text-transform: uppercase;
+		text-align: left;
+		margin-bottom: 0
+	}
+	
+	p {
+		color: $blanco;
+		text-align: center;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 110%; /* 19.8px */
+		letter-spacing: 0.18px;
+		text-align: left;
+		margin-top: -5px;
+	}
+
+	.button {
+		color: $blanco;
+		border-radius: 8px;
+		transition: all 300ms;
+		background: rgba(255, 255, 255, 0.20);
+		backdrop-filter: blur(3.1499998569488525px);
+		max-width: 0;
+		
+		&:hover, &:focus {
+			background-color: rgba(0,0,0,.85);
+			color: $blanco;
+		}
 	}
 }
 
@@ -1795,7 +1980,8 @@ ul.facets-layout-list--text {
 
 					a {
 						figure {
-							background-color: #e0e0e0;
+							background-color: #F6F6F6;
+							border: 1.5px solid $negro;
 						}
 					}
 				}
@@ -1807,7 +1993,7 @@ ul.facets-layout-list--text {
 					figure {
 						margin: 0;
 						width: 100%;
-						border: 1.5px solid $negro;
+						border: 1.5px solid rgba(28,28,28,.20);
 						border-radius: 23px;
 						aspect-ratio: 0.95/1;
 						background-repeat: no-repeat;
@@ -1822,7 +2008,7 @@ ul.facets-layout-list--text {
 	}
 }
 
-#categorias-home, #signatures-home, #ultimos-contenidos, #amigos-de-la-casa {
+#categorias-home, #signatures-home, #ultimos-contenidos, #amigos-de-la-casa, #flash-home, #destacados-home {
 	margin-top: 50px;
 	margin-bottom: 50px;
 
@@ -1831,18 +2017,18 @@ ul.facets-layout-list--text {
 		padding-bottom: 10px;
 	}
 
-	.categorias-home-cont, .signatures-home-cont {
+	.categorias-home-cont, .signatures-home-cont, .flash-home-cont, .destacados-home-cont {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 20px;
 
-		figure {
+		figure, .card-wrapper {
 			flex-basis: 33.33%;
 			display: inline-block;
 			aspect-ratio: 0.72/1;
 			margin: 0;
-			border-radius: 23px;
+			border-radius: 10px;
 			background-position: center;
 			background-size: cover;
 			transition: all 200ms;
@@ -1871,10 +2057,10 @@ ul.facets-layout-list--text {
 				position: absolute;
 				content: '';
 				width: 100%;
-				height: 100%;
-				top: 0;
+				height: 50%;
+				top: 50%;
 				left: 0;
-				border-radius: 23px;
+				border-radius: 10px;
 				background: linear-gradient(180deg, transparent 0%, $negro 100%);
 
 			}
@@ -1916,6 +2102,159 @@ ul.facets-layout-list--text {
 	}
 }
 
+#flash-home, #destacados-home {
+	position: relative;
+
+	.cont-titulo {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.h2home {
+			margin-bottom: 32px;
+		}
+	}
+
+	.cont-cont-flash, .cont-cont-destacados {
+		.flash-home-cont, .destacados-home-cont {
+			list-style-type: none;
+			white-space: nowrap;
+			overflow-x: auto;
+			padding-bottom: 10px;
+			display: inline-block;
+			width: 100%;
+			display: none;
+
+			&.visible {
+				display: inline-block;
+			}
+
+			.card-wrapper {
+				width: calc(20% - 12px);
+				margin-right: 10px;
+				border-radius: 0;
+				aspect-ratio: initial;
+				overflow: visible;
+				white-space:initial;
+
+				a {
+					position: initial;
+				}
+				
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.cont-pastilla-seleccion {
+		--radio-switch-width: 250px;
+		--radio-switch-height: 40px;
+		--radio-switch-padding: 2.5px;
+		--radio-switch-radius: 50em;
+		--radio-switch-animation-duration: 0.3s;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 26px;
+
+		.sr-only {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+			-webkit-clip-path: inset(50%);
+			clip-path: inset(50%);
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			padding: 0;
+			border: 0;
+			white-space: nowrap;
+		}
+
+		.radio-switch {
+			margin: 0;
+			position: relative;
+			display: inline-block;
+			display: inline-flex;
+			padding: var(--radio-switch-padding);
+			border-radius: calc(var(--radio-switch-radius) * 1.4);
+			background-color: #DEDEDE;
+		}
+		.radio-switch:focus-within, .radio-switch:active {
+			box-shadow: 0 0 0 2px hsla(var(--ri5-color-contrast-higher-hsl), 0.15);
+		}
+
+		.radio-switch__item {
+			position: relative;
+			display: inline-block;
+			height: calc(var(--radio-switch-height) - 2*var(--radio-switch-padding));
+			width: calc(var(--radio-switch-width)*0.5 - var(--radio-switch-padding));
+		}
+
+		.radio-switch__label {
+			position: relative;
+			z-index: 2;
+			display: flex;
+			height: 100%;
+			align-items: center;
+			justify-content: center;
+			border-radius: var(--radio-switch-radius);
+			cursor: pointer;
+			color: $negro;
+			text-align: center;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 110%; /* 15.4px */
+			letter-spacing: -0.14px;
+			transition: all var(--radio-switch-animation-duration);
+			font-family: 'PP Neue Montreal';
+		}
+		.radio-switch__input:checked ~ .radio-switch__label {
+			color: hsl(var(--ri5-color-white-hsl));
+		}
+		.radio-switch__input:focus ~ .radio-switch__label {
+			background-color: $blanco;
+		}
+		.radio-switch__label :not(*):focus-within, .radio-switch__input:focus ~ .radio-switch__label {
+			background-color: transparent;
+		}
+
+		.radio-switch__marker {
+			display: inline-block;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: -100%;
+			border-radius: var(--radio-switch-radius);
+			background-color: $blanco;
+			height: calc(var(--radio-switch-height) - 2*var(--radio-switch-padding));
+			width: calc(var(--radio-switch-width)*0.5 - var(--radio-switch-padding));
+			transition: -webkit-transform var(--radio-switch-animation-duration);
+			transition: transform var(--radio-switch-animation-duration);
+			transition: transform var(--radio-switch-animation-duration), -webkit-transform var(--radio-switch-animation-duration);
+		}
+		.radio-switch__input:checked ~ .radio-switch__marker {
+			-webkit-transform: translateX(100%);
+			transform: translateX(100%);
+		}
+
+		/* utility classes */
+		.ri5-sr-only {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+			clip-path: inset(50%);
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			padding: 0;
+			border: 0;
+			white-space: nowrap;
+		}
+	}
+}
+
 .page-width-desktop {
 	width: 100%;
 	padding: 0;
@@ -1953,6 +2292,19 @@ h2.h2home, h2.inline-richtext {
 	letter-spacing: -0.42px;
 }
 
+.cont-titulo {
+	.link-mostrar-todo {
+		color: $negro;
+		text-align: right;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 110%; /* 17.6px */
+		letter-spacing: 0.16px;
+		text-decoration: none;
+	}
+}
+
 #tipos-jugador {
 	background-color: $casiblanco;
 	margin-top: 50px;
@@ -1981,6 +2333,7 @@ h2.h2home, h2.inline-richtext {
 			cursor: pointer;
 			overflow: hidden;
 			transition: all 200ms;
+			letter-spacing: -1px;
 
 			&:before {
 				content: '';
@@ -2034,7 +2387,7 @@ h2.h2home, h2.inline-richtext {
 	.button {
 		margin-left: 70px;
 		margin-top: 50px;
-		border-radius: 100px;
+		border-radius: 8px;
 		border: 1px solid $negro;
 		background-color: #d9d9d9;
 		color: $negro;
@@ -2051,10 +2404,106 @@ h2.h2home, h2.inline-richtext {
 	}
 }
 
-#signatures-home {
+#ofertas-home {
+	margin-top: 40px;
+	
+	.cont-cont-ofertas {
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 16px;
+
+			li.card-oferta {
+				flex-basis: 33.33%;
+				aspect-ratio: 1/1.05;
+				border-radius: 8px;
+				box-sizing: border-box;
+				position: relative;
+
+
+				h3 {
+					text-align: center;
+					width: 100%;
+					margin: 0;
+					position: absolute;
+					left: 0;
+					top: 55%;
+					transform: translate(0,-50%);
+
+					span {
+						text-align: center;
+						font-family: "PP Neue Montreal";
+						font-size: 32px;
+						font-style: normal;
+						font-weight: 500;
+						line-height: 27px; /* 84.375% */
+						letter-spacing: -0.5px;
+
+						&:first-child {
+							width: 100%;
+							display: inline-block;
+						}
+					}
+
+					span.numero {
+						text-align: center;
+						font-family: "PP Neue Montreal";
+						font-size: 147px;
+						font-style: normal;
+						font-weight: 500;
+						line-height: 145px; /* 121.086% */
+						letter-spacing: -4.088px;
+					}
+
+					small {
+						font-family: "PP Neue Montreal";
+						font-size: 49.056px;
+						font-style: normal;
+						font-weight: 500;
+						line-height: 178.2px;
+						letter-spacing: -4.088px;
+					}
+				}
+
+				&.oferta20 {
+					background-color: #E6E3E2;
+					h3 {
+						color: $negro;
+					}
+				}
+
+				&.oferta30 {
+					background-color: #1C1C1C;
+					h3 {
+						color: $blanco;
+					}
+				}
+
+				&.oferta40 {
+					background-color: #A3EB30;
+					h3 {
+						color: $negro;
+					}
+				}
+
+				.button {
+					position: absolute;
+					left: 15px;
+					bottom:15px;
+				}
+			}
+		}
+	}
+}
+
+#signatures-home, #categorias-home {
 	margin-top: 50px;
 
-	.signatures-home-cont {
+	.signatures-home-cont, .categorias-home-cont {
 		list-style-type:none;
 	    white-space:nowrap;
 	    overflow-x:auto;
@@ -2063,8 +2512,8 @@ h2.h2home, h2.inline-richtext {
 	    width: 100%;
 
 		figure {
-			width: calc(20% - 25px);
-			margin-right: 23px;
+			width: calc(20% - 14px);
+			margin-right: 13px;
 			overflow: hidden;
 
 			&:hover, &:focus {
@@ -2087,7 +2536,7 @@ h2.h2home, h2.inline-richtext {
 			a, .cont-cta {
 				h3 {
 					font-family: "PP Neue Montreal";
-					font-size: 22px;
+					font-size: 17px;
 					font-style: normal;
 					font-weight: 500;
 					line-height: normal;
@@ -2111,6 +2560,30 @@ h2.h2home, h2.inline-richtext {
 						width: 35px;
 					}
 				}
+			}
+		}
+	}
+}
+
+#categorias-home {
+	.categorias-home-cont {
+	    white-space:initial;
+	    overflow-x:auto;
+		display: flex;
+		gap: 23px;
+
+		figure {
+			width: calc(33.33% - 23px);
+			margin-right: 0;
+			aspect-ratio: 1/1.4;
+			border-radius: 10px;
+			
+			&:after {
+				border-radius: 10px;
+			}
+
+			&:last-child {
+				margin-right: 0;
 			}
 		}
 	}
@@ -2270,11 +2743,13 @@ h2.h2home, h2.inline-richtext {
 
 #amigos-de-la-casa {
 	h3 {
-		font-size: 42px;
-		font-weight: 500;
 		color: $blanco;
-		margin-bottom: 20px;
 		font-family: "PP Neue Montreal";
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 110%; /* 26.4px */
+		letter-spacing: -0.36px;	
 	}
 
 	.categorias-home-cont, .signatures-home-cont {
@@ -2289,7 +2764,7 @@ h2.h2home, h2.inline-richtext {
 			display: inline-block;
 			aspect-ratio: 0.78/1;
 			position: relative;
-			border-radius: 23px;
+			border-radius: 10px;
 			overflow: hidden;
 			width: calc(33.33% - 19px);
 			margin-right: 23px;
@@ -2302,7 +2777,7 @@ h2.h2home, h2.inline-richtext {
 
 			&:hover, &:focus {
 				.cont-img {
-					transform: scale(1.1,1.1);
+					transform: scale(1.05,1.05);
 				}
 			}
 
@@ -2317,7 +2792,7 @@ h2.h2home, h2.inline-richtext {
 				background-size: cover;
 				background-position: center;
 				cursor: default;
-				border-radius: 26px;
+				border-radius: 10px;
 			}
 
 			&:before {
@@ -2335,24 +2810,24 @@ h2.h2home, h2.inline-richtext {
 					z-index: 10;
 
 					p {
-						font-family: "PP Neue Montreal";
 						color: $blanco;
-						font-size: 28px;
+						font-family: "PP Neue Montreal";
+						font-size: 18.89px;
 						font-style: normal;
 						font-weight: 500;
 						line-height: normal;
-						letter-spacing: -0.28px;
-						margin-bottom: 10px;
+						letter-spacing: -0.189px;
+						margin-bottom: 0;
+						margin-top: 0;
 					}
 
 					span.autor {
+						color: $blanco;
 						font-family: "PP Neue Montreal";
-						font-size: 20px;
+						font-size: 13.493px;
 						font-style: normal;
 						font-weight: 400;
 						line-height: normal;
-						color: $blanco;
-						width: 100%;
 					}
 
 					span {
@@ -2396,6 +2871,30 @@ h2.h2home, h2.inline-richtext {
 			max-width: calc(40% - 4rem) !important;
 		}
 	}
+
+	#ofertas-home {
+		.cont-cont-ofertas {
+			ul {
+				li.card-oferta {
+					h3 {
+						span.numero {
+								font-size: 133px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#flash-home, #destacados-home {
+		.cont-cont-flash, .cont-cont-destacados {
+			.flash-home-cont, .destacados-home-cont {
+				.card-wrapper {
+					width: calc(25% - 12px);
+				}
+			}
+		}
+	}
 }
 
 @media(max-width: 1010px) {
@@ -2407,6 +2906,10 @@ h2.h2home, h2.inline-richtext {
 		.product__info-wrapper {
 			max-width: calc(60% - 4rem) !important;
 		}
+	}
+
+	#tipos-jugador {
+		margin-top: 60px;
 	}
 }
 
@@ -2582,6 +3085,41 @@ h2.h2home, h2.inline-richtext {
 			filter: none;
 		}
 	}
+
+	#ofertas-home {
+		.cont-cont-ofertas {
+			ul {
+				li.card-oferta {
+					h3 {
+						top: 45%;
+
+						span:first-child {
+							font-size: 24px;
+						}
+						
+						span.numero {
+								font-size: 105px;
+								line-height: 100px;
+						}
+						
+						small {
+							line-height: 100px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#flash-home, #destacados-home {
+		.cont-cont-flash, .cont-cont-destacados {
+			.flash-home-cont, .destacados-home-cont {
+				.card-wrapper {
+					width: calc(33.33% - 12px);
+				}
+			}
+		}
+	}
 }
 
 @media(max-width: 990px) {
@@ -2597,11 +3135,17 @@ h2.h2home, h2.inline-richtext {
 			}
 		}
 	}
+
+	#amigos-de-la-casa .signatures-home-cont figure {
+		.cont-cta .cont-text p {
+			margin-bottom: 10px;
+		}
+	}
 }
 
 @media(max-width: 810px) {
-	#marcas-home, #signatures-home, #ultimos-contenidos, #amigos-de-la-casa {
-		.marcas-cont, .cont-cont-signatures {
+	#categorias-home, #marcas-home, #signatures-home, #ultimos-contenidos, #amigos-de-la-casa, #flash-home, #destacados-home {
+		.cont-cont-categorias-home, .marcas-cont, .cont-cont-signatures, .cont-cont-flash, .cont-cont-destacados {
 			position: relative;
 
 			&:after {
@@ -2609,7 +3153,7 @@ h2.h2home, h2.inline-richtext {
 				height: 100%;
 				width: 40px;
 				position: absolute;
-				right: 0;
+				right: -2px;
 				top: 0;
 				background: rgb(255,255,255);
 				background: -moz-linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(252,252,254,0) 100%);
@@ -2712,6 +3256,19 @@ h2.h2home, h2.inline-richtext {
 		}
 	}
 
+	#categorias-home {
+		.categorias-home-cont {
+			white-space:nowrap;
+			overflow-x: scroll;
+			display: inline-block;
+
+			figure {
+				width: calc(40% - 15px);
+				margin-right: 11px;
+			}
+		}
+	}
+
 	#signatures-home {
 		.signatures-home-cont {
 			figure {
@@ -2735,13 +3292,88 @@ h2.h2home, h2.inline-richtext {
 
 	#amigos-de-la-casa {
 		h3 {
-			font-size: 30px;
-			margin-top: 10px;
+			font-size: 23px;
+			margin-top: 50px;
 		}
 
 		.signatures-home-cont {
 			figure {
 				width: 40%;
+			}
+		}
+	}
+
+	#ofertas-home {
+		.cont-cont-ofertas {
+			ul {
+				li.card-oferta {
+					h3 {
+						top: 35%;
+
+						span:first-child {
+							font-size: 19px;
+						}
+						
+						span.numero {
+								font-size: 60px;
+								line-height: 60px;
+						}
+						
+						small {
+							line-height: 60px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.cont-titulo {
+		.link-mostrar-todo {
+			span {
+				display: none;
+			}
+			&:after {
+				content: '';
+				display: inline-block;
+				width: 26px;
+				height: 26px;
+				background-image: url('ico-plus-circle.svg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;;
+			}
+		}
+	}
+
+	#flash-home, #destacados-home {
+		.cont-titulo {
+			.h2home {
+				margin-bottom: 22px;
+			}
+		}
+		.cont-pastilla-seleccion {	
+			--radio-switch-width: 100%;
+
+			position: initial;
+			transform: translateX(0);
+			text-align: center;
+			margin-bottom: 22px;
+
+			.radio-switch {
+				width: 100%;
+			}
+
+			.radio-switch__marker {
+				width: calc(var(--radio-switch-width) + var(--radio-switch-padding));
+			}
+		}
+
+		.cont-cont-flash, .cont-cont-destacados {
+			.flash-home-cont, .destacados-home-cont {
+				.card-wrapper {
+					width: calc(50% - 12px);
+				}
 			}
 		}
 	}
@@ -2768,6 +3400,27 @@ h2.h2home, h2.inline-richtext {
 }
 
 @media(max-width: 749px) {
+	#banner-home {
+		.banner__buttons {
+			justify-content: center;
+			text-align: center;
+			align-items: center;
+			
+			h2 {
+				font-size: 48px;
+				text-align: center;
+			}
+
+			p {
+				text-align: center;
+			}
+
+			.button {
+				margin: 0;
+			}
+		}
+	}
+
 	#marcas-home {
 		.marcas-cont {
 			ul {
@@ -2847,7 +3500,7 @@ h2.h2home, h2.inline-richtext {
 		}
 	}
 
-	#categorias-home {
+	/* #categorias-home {
 		.categorias-home-cont {
 			flex-wrap: wrap;
 			gap: 10px;
@@ -2865,7 +3518,7 @@ h2.h2home, h2.inline-richtext {
 				}
 			}
 		}
-	}
+	} */
 
 	#tipos-jugador {
 		ul {
@@ -2874,7 +3527,6 @@ h2.h2home, h2.inline-richtext {
 
 		.listado-tipos-jugador, a.button {
 			margin-left: 25px;
-			padding-top: 0;
 		}
 
 		.cont-figure {
@@ -2947,6 +3599,24 @@ h2.h2home, h2.inline-richtext {
 }
 
 @media(max-width: 474px) {
+	.utility-bar {
+		display: none;
+	}
+
+	.single-product {
+		header {
+			margin-top: 32px !important;
+		}
+	}
+	
+	#banner-home {
+		height: 100vh;
+	}
+
+	header {
+		margin-top: 32px;
+	}
+
 	.product .product-form__input--pill label {
 		width: calc(24% - 7px);
 	}
@@ -2959,6 +3629,16 @@ h2.h2home, h2.inline-richtext {
 		top: 13px;
   		right: 13px;
 	}
+
+	#tipos-jugador {
+		.cont-figure {
+			height: 470px;
+
+			.cont-zapa {
+				top: 35px;
+			}
+		}
+	}
 }
 
 @media(max-width: 470px) {
@@ -2968,6 +3648,43 @@ h2.h2home, h2.inline-richtext {
 				li {
 					width: 28%;
 				}
+			}
+		}
+	}
+
+	#ofertas-home {
+		.cont-cont-ofertas {
+			ul {
+				flex-direction: column;
+				li.card-oferta {
+					flex-basis: 100%;
+					width: 100%;
+					h3 {
+						top: 45%;
+						
+						span:first-child {
+							font-size: 32px;
+						}
+						
+						span.numero {
+								font-size: 147px;
+								line-height: 150px;
+						}
+						
+						small {
+							line-height: 50px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#categorias-home {
+		.categorias-home-cont {
+			figure {
+				width: calc(80% - 15px);
+				margin-right: 11px;
 			}
 		}
 	}
@@ -2989,6 +3706,18 @@ h2.h2home, h2.inline-richtext {
 	#signatures-home {
 		margin-top: 30px;
 		margin-bottom: 0px;
+	}
+
+	
+
+	#flash-home, #destacados-home {
+		.cont-cont-flash, .cont-cont-destacados {
+			.flash-home-cont, .destacados-home-cont {
+				.card-wrapper {
+					width: calc(80% - 12px);
+				}
+			}
+		}
 	}
 
 	#footer-rico {
@@ -3018,16 +3747,6 @@ h2.h2home, h2.inline-richtext {
 				li {
 					width: 32%;
 				}
-			}
-		}
-	}
-
-	#tipos-jugador {
-		.cont-figure {
-			height: 350px;
-
-			.cont-zapa {
-				top: 35px;
 			}
 		}
 	}
