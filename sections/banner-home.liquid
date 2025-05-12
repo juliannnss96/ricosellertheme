@@ -9,7 +9,7 @@
     <div class="banner__media media scroll-trigger animate--fade-in">
     
     {% if section.settings.imagen_desktop != '' and section.settings.imagen_mobile != '' %}
-      <img src="{{ section.settings.imagen_desktop }}" alt="" srcset="{{ section.settings.imagen_mobile }} 480w" width="1920" height="1080.0" sizes="100vw" fetchpriority="high">
+      <img id="img-home" src="{{ section.settings.imagen_desktop }}" alt="" data-desktop="{{ section.settings.imagen_desktop }}" data-mobile="{{ section.settings.imagen_mobile }}" width="1920" height="1080.0" sizes="100vw" fetchpriority="high">
     {% endif %}
 
     {% if section.settings.video_desktop != '' and section.settings.video_mobile != '' %}

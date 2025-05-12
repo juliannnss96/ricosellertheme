@@ -155,6 +155,7 @@
           {% endfor %}
           {% if hot-sale == true %}<span class="text-envio-gratis">Hot Sale</span>{% assign dot = true %}{% endif %}
           {% if envio-gratis == true %}<span class="text-envio-gratis">{% if dot == true %} · {% endif %}Envío gratis</span>{% endif %}
+
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}

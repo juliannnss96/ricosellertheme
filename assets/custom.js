@@ -2,10 +2,14 @@ $(document).ready(function() {
 	/*Responsive video home, rompe a 678px*/
 	var videoSrcMobile = $('#video-home').attr('data-mobile');
 	var videoSrcDesktop = $('#video-home').attr('data-desktop');
+	var imgSrcMobile = $('#img-home').attr('data-mobile');
+	var imgSrcDesktop = $('#img-home').attr('data-desktop');
 
 	if (window.innerWidth > 678){
        $("#video-home").attr("src",videoSrcDesktop);
+       $("#img-home").attr("src",imgSrcDesktop);
     }else{
+       $("#img-home").attr("src",imgSrcMobile);
        $("#video-home").attr("src",videoSrcMobile);
     }
 
