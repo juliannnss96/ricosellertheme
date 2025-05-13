@@ -23,17 +23,10 @@
         "essential_upsell_app_block_TxWKDK": {
           "type": "shopify://apps/essential-upsell/blocks/app-block/50627fd9-24fd-4250-8614-accc12826d80",
           "settings": {}
-        },
-        "essential_free_shipping_app_block_Ap3h3y": {
-          "type": "shopify://apps/essential-free-shipping/blocks/app-block/4125375e-37c8-4137-949d-c4e1a3aac572",
-          "settings": {
-            "id": ""
-          }
         }
       },
       "block_order": [
-        "essential_upsell_app_block_TxWKDK",
-        "essential_free_shipping_app_block_Ap3h3y"
+        "essential_upsell_app_block_TxWKDK"
       ],
       "settings": {
         "include_margins": true
