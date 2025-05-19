@@ -39,8 +39,8 @@
       "type": "bloque-flash",
       "name": "Bloque Flash",
       "settings": {
-        "titulo": "Ofertas flash ⚡",
-        "collection_selected": "hot-sale",
+        "titulo": "Destacados",
+        "collection_selected": "destacadas",
         "texto_cat1": "Ver Zapatillas",
         "collection_cat1": "calzado",
         "texto_cat2": "Ver Indumentaria",
