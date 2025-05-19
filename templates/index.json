@@ -49,6 +49,7 @@
     },
     "bloque_ofertas_pAAPAy": {
       "type": "bloque-ofertas",
+      "disabled": true,
       "name": "Descuentos por porcentaje",
       "settings": {
         "texto_card_1": "Kelme hasta",
