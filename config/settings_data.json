@@ -142,11 +142,6 @@
         "type": "shopify://apps/essential-free-shipping/blocks/app_embed/4125375e-37c8-4137-949d-c4e1a3aac572",
         "disabled": false,
         "settings": {}
-      },
-      "12415617228535682091": {
-        "type": "shopify://apps/countdown-sami/blocks/app-embed-block/4a43514a-3558-477f-914e-e834a137453e",
-        "disabled": false,
-        "settings": {}
       }
     },
     "color_schemes": {
