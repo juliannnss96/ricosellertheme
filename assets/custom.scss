@@ -1036,7 +1036,8 @@ ul.facets-layout-list--text {
 	padding-top: 0 !important;
 }
 .product {
-	.product__media-wrapper {
+	/* Full width media wrapper viejo */
+	/* .product__media-wrapper {
 		padding-top: 145px;
 		background-color: #f6f6f6;
 		max-width: 60% !important;
@@ -1046,6 +1047,78 @@ ul.facets-layout-list--text {
 			left: auto;
 			right: 1.2rem;
 		}
+	} */
+
+	/* nuevo media wrapper, dentro de container */
+	.product__media-wrapper {
+		margin-top: 145px;
+		/* background-color: #f6f6f6 */;
+		max-width: 30% !important;
+		margin-left: 25%;
+		width: calc(30% - var(--grid-desktop-horizontal-spacing) / 2) !important;
+
+		.product__media-icon, .thumbnail__badge {
+			left: auto;
+			right: 1.2rem;
+			opacity: 1;
+			width: 42px;
+			height: 42px;
+			border: 0;
+		}
+
+		.product__modal-opener {
+			&:focus, &:hover {
+				.product__media-icon {
+					border: 0;
+					
+				}
+			}
+			
+			.product__media-icon {
+				top: 20px;
+				right: 20px;
+			}
+		}
+
+		.product__media-list {
+			li:not(.is-active) {
+				display: none;
+			}
+
+			.product-media-container {
+				border: 0;
+
+				.product__modal-opener {
+					border-radius: 28px;
+					overflow: hidden;
+				}
+			}
+		}
+
+		.media-thumbs {
+			position: absolute;
+			left: -78px;
+			top: 0;
+			width: 62px;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			justify-content: flex-start;
+			flex-direction: column;
+			gap: 14px;
+
+			.product__media-item {
+				max-width: 100%;
+				width: 100%;
+
+				img {
+					width: 100%;
+					height: auto;
+					border-radius: 10px;
+				}
+			}
+		}
 	}
 
 	.product__column-sticky {
@@ -1053,7 +1126,8 @@ ul.facets-layout-list--text {
 
 	.product__info-wrapper {
 		padding-top: 145px !important;
-		max-width: 25% !important;
+		max-width: 22% !important;
+		padding-left: 5rem !important;
 	}
 
 	.product__info-container > :first-child {
@@ -1132,17 +1206,20 @@ ul.facets-layout-list--text {
 	/*variables producto*/
 	.variables_color {
 		width: 100%;
-		display: flex;
-		justify-content: flex-start;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: 1fr;
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
 		gap: 8px;
 		margin-bottom: 24px;
 
 		a {
-			flex-basis: calc(20% - 8px);
+			display: inline-block;
+
 			img {
-				border: 1px solid $negro30;
-				border-radius: 4px;
+				border: 1.2px solid $negro30;
+				border-radius: 10px;
 				width: 100%;
 				transition: all 300ms;
 			}
@@ -1200,15 +1277,37 @@ ul.facets-layout-list--text {
 		margin-bottom: 0 !important;
 	}
 
-	.text-envio-gratis {
+	/* .text-envio-gratis {
 		color: $naranja;
 		font-family: "PP Neue Montreal";
 		font-size: 16px;
 		font-style: normal;
 		font-weight: 500;
-		line-height: 123%; /* 19.68px */
+		line-height: 123%;
 		letter-spacing: -0.32px;
 		margin-top: 0;
+	} */
+
+	.label-envio-gratis {
+		color: $negro;
+		font-family: "PP Neue Montreal";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 14.446px; /* 101.181% */
+		letter-spacing: -0.286px;
+		padding: 13px 15px;
+		background-color: $blanco;
+		position: absolute;
+		z-index: 100;
+		border-radius: 80px;
+		top: 20px;
+		left: 20px;
+		background-image: url('icon-free-shipping.svg');
+		background-repeat: no-repeat;
+		background-position: 10px center;
+		background-size: 19px 19px;
+		padding-left: 34px;		
 	}
 
 	.text-descuento {
@@ -1230,22 +1329,19 @@ ul.facets-layout-list--text {
 	}
 
 	.product-form__input--pill {
-		.guia-talles-variantes, legend.form__label {
-			width: 50%;
-			display: inline-block;
-			padding: 0;
-			float: left;
-		}
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 0px; 
+		position: relative;
+		padding-top: 35px;
+		gap: 8px;
+		max-width: 100%;
 
-		.guia-talles-variantes {
-			text-align: right;
-			padding-right: 5px;
-			color: var(--Black, #1C1C1C);
-			font-family: "PP Neue Montreal";
-			font-size: 16px;
-			font-style: normal;
-			font-weight: 500;
-			letter-spacing: 0.16px;
+		.guia-talles-variantes, legend.form__label {
+			/* display: inline-block; */
+			padding: 0;
 		}
 
 		legend.form__label {
@@ -1255,10 +1351,26 @@ ul.facets-layout-list--text {
 			font-style: normal;
 			font-weight: 400;
 			letter-spacing: 0.16px;
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
 
-		label {
-			width: 22.3%;
+		.guia-talles-variantes {
+			text-align: right;
+			color: var(--Black, #1C1C1C);
+			font-family: "PP Neue Montreal";
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 500;
+			letter-spacing: 0.16px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		input {
+			display: none;
 		}
 
 		input[type="radio"] + label {
@@ -1269,9 +1381,10 @@ ul.facets-layout-list--text {
 			font-style: normal;
 			font-weight: 500;
 			line-height: 110%; /* 14.3px */
-			padding-top: 14px;
-			padding-bottom: 14px;
+			padding-top: 19px;
+			padding-bottom: 19px;
 			letter-spacing: 0;
+			margin: 0;
 			border-color: rgba(var(--color-foreground), 0.1);
 		}
 
@@ -1300,6 +1413,9 @@ ul.facets-layout-list--text {
 
 	.product-form__submit {
 		margin: 45px 0;
+		font-size: 18px;
+		font-weight: 500;
+		padding: 20px 0;
 	}
 
 	h2.inline-richtext {
@@ -2871,6 +2987,19 @@ h2.h2home, h2.inline-richtext {
 
 /*MEDIA QUERIES MOBILE*/
 
+@media(max-width: 1500px) {
+	.product {
+		.product__media-wrapper {
+			max-width: 40% !important;
+			margin-left: 17%;
+		}
+
+		.product__info-wrapper {
+			max-width: 30% !important;
+		}
+	}
+}
+
 @media(max-width: 1200px) {
 	#amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text {
 		p {
@@ -2889,8 +3018,12 @@ h2.h2home, h2.inline-richtext {
 	}
 
 	.product {
+		.product__media-wrapper {
+			margin-left: 13%;
+		}
+
 		.product__info-wrapper {
-			max-width: calc(40% - 4rem) !important;
+			max-width: 40% !important;
 		}
 	}
 
@@ -2922,11 +3055,11 @@ h2.h2home, h2.inline-richtext {
 @media(max-width: 1010px) {
 	.product {
 		.product__media-wrapper {
-			max-width: 40% !important;
+			margin-left: 12%;
 		}
 
 		.product__info-wrapper {
-			max-width: calc(60% - 4rem) !important;
+			max-width: 42% !important;
 		}
 	}
 
@@ -2993,6 +3126,11 @@ h2.h2home, h2.inline-richtext {
 		width: 35px;
 		height: 35px;
 		right: 14px;
+	}
+
+	.product .product__media-wrapper .media-thumbs {
+		width: 50px;
+		left: -70px;
 	}
 
 	#footer-rico {
@@ -3182,6 +3320,7 @@ h2.h2home, h2.inline-richtext {
 				background: -webkit-linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(252,252,254,0) 100%);
 				background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(252,252,254,0) 100%);
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#fcfcfe",GradientType=1);
+				z-index: 11;
 			}
 
 			ul li:last-child, figure:last-child {
@@ -3459,18 +3598,37 @@ h2.h2home, h2.inline-richtext {
 			width: 100% !important;
 			max-width: 100% !important;
 			padding-top: 0;
-			background-color: #f6f6f6;
+			margin: 0;
+			max-width: 100vw;
+			display: block;
+			overflow: hidden;
+			/* background-color: #f6f6f6 */;
 
 			.product__media-icon {
 				display: none;
+			}
+
+			.product__media-list {
+				.product-media-container .product__modal-opener {
+					border-radius: 0;
+					overflow: visible;
+				}
+
+				li:not(.is-active) {
+					display: flex;
+				}
 			}
 		}
 
 		.product__info-wrapper {
 			width: 100% !important;
 			max-width: 100% !important;
-			padding: 0 15px;
+			padding: 0 15px !important;
 			padding-top: 0 !important;
+		}
+
+		.label-envio-gratis {
+			left: 30px;
 		}
 
 		.product-form__input--pill {
@@ -3482,14 +3640,12 @@ h2.h2home, h2.inline-richtext {
 
 			label {
 				margin: 0;
-				width: calc(24% - 5px);
- 				margin-right: 10px !important;
  				margin-bottom: 10px !important;
 			}
 		}
 
 		.slider.slider--mobile {
-			margin-top: 10vh
+			margin-top: 110px;
 		}
 	}
 
@@ -3578,12 +3734,6 @@ h2.h2home, h2.inline-richtext {
 	}
 }
 
-@media(max-width: 572px) {
-	.product .product-form__input--pill label {
-		width: calc(24% - 6px);
-	}
-}
-
 @media(max-width: 530px) {
 	#footer-rico {
 		padding-bottom: 120px;
@@ -3641,10 +3791,6 @@ h2.h2home, h2.inline-richtext {
 
 	header {
 		margin-top: 32px;
-	}
-
-	.product .product-form__input--pill label {
-		width: calc(24% - 7px);
 	}
 
 	.modal-default .modal {
@@ -3842,11 +3988,5 @@ h2.h2home, h2.inline-richtext {
 				height: 22px;
 			}
 		}
-	}
-}
-
-@media(max-width: 374px) {
-	.product .product-form__input--pill label {
-		width: calc(24% - 8px);
 	}
 }

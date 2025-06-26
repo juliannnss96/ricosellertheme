@@ -125,9 +125,9 @@
                   <span class="texto-descuento">20% de descuento</span>
                   {% endif %}
                 </div>
-                {% if envio_gratis == true %}
+                {% comment %} {% if envio_gratis == true %}
                 <span class="text-envio-gratis">Envío gratis</span>
-                {% endif %}
+                {% endif %} {% endcomment %}
                 
                 <div class="variables_color">
                   {% assign relacionados_ordenados = product.metafields.custom.productos_relacionados.value | sort: "title" %}

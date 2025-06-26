@@ -118,4 +118,32 @@ $(document).ready(function() {
 	    return;
 	 	$('.modal-default').removeClass('abierto');
 	});
+
+	/* Single prodcut gallery v2 */
+	function activateMedia(mediaId, $thumb) {
+		var $main = $('.product__media-list li[data-media-id="' + mediaId + '"]');
+
+		if ($main.length) {
+			$main.prependTo('.product__media-list');
+
+			$('.product__media-list li').removeClass('is-active');
+			$main.addClass('is-active');
+
+			$('.media-thumbs li').removeClass('is-active');
+			$thumb.addClass('is-active');
+		}
+		}
+
+		$('.media-thumbs li').on('mouseenter touchstart', function (e) {
+		var $thumb = $(this);
+		var mediaId = $thumb.data('media-id');
+
+		// Evitar que dispare múltiples veces en touch
+		if (e.type === 'touchstart') {
+			e.preventDefault(); // opcional para evitar scroll no deseado
+			$(this).off('touchstart'); // evita múltiples activaciones
+		}
+
+		activateMedia(mediaId, $thumb);
+		});
 });
