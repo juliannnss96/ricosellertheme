@@ -17,6 +17,21 @@
         "padding_bottom": 36
       }
     },
+    "173808883967993bec": {
+      "type": "apps",
+      "blocks": {
+        "essential_upsell_app_block_TxWKDK": {
+          "type": "shopify://apps/essential-upsell/blocks/app-block/50627fd9-24fd-4250-8614-accc12826d80",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "essential_upsell_app_block_TxWKDK"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "cart-footer": {
       "type": "main-cart-footer",
       "blocks": {
@@ -65,21 +80,6 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "173808883967993bec": {
-      "type": "apps",
-      "blocks": {
-        "essential_upsell_app_block_TxWKDK": {
-          "type": "shopify://apps/essential-upsell/blocks/app-block/50627fd9-24fd-4250-8614-accc12826d80",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "essential_upsell_app_block_TxWKDK"
-      ],
-      "settings": {
-        "include_margins": true
       }
     }
   },

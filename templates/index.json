@@ -13,14 +13,14 @@
       "type": "banner-home",
       "name": "Banner home",
       "settings": {
-        "titulo": "HOT SELLER ON",
-        "subtitulo": "Acumulá hasta un 50% off",
-        "texto_boton": "Ver ofertas",
-        "url_boton": "shopify://collections/hot-sale",
-        "imagen_desktop": "https://cdn.shopify.com/s/files/1/0738/4547/3524/files/Hero_Desktop_Hot_Seller.jpg?v=1747016223",
-        "imagen_mobile": "https://cdn.shopify.com/s/files/1/0738/4547/3524/files/Hero_Mobile_Hot_Seller.jpg?v=1747016176",
-        "video_desktop": "",
-        "video_mobile": ""
+        "titulo": "Nuevos ingresos",
+        "subtitulo": "El stock más variado de todo el país",
+        "texto_boton": "Ver tienda",
+        "url_boton": "shopify://collections/all",
+        "imagen_desktop": "",
+        "imagen_mobile": "",
+        "video_desktop": "https://cdn.shopify.com/videos/c/o/v/6ab51919e1c34867997d3144f39fc3f4.mp4",
+        "video_mobile": "https://cdn.shopify.com/videos/c/o/v/458a8f0bfc4d47aaa25b1f130cbda74b.mp4"
       }
     },
     "marcas_slider_WwPfzX": {
@@ -39,8 +39,8 @@
       "type": "bloque-flash",
       "name": "Bloque Flash",
       "settings": {
-        "titulo": "Ofertas flash ⚡",
-        "collection_selected": "hot-sale",
+        "titulo": "Destacados",
+        "collection_selected": "destacadas",
         "texto_cat1": "Ver Zapatillas",
         "collection_cat1": "calzado",
         "texto_cat2": "Ver Indumentaria",
@@ -49,6 +49,7 @@
     },
     "bloque_ofertas_pAAPAy": {
       "type": "bloque-ofertas",
+      "disabled": true,
       "name": "Descuentos por porcentaje",
       "settings": {
         "texto_card_1": "Kelme hasta",
