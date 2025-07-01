@@ -5144,7 +5144,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   padding: 13px 15px;
   background-color: #ffffff;
   position: absolute;
-  z-index: 100;
+  z-index: 5;
   border-radius: 80px;
   top: 20px;
   left: 20px;
@@ -6827,6 +6827,9 @@ h2.h2home, h2.inline-richtext {
   }
 }
 @media (max-width: 767px) {
+  .product-media-container .media {
+    padding-top: 111.1111111111% !important;
+  }
   .announcement-bar {
     grid-template-columns: repeat(2, 1fr);
   }
