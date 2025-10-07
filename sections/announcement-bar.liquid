@@ -166,7 +166,7 @@
                 <li><a href="{{ routes.root_url }}collections/puma"><img alt="puma" src="{{ 'marca-puma.png' | asset_img_url }}"></a></li>
               </ul>
             <p class="announcement-bar__message h5">
-              <span>📦 {{ section.blocks.first.settings.text | escape }}</span>
+              <span>{{ section.blocks.first.settings.text | escape }}</span>
               {%- if section.blocks.first.settings.link != blank -%}
                 {{- 'icon-arrow.svg' | inline_asset_content -}}
               {%- endif -%}
