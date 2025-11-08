@@ -19,14 +19,6 @@
             "text_style": "uppercase"
           }
         },
-        "inventory_NFbjEd": {
-          "type": "inventory",
-          "settings": {
-            "text_style": "body",
-            "inventory_threshold": 10,
-            "show_inventory_quantity": true
-          }
-        },
         "caption": {
           "type": "text",
           "settings": {
@@ -94,7 +86,6 @@
       },
       "block_order": [
         "vendor",
-        "inventory_NFbjEd",
         "caption",
         "title",
         "price",
