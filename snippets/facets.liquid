@@ -16,7 +16,7 @@
 {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
 {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
 
-{%- liquid
+{% comment %} {%- liquid
   assign sort_by = results.sort_by | default: results.default_sort_by
   assign total_active_values = 0
   assign default_presentation = 'text'
@@ -29,7 +29,7 @@
   endif
 
   assign avail = results_url | append: '&filter.v.availability=1'
--%}
+-%} {% endcomment %}
 
 {{ terms }}
 {{ results_url }}
