@@ -16,7 +16,7 @@
 {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
 {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
 
-{% comment %} {%- liquid
+{%- liquid
   assign sort_by = results.sort_by | default: results.default_sort_by
   assign total_active_values = 0
   assign default_presentation = 'text'
@@ -28,12 +28,12 @@
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by  
   endif
 
-  assign avail = results_url | append: '&filter.v.availability=1'
--%} {% endcomment %}
+-%}
 
+{% comment %} assign avail = results_url | append: '&filter.v.availability=1'
 {{ terms }}
 {{ results_url }}
-{{ avail }}
+{{ avail }} {% endcomment %}
 
 {% comment %} append: '&filter.v.availability=1' {% endcomment %}
 
