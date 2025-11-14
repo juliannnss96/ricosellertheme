@@ -16,7 +16,7 @@
 {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
 {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
 
-{% comment %} {%- liquid
+{%- liquid
   assign sort_by = results.sort_by | default: results.default_sort_by
   assign total_active_values = 0
   assign default_presentation = 'text'
@@ -28,21 +28,7 @@
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by  
   endif
 
--%} {% endcomment %}
-
-{% assign base_url = '?' %}
-{% assign query_param = 'q=' | append: terms %}
-{% assign prefix_param = '&options[prefix]=last' %}
-{% assign sort_param = '&sort_by=' | append: sort_by %}
-{% assign availability_param = '&filter.v.availability=1' %}
-
-{% assign results_url = base_url 
-  | append: query_param
-  | append: prefix_param
-  | append: sort_param
-  | append: availability_param
-%}
-
+-%}
 
 {% comment %} assign avail = results_url | append: '&filter.v.availability=1'
 {{ terms }}
