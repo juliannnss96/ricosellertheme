@@ -193,22 +193,13 @@
                           role="list"
                         >
                           {%- for value in sorted_values -%}
-                            {% comment %} {% liquid
+                            {% liquid
                               assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index
                               assign is_disabled = false
                               if value.count == 0 and value.active == false
                                 assign is_disabled = true
                               endif
-                            %} {% endcomment %}
-
-{% if value.count == 0 %}
-    {% continue %}
-  {% endif %}
-
-  {% liquid
-    assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index
-  %}
-
+                            %}
                             {%- capture label_class -%}
                             facets__label facet-checkbox{% if is_disabled %} disabled{% endif %}{% if value.active %} active{% endif %}
                             {%- endcapture -%}
@@ -570,21 +561,13 @@
                               endif
                             -%}
                             {%- for value in sorted_values -%}
-                              {% comment %} {% liquid
+                              {% liquid
                                 assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-mobile-' | append: forloop.index
                                 assign is_disabled = false
                                 if value.count == 0 and value.active == false
                                   assign is_disabled = true
                                 endif
-                              %} {% endcomment %}
-
-                              {% if value.count == 0 %}
-    {% continue %}
-  {% endif %}
-
-  {% liquid
-    assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index
-  %}
+                              %}
 
                               {%- capture label_class -%}
                               facets__label mobile-facets__label{% if is_disabled %} disabled{% endif %}{% if value.active %} active{% endif %}
