@@ -24,7 +24,7 @@
     assign results_url = results.url
   else
     assign terms = results.terms | escape
-    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by | append: '&filter.v.availability=1'
   endif
 -%}
 
@@ -67,7 +67,7 @@
                     </h2>
                   {%- endunless -%}
                   <facet-remove class="active-facets__button-wrapper">
-                    <a href="{{ results_url | append: '&filter.v.availability=1' }}" class="active-facets__button-remove underlined-link">
+                    <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
                       <span>{{ 'products.facets.clear_all' | t }}</span>
                     </a>
                   </facet-remove>
@@ -371,7 +371,7 @@
                 {% endif %}
               {%- endfor -%}
               <facet-remove class="active-facets__button-wrapper">
-                <a href="{{ results_url | append: '&filter.v.availability=1' }}" class="active-facets__button-remove underlined-link">
+                <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
                   <span>{{ 'products.facets.clear_all' | t }}</span>
                 </a>
               </facet-remove>
@@ -754,7 +754,7 @@
 
               <div class="mobile-facets__footer">
                 <facet-remove class="mobile-facets__clear-wrapper">
-                  <a href="{{ results_url | append: '&filter.v.availability=1' }}" class="mobile-facets__clear underlined-link">
+                  <a href="{{ results_url }}" class="mobile-facets__clear underlined-link">
                     {{- 'products.facets.clear_all' | t -}}
                   </a>
                 </facet-remove>
@@ -817,7 +817,7 @@
       {%- endif -%}
     {%- endfor -%}
     <facet-remove class="active-facets__button-wrapper">
-      <a href="{{ results_url | append: '&filter.v.availability=1' }}" class="active-facets__button-remove underlined-link">
+      <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
         <span>{{ 'products.facets.clear_all' | t }}</span>
       </a>
     </facet-remove>
@@ -926,7 +926,7 @@
             {%- endif -%}
           {%- endfor -%}
           <facet-remove class="active-facets__button-wrapper">
-            <a href="{{ results_url | append: '&filter.v.availability=1' }}" class="active-facets__button-remove underlined-link">
+            <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
               <span>{{ 'products.facets.clear_all' | t }}</span>
             </a>
           </facet-remove>
