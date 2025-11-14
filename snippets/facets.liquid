@@ -77,6 +77,14 @@
                 </div>
                 {%- for filter in results.filters -%}
                   {%- for value in filter.active_values -%}
+
+                    {% assign remove_url = value.url_to_remove %}
+
+{% if remove_url contains '?' %}
+  {% assign final_remove_url = remove_url | append: '&filter.v.availability=1' %}
+{% else %}
+  {% assign final_remove_url = remove_url | append: '?filter.v.availability=1' %}
+{% endif %}
                     <facet-remove>
                       <a href="{{ final_remove_url }}" class="active-facets__button active-facets__button--light">
                         <span class="active-facets__button-inner button button--tertiary">
@@ -343,6 +351,13 @@
             <div class="active-facets active-facets-desktop">
               {%- for filter in results.filters -%}
                 {%- for value in filter.active_values -%}
+                  {% assign remove_url = value.url_to_remove %}
+
+{% if remove_url contains '?' %}
+  {% assign final_remove_url = remove_url | append: '&filter.v.availability=1' %}
+{% else %}
+  {% assign final_remove_url = remove_url | append: '?filter.v.availability=1' %}
+{% endif %}
                   <facet-remove>
                     <a href="{{ final_remove_url }}" class="active-facets__button active-facets__button--light">
                       <span class="active-facets__button-inner button button--tertiary">
@@ -906,6 +921,14 @@
         <div class="active-facets active-facets-desktop">
           {%- for filter in results.filters -%}
             {%- for value in filter.active_values -%}
+
+              {% assign remove_url = value.url_to_remove %}
+
+{% if remove_url contains '?' %}
+  {% assign final_remove_url = remove_url | append: '&filter.v.availability=1' %}
+{% else %}
+  {% assign final_remove_url = remove_url | append: '?filter.v.availability=1' %}
+{% endif %}
               <facet-remove>
                 <a href="{{ final_remove_url }}" class="active-facets__button active-facets__button--light">
                   <span class="active-facets__button-inner button button--tertiary">
