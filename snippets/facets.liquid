@@ -30,6 +30,7 @@
   assign avail = results_url | append: '&filter.v.availability=1'
 -%}
 
+{{ results_url }}
 {{ avail }}
 
 {% comment %} append: '&filter.v.availability=1' {% endcomment %}
