@@ -399,23 +399,22 @@
     {%- endif -%}
 
 <script>
-  // Run on all collection pages
-  if (window.location.pathname.includes('/collections/')) {
+document.addEventListener('change', function (e) {
 
-    // Trigger when any filter or sort changes
-    $(document).on('change', '.facets__form input, .facets__form select', function() {
+    // Detect any Search & Discovery filter change
+    if (e.target.closest('facet-filters-form, .facets__form')) {
+
         let url = new URL(window.location.href);
 
-        // Always force "in-stock only"
+        // ALWAYS force in-stock products
         url.searchParams.set('filter.v.availability', '1');
 
-        // Redirect to updated URL
+        // Redirect with availability added
         window.location.href = url.toString();
-    });
+    }
 
-  }
+});
 </script>
-
-
+    
   </body>
 </html>
