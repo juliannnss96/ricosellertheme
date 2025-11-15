@@ -403,14 +403,12 @@ document.addEventListener("facet:changed", function () {
 
   const url = new URL(window.location.href);
 
-  // Replace this with the EXACT size filter parameter used in your store
-  let selectedSize = [...url.searchParams.entries()]
-    .filter(([key, value]) => key.includes("talla") || key.includes("size"))
-    .map(([key, value]) => value)[0];
+  // Get selected size from URL parameter
+  let selectedSize = url.searchParams.get("filter.v.option.talla del calzado");
 
-  if (!selectedSize) return;
+  if (!selectedSize) return; // If no size is selected, do nothing
 
-  // Loop through all products on the collection page
+  // Loop through all product cards
   document.querySelectorAll('.product-grid .grid__item').forEach(item => {
 
     const jsonEl = item.querySelector('.variants-json');
@@ -423,21 +421,20 @@ document.addEventListener("facet:changed", function () {
       return;
     }
 
-    // Check if selected size variant exists AND is available
-    let hasAvailableVariant = variants.some(v =>
+    // Check if ANY variant of this product has the selected size IN STOCK
+    let hasMatchingVariant = variants.some(v =>
       (v.option1 == selectedSize ||
        v.option2 == selectedSize ||
        v.option3 == selectedSize) &&
       v.available
     );
 
-    // Hide the product card if no variant of selected size is in stock
-    item.style.display = hasAvailableVariant ? "block" : "none";
+    // If NOT available in selected size → hide
+    item.style.display = hasMatchingVariant ? "block" : "none";
   });
 
 });
 </script>
-
 
     
   </body>
