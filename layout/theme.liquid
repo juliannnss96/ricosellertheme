@@ -398,6 +398,35 @@
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+<script>
+document.addEventListener("facet:changed", function() {
+
+  const url = new URL(window.location.href);
+  const selectedSize = url.searchParams.get("filter.v.option.talla del calzado");
+
+  if (!selectedSize) return;
+
+  // Loop all product cards
+  document.querySelectorAll('[data-product-id]').forEach(function(card) {
+    const variantsJson = card.querySelector('[data-variants-json]');
+    if (!variantsJson) return;
+
+    const variants = JSON.parse(variantsJson.textContent);
+    let isAvailable = false;
+
+    variants.forEach(v => {
+      if (v.option1 == selectedSize && v.available) {
+        isAvailable = true;
+      }
+    });
+
+    if (!isAvailable) {
+      card.style.display = "none";
+    }
+  });
+
+});
+</script>
 
     
   </body>
