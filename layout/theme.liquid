@@ -399,34 +399,45 @@
     {%- endif -%}
 
 <script>
-document.addEventListener("facet:changed", function() {
+document.addEventListener("facet:changed", function () {
 
   const url = new URL(window.location.href);
-  const selectedSize = url.searchParams.get("filter.v.option.talla del calzado");
+
+  // Replace this with the EXACT size filter parameter used in your store
+  let selectedSize = [...url.searchParams.entries()]
+    .filter(([key, value]) => key.includes("talla") || key.includes("size"))
+    .map(([key, value]) => value)[0];
 
   if (!selectedSize) return;
 
-  // Loop all product cards
-  document.querySelectorAll('[data-product-id]').forEach(function(card) {
-    const variantsJson = card.querySelector('[data-variants-json]');
-    if (!variantsJson) return;
+  // Loop through all products on the collection page
+  document.querySelectorAll('.product-grid .grid__item').forEach(item => {
 
-    const variants = JSON.parse(variantsJson.textContent);
-    let isAvailable = false;
+    const jsonEl = item.querySelector('.variants-json');
+    if (!jsonEl) return;
 
-    variants.forEach(v => {
-      if (v.option1 == selectedSize && v.available) {
-        isAvailable = true;
-      }
-    });
-
-    if (!isAvailable) {
-      card.style.display = "none";
+    let variants;
+    try {
+      variants = JSON.parse(jsonEl.textContent);
+    } catch (e) {
+      return;
     }
+
+    // Check if selected size variant exists AND is available
+    let hasAvailableVariant = variants.some(v =>
+      (v.option1 == selectedSize ||
+       v.option2 == selectedSize ||
+       v.option3 == selectedSize) &&
+      v.available
+    );
+
+    // Hide the product card if no variant of selected size is in stock
+    item.style.display = hasAvailableVariant ? "block" : "none";
   });
 
 });
 </script>
+
 
     
   </body>
