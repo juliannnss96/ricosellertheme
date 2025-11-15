@@ -399,14 +399,14 @@
     {%- endif -%}
 
 <script>
-  // Apply only on this specific collection
-  if (window.location.pathname.includes('/collections/calzado')) {
+  // Run on all collection pages
+  if (window.location.pathname.includes('/collections/')) {
 
-    // Trigger on any filter/sort change
+    // Trigger when any filter or sort changes
     $(document).on('change', '.facets__form input, .facets__form select', function() {
         let url = new URL(window.location.href);
 
-        // Always force availability filter
+        // Always force "in-stock only"
         url.searchParams.set('filter.v.availability', '1');
 
         // Redirect to updated URL
@@ -415,6 +415,7 @@
 
   }
 </script>
+
 
   </body>
 </html>
