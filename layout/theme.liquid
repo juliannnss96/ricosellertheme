@@ -399,14 +399,21 @@
     {%- endif -%}
 
 <script>
-  $(document).on('change', '.facets__form input, .facets__form select', function() {
-      let url = new URL(window.location.href);
+  // Apply only on this specific collection
+  if (window.location.pathname.includes('/collections/calzado')) {
 
-      url.searchParams.set('filter.v.availability', '1');
+    // Trigger on any filter/sort change
+    $(document).on('change', '.facets__form input, .facets__form select', function() {
+        let url = new URL(window.location.href);
 
-      window.location.href = url.toString();
-      
-  });
+        // Always force availability filter
+        url.searchParams.set('filter.v.availability', '1');
+
+        // Redirect to updated URL
+        window.location.href = url.toString();
+    });
+
+  }
 </script>
 
   </body>
