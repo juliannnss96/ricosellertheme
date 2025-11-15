@@ -398,69 +398,6 @@
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-<script>
-document.addEventListener("facet:changed", function () {
-
-  const url = new URL(window.location.href);
-  const params = url.searchParams;
-
-  // Collect ALL option filters automatically
-  let selectedFilters = {};
-
-  params.forEach((value, key) => {
-    if (key.startsWith("filter.v.option.")) {
-      let optionName = key.replace("filter.v.option.", "").toLowerCase();
-      selectedFilters[optionName] = value.toLowerCase();
-    }
-  });
-
-  // Loop through products
-  document.querySelectorAll('.product-grid .grid__item').forEach(item => {
-
-    const jsonEl = item.querySelector('.variants-json');
-    if (!jsonEl) return;
-
-    let variants;
-    try {
-      variants = JSON.parse(jsonEl.textContent);
-    } catch (e) {
-      return;
-    }
-
-    let showProduct = false;
-
-    // Check each variant
-    variants.forEach(variant => {
-
-      if (!variant.available) return;
-
-      let match = true;
-
-      Object.keys(selectedFilters).forEach(optionName => {
-
-        const filterValue = selectedFilters[optionName];
-
-        const variantOptions = [
-          (variant.option1 || "").toLowerCase(),
-          (variant.option2 || "").toLowerCase(),
-          (variant.option3 || "").toLowerCase()
-        ];
-
-        // If any variant option matches the filter
-        if (!variantOptions.includes(filterValue)) {
-          match = false;
-        }
-      });
-
-      if (match) showProduct = true;
-    });
-
-    // Hide or show product
-    item.style.display = showProduct ? "block" : "none";
-  });
-
-});
-</script>
 
 
     
