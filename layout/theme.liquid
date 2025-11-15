@@ -397,5 +397,17 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+<script>
+  $(document).on('change', '.facets__form input, .facets__form select', function() {
+      let url = new URL(window.location.href);
+
+      url.searchParams.set('filter.v.availability', '1');
+
+      window.location.href = url.toString();
+      
+  });
+</script>
+
   </body>
 </html>
