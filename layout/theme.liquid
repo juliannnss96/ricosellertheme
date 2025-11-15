@@ -398,23 +398,7 @@
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-<script>
-document.addEventListener('change', function (e) {
 
-    // Detect any Search & Discovery filter change
-    if (e.target.closest('facet-filters-form, .facets__form')) {
-
-        let url = new URL(window.location.href);
-
-        // ALWAYS force in-stock products
-        url.searchParams.set('filter.v.availability', '1');
-
-        // Redirect with availability added
-        window.location.href = url.toString();
-    }
-
-});
-</script>
     
   </body>
 </html>
