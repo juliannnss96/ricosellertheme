@@ -202,6 +202,7 @@
                           role="list"
                         >
                           {%- for value in sorted_values -%}
+                            {{ value }}
                             {% liquid
                               assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index
                               assign is_disabled = false
