@@ -158,19 +158,6 @@
                   >
                     {% assign skip_card_product_styles = false %}
                     {%- for product in collection.products -%}
-
-{% assign show_product = true %}
-
-  {% if selected_option %}
-    {% assign show_product = false %}
-    {% for v in product.variants %}
-      {% if v.option1 == selected_option and v.available %}
-        {% assign show_product = true %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-
-  {% if show_product %}
                       
                       {% assign lazy_load = false %}
                       {%- if forloop.index > 2 -%}
@@ -196,7 +183,6 @@
                           section_id: section.id
                         %}
                       </li>
-{% endif %}
                       {%- assign skip_card_product_styles = true -%}
                     {%- endfor -%}
                   </ul>
