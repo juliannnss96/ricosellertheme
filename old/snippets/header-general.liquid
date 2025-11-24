@@ -1,0 +1,87 @@
+<div class="cont-header{% if template.name != "index" %} nothome{% endif %}{% if template.name == "product" %} single-product{% endif %}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <header>
+          <section id="logo-cont">
+            <a href="{{ routes.root_url }}">
+              <img src="{{ 'rico-logo.png' | asset_url }}">
+            </a>
+          </section>
+          <navbar class="header-general">
+            <div class="items-navbar">
+              {%- liquid
+                if section.settings.menu != blank
+                  if section.settings.menu_type_desktop == 'dropdown'
+                    render 'header-dropdown-menu'
+                  elsif section.settings.menu_type_desktop != 'drawer'
+                    render 'header-mega-menu'
+                  endif
+                endif
+              %}
+            </div>
+
+
+            <div class="nav-specials">
+              {% render 'header-search', input_id: 'Search-In-Modal' %}
+
+              {%- if shop.customer_accounts_enabled -%}
+                <a
+                  href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+                  class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+                  rel="nofollow"
+                >
+                  {%- if section.settings.enable_customer_avatar -%}
+                    <account-icon>
+                      {%- if customer and customer.has_avatar? -%}
+                        {{ customer | avatar }}
+                      {%- else -%}
+                        <span class="svg-wrapper">{{ 'ico-user.svg' | inline_asset_content }}</span>
+                      {%- endif -%}
+                    </account-icon>
+                  {%- else -%}
+                    <span class="svg-wrapper">{{ 'ico-user.svg' | inline_asset_content }}</span>
+                  {%- endif -%}
+                  <span class="visually-hidden">
+                    {%- liquid
+                      if customer
+                        echo 'customer.account_fallback' | t
+                      else
+                        echo 'customer.log_in' | t
+                      endif
+                    -%}
+                  </span>
+                </a>
+              {%- endif -%}
+
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when '@app' -%}
+                    {% render block %}
+                {%- endcase -%}
+              {%- endfor -%}
+
+              <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+                  {% if cart == empty %}
+                    <span class="svg-wrapper">{{'ico-cart.svg' | inline_asset_content }}</span>
+                  {% else %}
+                    <span class="svg-wrapper">{{'ico-cart.svg' | inline_asset_content }}</span>
+                  {% endif %}
+                <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+                {%- if cart != empty -%}
+                  <div class="cart-count-bubble">
+                    {%- if cart.item_count < 100 -%}
+                      <span aria-hidden="true">{{ cart.item_count }}</span>
+                    {%- endif -%}
+                    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                  </div>
+                {%- endif -%}
+              </a>
+            </div>
+            <div class="hamburger-mobile"></div>
+          </navbar>
+        </header>
+      </div>
+    </div>  
+  </div>
+</div>

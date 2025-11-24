@@ -1,0 +1,92 @@
+<section id="ofertas-home">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="cont-cont-ofertas">
+                    <ul>
+                        <li class="card-oferta oferta20">
+                            <h3>
+                                <span>{{ section.settings.texto_card_1 }}</span>
+                                <span class="numero">{{ section.settings.porcentaje_card_1 }}</span><small>%</small>
+                            </h3>
+                            <a href="collections/{{ section.settings.collection_card_1 }}" class="button blanco">Ver ofertas</a>
+                        </li>
+                        <li class="card-oferta oferta30">
+                            <h3>
+                                <span>{{ section.settings.texto_card_2 }}</span>
+                                <span class="numero">{{ section.settings.porcentaje_card_2 }}</span><small>%</small>
+                            </h3>
+                            <a href="collections/{{ section.settings.collection_card_2 }}" class="button blanco">Ver ofertas</a>
+                        </li>
+                        <li class="card-oferta oferta40">
+                            <h3>
+                                <span>{{ section.settings.texto_card_3 }}</span>
+                                <span class="numero">{{ section.settings.porcentaje_card_3 }}</span><small>%</small>
+                            </h3>
+                            <a href="collections/{{ section.settings.collection_card_3 }}" class="button blanco">Ver ofertas</a>
+                        </li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>
+
+{% schema %}
+{
+	"name": "Blqoues Ofertas %",
+	"settings": [
+        {
+            "type": "text",
+            "id": "texto_card_1",
+            "label": "Texto primer tarjeta"
+        },
+        {
+            "type": "text",
+            "id": "porcentaje_card_1",
+            "label": "Porcentaje primer tarjeta"
+        },
+        {
+            "type": "collection",
+            "id": "collection_card_1",
+            "label": "Colección URL primer tarjeta"
+        },
+        {
+            "type": "text",
+            "id": "texto_card_2",
+            "label": "Texto segunda tarjeta"
+        },
+        {
+            "type": "text",
+            "id": "porcentaje_card_2",
+            "label": "Porcentaje segunda tarjeta"
+        },
+        {
+            "type": "collection",
+            "id": "collection_card_2",
+            "label": "Colección URL segunda tarjeta"
+        },
+        {
+            "type": "text",
+            "id": "texto_card_3",
+            "label": "Texto tercer tarjeta"
+        },
+        {
+            "type": "text",
+            "id": "porcentaje_card_3",
+            "label": "Porcentaje tercer tarjeta"
+        },
+        {
+            "type": "collection",
+            "id": "collection_card_3",
+            "label": "Colección URL tercer tarjeta"
+        },
+    ],
+	"presets": [
+		{
+			"name": "Descuentos por porcentaje"
+		}
+	]
+
+}
+{% endschema %}

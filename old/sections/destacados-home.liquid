@@ -1,0 +1,57 @@
+<section id="destacados-home">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+                <div class="cont-titulo">
+				    <h2 class="h2home">{{ section.settings.titulo }}</h2>
+                    <a href="collections/{{ section.settings.collection_selected }}" class="link-mostrar-todo"><span>mostrar todo</span></a>
+                </div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="cont-cont-destacados">                    
+                    {% for collection in collections %}
+                        {%- assign collection_selected = collections[section.settings.collection_selected] %}
+                    {% endfor %}
+                    
+                    <div class="destacados-home-cont visible scrollnegro-h">
+                        
+                        {% for product in collection_selected.products limit:section.settings.limite %}
+                            {%- render 'card-product', card_product: product -%}
+                        {% endfor %}
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>
+
+{% schema %}
+{
+	"name": "Bloque Destacados",
+	"settings": [
+        {
+            "type": "text",
+            "id": "titulo",
+            "label": "Título del bloque*"
+        },
+        {
+            "type": "collection",
+            "id": "collection_selected",
+            "label": "Colección del bloque*"
+        },
+        {
+            "type": "text",
+            "id": "limite",
+            "label": "Límite de productos a mostrar*"
+        }
+    ],
+	"presets": [
+		{
+			"name": "Bloque destacados"
+		}
+	]
+
+}
+{% endschema %}
