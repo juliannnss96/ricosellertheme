@@ -24,18 +24,9 @@
     assign results_url = results.url
   else
     assign terms = results.terms | escape
-    
-    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by  
+    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
   endif
-
 -%}
-
-{% comment %} assign avail = results_url | append: '&filter.v.availability=1'
-{{ terms }}
-{{ results_url }}
-{{ avail }} {% endcomment %}
-
-{% comment %} append: '&filter.v.availability=1' {% endcomment %}
 
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
   {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
@@ -202,7 +193,6 @@
                           role="list"
                         >
                           {%- for value in sorted_values -%}
-                            {{ value.available }}
                             {% liquid
                               assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index
                               assign is_disabled = false
