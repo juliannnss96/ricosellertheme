@@ -94,7 +94,7 @@ class FacetFiltersForm extends HTMLElement {
     const endlessCollection = new Ajaxinate({
       container: "#product-grid",
       pagination: "#AjaxinatePagination",
-      method: "click",
+      method: "scroll",
     });
   }
 
@@ -369,4 +369,3 @@ class FacetRemove extends HTMLElement {
 }
 
 customElements.define('facet-remove', FacetRemove);
-
