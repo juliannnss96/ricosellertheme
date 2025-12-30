@@ -1,0 +1,1052 @@
+/*MEDIA QUERIES MOBILE*/
+
+@media(max-width: 1500px) {
+    .product {
+        .product__media-wrapper {
+            max-width: 40% !important;
+            margin-left: 17%;
+        }
+
+        .product__info-wrapper {
+            max-width: 30% !important;
+        }
+    }
+}
+
+@media(max-width: 1200px) {
+    #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text {
+        p {
+            font-size: 18px;
+        }
+
+        span.autor {
+            font-size: 15px;
+            line-height: 17px;
+            display: inline-block;
+        }
+    }
+
+    #signatures-home .signatures-home-cont figure a h3 {
+        font-size: 17px;
+    }
+
+    .product {
+        .product__media-wrapper {
+            margin-left: 13%;
+        }
+
+        .product__info-wrapper {
+            max-width: 40% !important;
+        }
+    }
+
+    #ofertas-home {
+        .cont-cont-ofertas {
+            ul {
+                li.card-oferta {
+                    h3 {
+                        span.numero {
+                            font-size: 133px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #flash-home,
+    #destacados-home {
+
+        .cont-cont-flash,
+        .cont-cont-destacados {
+
+            .flash-home-cont,
+            .destacados-home-cont {
+                .card-wrapper {
+                    width: calc(25% - 12px);
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1010px) {
+    .product {
+        .product__media-wrapper {
+            margin-left: 12%;
+        }
+
+        .product__info-wrapper {
+            max-width: 42% !important;
+        }
+    }
+
+    #tipos-jugador {
+        margin-top: 60px;
+    }
+}
+
+@media(max-width: 992px) {
+    .shopify-section-group-header-group {
+        z-index: 5;
+    }
+
+    header {
+        .header-general {
+            flex-basis: auto;
+            padding: 5px 25px 5px 15px;
+
+            .items-navbar {
+                display: none;
+            }
+
+            .hamburger-mobile {
+                display: inline-block;
+            }
+        }
+    }
+
+    .section-header.shopify-section-group-header-group {
+        z-index: 4;
+    }
+
+    .menu-mobile {
+        display: inline-block;
+    }
+
+    #marcas-home {
+        .marcas-cont {
+            ul {
+
+                li {
+                    width: 16.66%;
+                }
+            }
+        }
+    }
+
+    #tipos-jugador {
+        ul {
+            padding-left: 0;
+
+            li {
+                font-size: 30px;
+                line-height: 35px;
+            }
+        }
+
+        a.button {
+            margin-left: 0;
+        }
+    }
+
+    #categorias-home .categorias-home-cont figure a span.cta {
+        width: 35px;
+        height: 35px;
+        right: 14px;
+    }
+
+    .product .product__media-wrapper .media-thumbs {
+        width: 50px;
+        left: -70px;
+    }
+
+    #footer-rico {
+        padding-bottom: 140px;
+
+        .logo-footer {
+            display: none;
+        }
+
+        .por-que-elegirnos {
+            ul {
+                li {
+                    figure {
+                        width: 110px;
+                    }
+                }
+
+                h4 {
+                    font-size: 15px !important;
+                    line-height: 16px !important;
+
+                    br {
+                        display: none;
+                    }
+
+                    strong {
+                        font-size: 15px !important;
+                        line-height: 16px !important;
+                    }
+                }
+            }
+        }
+
+        .nav-footer {
+            margin-top: 35px;
+
+            .cont-nav {
+                flex-wrap: wrap;
+
+                .rico-club-cont {
+                    flex-basis: 100%;
+                    padding: 0 0 65px 0;
+                    border-bottom: 1px solid rgba(255, 255, 255, .15);
+
+                    p {
+                        max-width: 100%;
+                    }
+                }
+
+                .lista-cont,
+                .redes-cont {
+                    flex-basis: 33.33%;
+                    margin-top: 65px;
+                }
+            }
+        }
+    }
+
+    .barra-autor {
+        text-align: center;
+    }
+
+    #signatures-home {
+        .signatures-home-cont {
+            figure {
+                width: 25%;
+            }
+        }
+    }
+
+    .product {
+        .product__title {
+            h1 {
+                font-size: 36px;
+                line-height: 115%;
+            }
+        }
+    }
+
+    .product-grid {
+        .grid__item {
+            width: calc(50% - 15px);
+        }
+    }
+
+    header .header-general {
+        margin-top: -7px;
+    }
+
+    .header__search {
+        .search-modal__content {
+            padding-left: 7px;
+        }
+
+        .field__input {
+            border-radius: 20px;
+        }
+    }
+
+    .header__search .modal__content {
+        left: auto;
+        width: calc(100vw - 30px);
+    }
+
+    .header__search .modal-overlay:after {
+        display: none;
+    }
+
+    .cont-header .header__search .search-modal {
+        border-radius: 40px;
+
+        .svg-wrapper .icon {
+            filter: none;
+        }
+    }
+
+    #ofertas-home {
+        .cont-cont-ofertas {
+            ul {
+                li.card-oferta {
+                    h3 {
+                        top: 45%;
+
+                        span:first-child {
+                            font-size: 24px;
+                        }
+
+                        span.numero {
+                            font-size: 105px;
+                            line-height: 100px;
+                        }
+
+                        small {
+                            line-height: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #flash-home,
+    #destacados-home {
+
+        .cont-cont-flash,
+        .cont-cont-destacados {
+
+            .flash-home-cont,
+            .destacados-home-cont {
+                .card-wrapper {
+                    width: calc(33.33% - 12px);
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 990px) {
+
+    #shopify-section-template--18638285832444__featured_collection_JLKP4F,
+    #shopify-section-template--18978849095924__featured_collection_JLKP4F,
+    #shopify-section-template--18638281343228__featured-collection,
+    .related-products {
+        ul.product-grid {
+            column-gap: 10px;
+
+            li:last-child {
+                display: none;
+            }
+        }
+    }
+
+    #amigos-de-la-casa .signatures-home-cont figure {
+        .cont-cta .cont-text p {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media(max-width: 810px) {
+
+    #categorias-home,
+    #marcas-home,
+    #signatures-home,
+    #ultimos-contenidos,
+    #amigos-de-la-casa,
+    #flash-home,
+    #destacados-home {
+
+        .cont-cont-categorias-home,
+        .marcas-cont,
+        .cont-cont-signatures,
+        .cont-cont-flash,
+        .cont-cont-destacados {
+            position: relative;
+
+            &:after {
+                content: '';
+                height: 100%;
+                width: 40px;
+                position: absolute;
+                right: -2px;
+                top: 0;
+                background: rgb(255, 255, 255);
+                background: -moz-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 254, 0) 100%);
+                background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 254, 0) 100%);
+                background: linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 254, 0) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#fcfcfe", GradientType=1);
+                z-index: 11;
+            }
+
+            ul li:last-child,
+            figure:last-child {
+                margin-right: 25px;
+            }
+        }
+    }
+
+    #ultimos-contenidos,
+    #amigos-de-la-casa {
+        .cont-cont-signatures {
+            &:after {
+                background: rgb(28, 28, 28);
+                background: -moz-linear-gradient(270deg, rgba(28, 28, 28, 1) 0%, rgba(252, 254, 253, 0) 100%);
+                background: -webkit-linear-gradient(270deg, rgba(28, 28, 28, 1) 0%, rgba(252, 254, 253, 0) 100%);
+                background: linear-gradient(270deg, rgba(28, 28, 28, 1) 0%, rgba(252, 254, 253, 0) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c1c1c", endColorstr="#fcfefd", GradientType=1);
+            }
+        }
+    }
+
+    #marcas-home {
+        .marcas-cont {
+            ul {
+
+                li {
+                    width: 20%;
+                }
+            }
+        }
+    }
+
+    #signatures-home {
+        .signatures-home-cont {
+            figure {
+                width: 25%;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .product-media-container .media {
+        padding-top: calc(1 / 0.9 * 100%) !important;
+    }
+
+    .announcement-bar {
+        grid-template-columns: repeat(2, 1fr);
+
+        .marcas-announcement {
+            padding: 5px 0;
+        }
+
+        .announcement-bar__message {
+            display: none;
+        }
+    }
+
+    .banner .banner__content {
+        align-items: flex-end;
+    }
+
+    #categorias-home .categorias-home-cont figure a h3 {
+        font-size: 17px;
+    }
+
+    #categorias-home .categorias-home-cont figure a span.cta {
+        width: 28px;
+        height: 28px;
+    }
+
+    #tipos-jugador {
+        padding-bottom: 0;
+
+        .listado-tipos-jugador,
+        a.button {
+            position: relative;
+            z-index: 2;
+        }
+
+        a.button {
+            margin-top: 20px;
+        }
+
+        .cont-figure {
+            height: 440px;
+            z-index: 0;
+            margin-top: -155px;
+        }
+    }
+
+    #marcas-home {
+        .marcas-cont {
+            ul {
+
+                li {
+                    width: 25%;
+                }
+            }
+        }
+    }
+
+    #categorias-home {
+        .categorias-home-cont {
+            white-space: nowrap;
+            overflow-x: scroll;
+            display: inline-block;
+
+            figure {
+                width: calc(40% - 15px);
+                margin-right: 11px;
+            }
+        }
+    }
+
+    #signatures-home {
+        .signatures-home-cont {
+            figure {
+                width: 33.33%;
+            }
+        }
+    }
+
+    #ultimos-contenidos {
+        h3 {
+            font-size: 30px;
+            margin-top: 10px;
+        }
+
+        .signatures-home-cont {
+            figure {
+                width: 33.33%;
+            }
+        }
+    }
+
+    #amigos-de-la-casa {
+        h3 {
+            font-size: 23px;
+            margin-top: 50px;
+        }
+
+        .signatures-home-cont {
+            figure {
+                width: 40%;
+            }
+        }
+    }
+
+    #ofertas-home {
+        .cont-cont-ofertas {
+            ul {
+                li.card-oferta {
+                    h3 {
+                        top: 35%;
+
+                        span:first-child {
+                            font-size: 19px;
+                        }
+
+                        span.numero {
+                            font-size: 60px;
+                            line-height: 60px;
+                        }
+
+                        small {
+                            line-height: 60px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cont-titulo {
+        .link-mostrar-todo {
+            span {
+                display: none;
+            }
+
+            &:after {
+                content: '';
+                display: inline-block;
+                width: 26px;
+                height: 26px;
+                background-image: url('ico-plus-circle.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                ;
+            }
+        }
+    }
+
+    #flash-home,
+    #destacados-home {
+        .cont-titulo {
+            .h2home {
+                margin-bottom: 22px;
+            }
+        }
+
+        .cont-pastilla-seleccion {
+            --radio-switch-width: 100%;
+
+            position: initial;
+            transform: translateX(0);
+            text-align: center;
+            margin-bottom: 22px;
+
+            .radio-switch {
+                width: 100%;
+            }
+
+            .radio-switch__marker {
+                width: calc(var(--radio-switch-width) + var(--radio-switch-padding));
+            }
+        }
+
+        .cont-cont-flash,
+        .cont-cont-destacados {
+
+            .flash-home-cont,
+            .destacados-home-cont {
+                .card-wrapper {
+                    width: calc(50% - 12px);
+                }
+            }
+        }
+    }
+
+    #footer-rico {
+        .newsletter-form__field-wrapper {
+            max-width: 100%;
+        }
+
+        .por-que-elegirnos {
+            ul {
+                flex-wrap: wrap;
+
+                li {
+                    flex-basis: 50%;
+
+                    h4 {
+                        max-width: 85%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 749px) {
+    #banner-home {
+        .banner__buttons {
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+
+            h2 {
+                font-size: 48px;
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+            }
+
+            .button {
+                margin: 0;
+            }
+        }
+    }
+
+    #marcas-home {
+        .marcas-cont {
+            ul {
+
+                li {
+                    width: 25%;
+                }
+            }
+        }
+    }
+
+    .product {
+        .product__media-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding-top: 0;
+            margin: 0;
+            max-width: 100vw;
+            display: block;
+            overflow: hidden;
+            /* background-color: #f6f6f6 */
+            ;
+
+            .product__media-icon {
+                display: none;
+            }
+
+            .product__media-list {
+                .product-media-container .product__modal-opener {
+                    border-radius: 0;
+                    overflow: visible;
+                }
+
+                li:not(.is-active) {
+                    display: flex;
+                }
+            }
+        }
+
+        .product__info-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 0 15px !important;
+            padding-top: 0 !important;
+        }
+
+        .label-envio-gratis {
+            left: 30px;
+        }
+
+        .product-form__input--pill {
+            font-size: 0;
+
+            input[type="radio"] {
+                display: none;
+            }
+
+            label {
+                margin: 0;
+                margin-bottom: 10px !important;
+            }
+        }
+
+        .slider.slider--mobile {
+            margin-top: 110px;
+        }
+    }
+
+    ul.facets-layout-list--text {
+        .mobile-facets__item {
+            .mobile-facets__label>svg {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    /*.menu-mobile {
+		right: 15px;
+
+		.contenedor {
+			right: 15px;
+		}
+	}*/
+}
+
+@media(max-width: 575px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #marcas-home {
+        .marcas-cont {
+            ul {
+                li {
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+
+    /* #categorias-home {
+		.categorias-home-cont {
+			flex-wrap: wrap;
+			gap: 10px;
+
+			figure:nth-child(1), figure:nth-child(2) {
+				flex-basis: calc(50% - 5px);
+			} 
+
+			figure:last-child {
+				flex-basis: 100%;
+				aspect-ratio: 1.9/1;
+
+				.cont-img {
+					background-position: top center;
+				}
+			}
+		}
+	} */
+
+    #tipos-jugador {
+        ul {
+            margin-top: 30px;
+        }
+
+        .listado-tipos-jugador,
+        a.button {
+            margin-left: 25px;
+        }
+
+        .cont-figure {
+            height: 350px;
+
+            .cont-zapa {
+                top: 35px;
+                background-size: contain;
+            }
+        }
+    }
+
+    #signatures-home {
+        .signatures-home-cont {
+            figure {
+                margin-right: 7px;
+            }
+        }
+    }
+
+    .banner--large:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
+        min-height: 60vh !important;
+    }
+}
+
+@media(max-width: 530px) {
+    #footer-rico {
+        padding-bottom: 120px;
+
+        .nav-footer {
+            .cont-nav {
+                .rico-club-cont {
+                    padding-bottom: 42px;
+                }
+
+                .lista-cont {
+                    flex-basis: 50%;
+                    margin-top: 35px;
+                }
+
+                .redes-cont {
+                    flex-basis: 100%;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    #signatures-home {
+        .signatures-home-cont {
+            figure {
+                width: 42%;
+            }
+        }
+    }
+
+    #amigos-de-la-casa {
+        .signatures-home-cont {
+            figure {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media(max-width: 474px) {
+    .utility-bar {
+        display: none;
+    }
+
+    .single-product {
+        header {
+            margin-top: 32px !important;
+        }
+    }
+
+    #banner-home {
+        height: 100vh;
+    }
+
+    header {
+        margin-top: 32px;
+    }
+
+    .modal-default .modal {
+        padding-right: 36px;
+    }
+
+    .modal-default .modal .cerrar {
+        top: 13px;
+        right: 13px;
+    }
+
+    #tipos-jugador {
+        .cont-figure {
+            height: 470px;
+
+            .cont-zapa {
+                top: 35px;
+            }
+        }
+    }
+}
+
+@media(max-width: 470px) {
+    #marcas-home {
+        .marcas-cont {
+            ul {
+                li {
+                    width: 28%;
+                }
+            }
+        }
+    }
+
+    #ofertas-home {
+        .cont-cont-ofertas {
+            ul {
+                flex-direction: column;
+
+                li.card-oferta {
+                    flex-basis: 100%;
+                    width: 100%;
+
+                    h3 {
+                        top: 45%;
+
+                        span:first-child {
+                            font-size: 32px;
+                        }
+
+                        span.numero {
+                            font-size: 147px;
+                            line-height: 150px;
+                        }
+
+                        small {
+                            line-height: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #categorias-home {
+        .categorias-home-cont {
+            figure {
+                width: calc(80% - 15px);
+                margin-right: 11px;
+            }
+        }
+    }
+}
+
+@media(max-width: 450px) {
+    #marcas-home {
+        margin-top: 30px;
+    }
+
+    #categorias-home {
+        margin-top: 25px;
+    }
+
+    #tipos-jugador {
+        margin-top: 45px;
+    }
+
+    #signatures-home {
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+
+
+
+    #flash-home,
+    #destacados-home {
+
+        .cont-cont-flash,
+        .cont-cont-destacados {
+
+            .flash-home-cont,
+            .destacados-home-cont {
+                .card-wrapper {
+                    width: calc(80% - 12px);
+                }
+            }
+        }
+    }
+
+    #footer-rico {
+        margin-top: 45px;
+
+        #ultimos-contenidos {
+            margin-bottom: 15px;
+
+            .signatures-home-cont {
+                figure {
+                    width: 40%;
+                }
+            }
+        }
+
+        #amigos-de-la-casa {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media(max-width: 420px) {
+    #marcas-home {
+        .marcas-cont {
+            ul {
+                li {
+                    width: 32%;
+                }
+            }
+        }
+    }
+
+    #signatures-home {
+        .signatures-home-cont {
+            figure {
+                width: 55%;
+            }
+        }
+    }
+
+    #ultimos-contenidos {
+        .signatures-home-cont {
+            figure {
+                width: 50%;
+            }
+        }
+    }
+
+    #amigos-de-la-casa {
+        .signatures-home-cont {
+            figure {
+                width: 57%;
+            }
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    .announcement-bar {
+        grid-template-columns: repeat(1, 1fr);
+
+        .announcement-bar__message {
+            display: none;
+        }
+
+        .ayuda-top {
+            display: none;
+        }
+
+        .marcas-announcement {
+            justify-content: center;
+            padding: 5px 0;
+        }
+    }
+
+    .cont-header {
+        &.nothome {
+            header {
+                margin-top: 28px;
+            }
+        }
+    }
+
+    #tipos-jugador {
+        .button {
+            min-height: 50px;
+        }
+
+        ul li {
+            font-size: 25px;
+            line-height: 26px;
+
+            &:before {
+                width: 30px;
+                height: 22px;
+            }
+        }
+    }
+}

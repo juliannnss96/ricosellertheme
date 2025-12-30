@@ -1,0 +1,993 @@
+$grisoscuro: #2c2c2c;
+$grisclaro: #6b6b6b;
+$blanco: #ffffff;
+$negro: #1C1C1C;
+$negro10: rgba(28, 28, 28, 0.10);
+$negro45: rgba(28, 28, 28, 0.45);
+$negro30: rgba(28, 28, 28, 0.30);
+$blanco40: rgba(255, 255, 255, 0.4);
+$blanco30: rgba(255, 255, 255, 0.3);
+$casiblanco: rgba(246, 246, 246, 1);
+$naranja: #FF7A00;
+$verde: #128A09;
+
+
+#categorias-home {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .categorias-home-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        figure,
+        .card-wrapper {
+            flex-basis: 33.33%;
+            display: inline-block;
+            aspect-ratio: 0.72/1;
+            margin: 0;
+            border-radius: 10px;
+            background-position: center;
+            background-size: cover;
+            transition: all 200ms;
+            position: relative;
+            overflow: hidden;
+
+            &:hover {
+                .cont-img {
+                    transform: scale(1.05, 1.05);
+                }
+            }
+
+            .cont-img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: inline-block;
+                background-position: center;
+                background-size: cover;
+                transition: all 300ms;
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 50%;
+                top: 50%;
+                left: 0;
+                border-radius: 10px;
+                background: linear-gradient(180deg, transparent 0%, $negro 100%);
+
+            }
+
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 10;
+
+                h3 {
+                    color: $blanco;
+                    position: absolute;
+                    left: 20px;
+                    bottom: 13px;
+                    margin: 0;
+                    font-family: "PP Neue Montreal";
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: -0.24px;
+                }
+
+                span {
+                    width: 47px;
+                    height: 47px;
+                    display: inline-block;
+                    background-image: url('cta-go.svg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    right: 20px;
+                    bottom: 13px;
+                }
+            }
+        }
+    }
+}
+
+#categorias-home {
+    margin-top: 50px;
+
+    .categorias-home-cont {
+        list-style-type: none;
+        white-space: nowrap;
+        overflow-x: auto;
+        padding-bottom: 30px;
+        display: inline-block;
+        width: 100%;
+
+        figure {
+            width: calc(20% - 14px);
+            margin-right: 13px;
+            overflow: hidden;
+
+            &:hover,
+            &:focus {
+                .cont-img {
+                    transform: scale(1.1, 1.1);
+                }
+            }
+
+            .cont-img {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                transition: all 300ms;
+            }
+
+            &:last-child {
+                margin-right: 23px;
+            }
+
+            a,
+            .cont-cta {
+                h3 {
+                    font-family: "PP Neue Montreal";
+                    font-size: 17px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: -0.22px;
+                    bottom: 18px;
+                    max-width: calc(100% - 75px);
+                    word-break: normal;
+                    display: inline-block;
+                    white-space: initial;
+                }
+
+                span.cta {
+                    width: 35px;
+                    height: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#categorias-home {
+    .categorias-home-cont {
+        white-space: initial;
+        overflow-x: auto;
+        display: flex;
+        gap: 23px;
+
+        figure {
+            width: calc(33.33% - 23px);
+            margin-right: 0;
+            aspect-ratio: 1/1.4;
+            border-radius: 10px;
+
+            &:after {
+                border-radius: 10px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#flash-home,
+#destacados-home {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .flash-home-cont,
+    .destacados-home-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        figure,
+        .card-wrapper {
+            flex-basis: 33.33%;
+            display: inline-block;
+            aspect-ratio: 0.72/1;
+            margin: 0;
+            border-radius: 10px;
+            background-position: center;
+            background-size: cover;
+            transition: all 200ms;
+            position: relative;
+            overflow: hidden;
+
+            &:hover {
+                .cont-img {
+                    transform: scale(1.05, 1.05);
+                }
+            }
+
+            .cont-img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: inline-block;
+                background-position: center;
+                background-size: cover;
+                transition: all 300ms;
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 50%;
+                top: 50%;
+                left: 0;
+                border-radius: 10px;
+                background: linear-gradient(180deg, transparent 0%, $negro 100%);
+
+            }
+
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 10;
+
+                h3 {
+                    color: $blanco;
+                    position: absolute;
+                    left: 20px;
+                    bottom: 13px;
+                    margin: 0;
+                    font-family: "PP Neue Montreal";
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: -0.24px;
+                }
+
+                span {
+                    width: 47px;
+                    height: 47px;
+                    display: inline-block;
+                    background-image: url('cta-go.svg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    right: 20px;
+                    bottom: 13px;
+                }
+            }
+        }
+    }
+}
+
+#flash-home,
+#destacados-home {
+    position: relative;
+
+    .cont-titulo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .h2home {
+            margin-bottom: 32px;
+        }
+    }
+
+    .cont-cont-flash,
+    .cont-cont-destacados {
+
+        .flash-home-cont,
+        .destacados-home-cont {
+            list-style-type: none;
+            white-space: nowrap;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            display: inline-block;
+            width: 100%;
+            display: none;
+
+            &.visible {
+                display: inline-block;
+            }
+
+            .card-wrapper {
+                width: calc(20% - 12px);
+                margin-right: 10px;
+                border-radius: 0;
+                aspect-ratio: initial;
+                overflow: visible;
+                white-space: initial;
+
+                a {
+                    position: initial;
+                }
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .cont-pastilla-seleccion {
+        --radio-switch-width: 250px;
+        --radio-switch-height: 40px;
+        --radio-switch-padding: 2.5px;
+        --radio-switch-radius: 50em;
+        --radio-switch-animation-duration: 0.3s;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 26px;
+
+        .sr-only {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+            -webkit-clip-path: inset(50%);
+            clip-path: inset(50%);
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            padding: 0;
+            border: 0;
+            white-space: nowrap;
+        }
+
+        .radio-switch {
+            margin: 0;
+            position: relative;
+            display: inline-block;
+            display: inline-flex;
+            padding: var(--radio-switch-padding);
+            border-radius: calc(var(--radio-switch-radius) * 1.4);
+            background-color: #DEDEDE;
+        }
+
+        .radio-switch:focus-within,
+        .radio-switch:active {
+            box-shadow: 0 0 0 2px hsla(var(--ri5-color-contrast-higher-hsl), 0.15);
+        }
+
+        .radio-switch__item {
+            position: relative;
+            display: inline-block;
+            height: calc(var(--radio-switch-height) - 2*var(--radio-switch-padding));
+            width: calc(var(--radio-switch-width)*0.5 - var(--radio-switch-padding));
+        }
+
+        .radio-switch__label {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radio-switch-radius);
+            cursor: pointer;
+            color: $negro;
+            text-align: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 110%;
+            /* 15.4px */
+            letter-spacing: -0.14px;
+            transition: all var(--radio-switch-animation-duration);
+            font-family: 'PP Neue Montreal';
+        }
+
+        .radio-switch__input:checked~.radio-switch__label {
+            color: hsl(var(--ri5-color-white-hsl));
+        }
+
+        .radio-switch__input:focus~.radio-switch__label {
+            background-color: $blanco;
+        }
+
+        .radio-switch__label :not(*):focus-within,
+        .radio-switch__input:focus~.radio-switch__label {
+            background-color: transparent;
+        }
+
+        .radio-switch__marker {
+            display: inline-block;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: -100%;
+            border-radius: var(--radio-switch-radius);
+            background-color: $blanco;
+            height: calc(var(--radio-switch-height) - 2*var(--radio-switch-padding));
+            width: calc(var(--radio-switch-width)*0.5 - var(--radio-switch-padding));
+            transition: -webkit-transform var(--radio-switch-animation-duration);
+            transition: transform var(--radio-switch-animation-duration);
+            transition: transform var(--radio-switch-animation-duration), -webkit-transform var(--radio-switch-animation-duration);
+        }
+
+        .radio-switch__input:checked~.radio-switch__marker {
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+
+        /* utility classes */
+        .ri5-sr-only {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            padding: 0;
+            border: 0;
+            white-space: nowrap;
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#signatures-home {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .signatures-home-cont {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .signatures-home-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        figure,
+        .card-wrapper {
+            flex-basis: 33.33%;
+            display: inline-block;
+            aspect-ratio: 0.72/1;
+            margin: 0;
+            border-radius: 10px;
+            background-position: center;
+            background-size: cover;
+            transition: all 200ms;
+            position: relative;
+            overflow: hidden;
+
+            &:hover {
+                .cont-img {
+                    transform: scale(1.05, 1.05);
+                }
+            }
+
+            .cont-img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: inline-block;
+                background-position: center;
+                background-size: cover;
+                transition: all 300ms;
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 50%;
+                top: 50%;
+                left: 0;
+                border-radius: 10px;
+                background: linear-gradient(180deg, transparent 0%, $negro 100%);
+
+            }
+
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 10;
+
+                h3 {
+                    color: $blanco;
+                    position: absolute;
+                    left: 20px;
+                    bottom: 13px;
+                    margin: 0;
+                    font-family: "PP Neue Montreal";
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: -0.24px;
+                }
+
+                span {
+                    width: 47px;
+                    height: 47px;
+                    display: inline-block;
+                    background-image: url('cta-go.svg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    right: 20px;
+                    bottom: 13px;
+                }
+            }
+        }
+    }
+}
+
+#signatures-home {
+    margin-top: 50px;
+
+    .signatures-home-cont {
+        list-style-type: none;
+        white-space: nowrap;
+        overflow-x: auto;
+        padding-bottom: 30px;
+        display: inline-block;
+        width: 100%;
+
+        figure {
+            width: calc(20% - 14px);
+            margin-right: 13px;
+            overflow: hidden;
+
+            &:hover,
+            &:focus {
+                .cont-img {
+                    transform: scale(1.1, 1.1);
+                }
+            }
+
+            .cont-img {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                transition: all 300ms;
+            }
+
+            &:last-child {
+                margin-right: 23px;
+            }
+
+            a,
+            .cont-cta {
+                h3 {
+                    font-family: "PP Neue Montreal";
+                    font-size: 17px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: -0.22px;
+                    bottom: 18px;
+                    max-width: calc(100% - 75px);
+                    word-break: normal;
+                    display: inline-block;
+                    white-space: initial;
+                }
+
+                span.cta {
+                    width: 35px;
+                    height: 35px;
+                    background-image: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#amigos-de-la-casa {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .categorias-home-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        figure,
+        .card-wrapper {
+            flex-basis: 33.33%;
+            display: inline-block;
+            aspect-ratio: 0.72/1;
+            margin: 0;
+            border-radius: 10px;
+            background-position: center;
+            background-size: cover;
+            transition: all 200ms;
+            position: relative;
+            overflow: hidden;
+
+            &:hover {
+                .cont-img {
+                    transform: scale(1.05, 1.05);
+                }
+            }
+
+            .cont-img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: inline-block;
+                background-position: center;
+                background-size: cover;
+                transition: all 300ms;
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 50%;
+                top: 50%;
+                left: 0;
+                border-radius: 10px;
+                background: linear-gradient(180deg, transparent 0%, $negro 100%);
+
+            }
+
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 10;
+
+                h3 {
+                    color: $blanco;
+                    position: absolute;
+                    left: 20px;
+                    bottom: 13px;
+                    margin: 0;
+                    font-family: "PP Neue Montreal";
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: -0.24px;
+                }
+
+                span {
+                    width: 47px;
+                    height: 47px;
+                    display: inline-block;
+                    background-image: url('cta-go.svg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    right: 20px;
+                    bottom: 13px;
+                }
+            }
+        }
+    }
+}
+
+#amigos-de-la-casa {
+    h3 {
+        color: $blanco;
+        font-family: "PP Neue Montreal";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        /* 26.4px */
+        letter-spacing: -0.36px;
+    }
+
+    .categorias-home-cont,
+    .signatures-home-cont {
+        list-style-type: none;
+        white-space: nowrap;
+        overflow-x: auto;
+        padding-bottom: 30px;
+        display: inline-block;
+        width: 100%;
+
+        figure {
+            display: inline-block;
+            aspect-ratio: 0.78/1;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            width: calc(33.33% - 19px);
+            margin-right: 23px;
+            white-space: initial;
+            cursor: default;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover,
+            &:focus {
+                .cont-img {
+                    transform: scale(1.05, 1.05);
+                }
+            }
+
+            .cont-img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: inline-block !important;
+                transition: 300ms;
+                background-size: cover;
+                background-position: center;
+                cursor: default;
+                border-radius: 10px;
+            }
+
+            &:before {
+                background: linear-gradient(180deg, transparent 0%, rgba(28, 28, 28, 0.6) 100%);
+            }
+
+            a,
+            .cont-cta {
+                cursor: default;
+
+                .cont-text {
+                    padding: 20px;
+                    position: absolute;
+                    left: 0;
+                    bottom: -10px;
+                    z-index: 10;
+
+                    p {
+                        color: $blanco;
+                        font-family: "PP Neue Montreal";
+                        font-size: 18.89px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        letter-spacing: -0.189px;
+                        margin-bottom: 0;
+                        margin-top: 0;
+                    }
+
+                    span.autor {
+                        color: $blanco;
+                        font-family: "PP Neue Montreal";
+                        font-size: 13.493px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+
+                    span {
+                        position: initial;
+                        background-image: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#ultimos-contenidos {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .categorias-home-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        figure,
+        .card-wrapper {
+            flex-basis: 33.33%;
+            display: inline-block;
+            aspect-ratio: 0.72/1;
+            margin: 0;
+            border-radius: 10px;
+            background-position: center;
+            background-size: cover;
+            transition: all 200ms;
+            position: relative;
+            overflow: hidden;
+
+            &:hover {
+                .cont-img {
+                    transform: scale(1.05, 1.05);
+                }
+            }
+
+            .cont-img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: inline-block;
+                background-position: center;
+                background-size: cover;
+                transition: all 300ms;
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 50%;
+                top: 50%;
+                left: 0;
+                border-radius: 10px;
+                background: linear-gradient(180deg, transparent 0%, $negro 100%);
+
+            }
+
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 10;
+
+                h3 {
+                    color: $blanco;
+                    position: absolute;
+                    left: 20px;
+                    bottom: 13px;
+                    margin: 0;
+                    font-family: "PP Neue Montreal";
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: -0.24px;
+                }
+
+                span {
+                    width: 47px;
+                    height: 47px;
+                    display: inline-block;
+                    background-image: url('cta-go.svg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    right: 20px;
+                    bottom: 13px;
+                }
+            }
+        }
+    }
+}
+
+#ultimos-contenidos {
+    h3 {
+        font-size: 42px;
+        font-weight: 500;
+        color: $blanco;
+        margin-bottom: 20px;
+        font-family: "PP Neue Montreal";
+    }
+
+    .categorias-home-cont,
+    .signatures-home-cont {
+        list-style-type: none;
+        white-space: nowrap;
+        overflow-x: auto;
+        padding-bottom: 30px;
+        display: inline-block;
+        width: 100%;
+
+        figure {
+            flex-basis: 25%;
+            display: inline-block;
+            aspect-ratio: 9/16;
+            position: relative;
+            border-radius: 23px;
+            overflow: hidden;
+            cursor: pointer;
+            width: calc(25% - 19px);
+            margin-right: 23px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover,
+            &:focus {
+                .cont-img {
+                    transform: scale(1.1, 1.1);
+                }
+            }
+
+            .cont-img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: inline-block !important;
+                transition: 300ms;
+                background-size: cover;
+                background-position: center;
+                border-radius: 26px;
+            }
+
+            &:before {
+                display: none;
+            }
+
+            .cont-cta {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            a,
+            .cont-cta {
+                span {
+                    background-image: url('cta-play.svg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    width: 47px;
+                    height: 47px;
+                    bottom: 25px;
+                    right: 25px;
+                    display: inline-block;
+                    z-index: 10;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
