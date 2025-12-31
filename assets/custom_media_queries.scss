@@ -492,8 +492,9 @@
 
     #amigos-de-la-casa {
         h3 {
-            font-size: 23px;
-            margin-top: 50px;
+            font-size: 30px;
+            margin-top: 80px;
+            margin-bottom: 15px;
         }
 
         .signatures-home-cont {
@@ -537,8 +538,8 @@
             &:after {
                 content: '';
                 display: inline-block;
-                width: 26px;
-                height: 26px;
+                width: 30px;
+                height: 30px;
                 background-image: url('ico-plus-circle.svg');
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -793,6 +794,10 @@
 }
 
 @media(max-width: 530px) {
+    h2.h2home {
+        margin-bottom: 10px;
+    }
+
     #footer-rico {
         padding-bottom: 120px;
 
@@ -818,7 +823,7 @@
     #signatures-home {
         .signatures-home-cont {
             figure {
-                width: 42%;
+                width: 85%;
             }
         }
     }
@@ -826,7 +831,7 @@
     #amigos-de-la-casa {
         .signatures-home-cont {
             figure {
-                width: 50%;
+                width: 85%;
             }
         }
     }
@@ -924,12 +929,12 @@
 
 @media(max-width: 450px) {
     #marcas-home {
-        margin-top: 30px;
+        margin-top: 10px;
 
         .marcas-cont {
             ul {
                 li {
-                    width: 60px;
+                    width: 65px;
                 }
             }
 
@@ -938,19 +943,31 @@
                 padding-bottom: 0;
             }
         }
+
+        .container-scrollbar {
+            display: none;
+        }
     }
 
     #categorias-home {
-        margin-top: 25px;
+        margin-top: 5px;
+
+        .categorias-home-cont {
+            padding-bottom: 10px;
+        }
     }
 
     #tipos-jugador {
-        margin-top: 45px;
+        margin-top: -15px;
     }
 
     #signatures-home {
         margin-top: 30px;
         margin-bottom: 0px;
+
+        .signatures-home-cont {
+            padding-bottom: 10px;
+        }
     }
 
 
@@ -964,14 +981,19 @@
             .flash-home-cont,
             .destacados-home-cont {
                 .card-wrapper {
-                    width: calc(80% - 12px);
+                    width: 85%;
                 }
             }
+        }
+
+        .container-scrollbar {
+            margin-top: -10px;
         }
     }
 
     #footer-rico {
         margin-top: 45px;
+        padding-bottom: 100px;
 
         #ultimos-contenidos {
             margin-bottom: 15px;
@@ -986,16 +1008,156 @@
         #amigos-de-la-casa {
             margin-top: 0;
             margin-bottom: 0;
+
+            .signatures-home-cont {
+                padding-bottom: 10px;
+
+                .categoria-destacada-item {
+                    .cont-cta .cont-text {
+                        p {
+                            font-size: 28px;
+                            line-height: 30px;
+                        }
+
+                        span.autor {
+                            font-size: 20px;
+                            line-height: 25px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .por-que-elegirnos {
+            ul {
+                li {
+                    flex-basis: 100%;
+                    margin-bottom: 35px;
+
+                    figure {
+                        width: 140px;
+                    }
+
+                    h4 {
+                        font-size: 18px !important;
+
+                        strong {
+                            font-size: 18px !important;
+                        }
+
+                        br {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-footer {
+            .cont-nav {
+                .rico-club-cont {
+                    border-bottom: 0;
+                    padding-bottom: 70px;
+
+                    h2 {
+                        font-size: 34px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        line-height: 130%;
+                        display: inline-block;
+                        max-width: 85%;
+                    }
+
+                    .footer-block__newsletter {
+                        max-width: 85%;
+                    }
+                }
+
+                .lista-cont {
+                    flex-basis: 100%;
+
+                    h3 {
+                        font-size: 20px;
+                    }
+
+                    ul {
+                        li {
+                            a {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .redes-cont {
+                    margin-top: 300px;
+                    position: relative;
+                    justify-content: flex-start;
+
+                    .logo-footer-mobile {
+                        position: absolute;
+                        top: -494px;
+                        right: -282px;
+                        display: inline-block;
+
+                        &:before {
+                            content: "";
+                            width: 360px;
+                            height: 360px;
+                            display: inline-block;
+                            background: conic-gradient(from 180deg at 50% 50%, #FF6161 0deg, #FFD361 70.5deg, #95FFA0 162.37deg, #95B9FF 233.62deg, #D795FF 310.5deg, #FF6161 360deg);
+                            border-radius: 50%;
+                            backdrop-filter: blur(86.0230484009px);
+                            transform: rotate(188deg);
+                            filter: blur(83px);
+                            right: 100px;
+                            position: absolute;
+                        }
+
+
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            top: 45px;
+                            right: 264px;
+                            width: 176px;
+                            height: 303px;
+                            background-image: url("rico-brand.png");
+                            background-size: cover;
+                            background-position: center;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+
+        .copy-cont {
+            display: inline-block;
+            position: initial;
+            margin-top: 10px;
+
+            p {
+                margin-bottom: 0;
+            }
+
+            a {
+                text-decoration: none;
+            }
         }
     }
 }
 
 @media(max-width: 420px) {
     #marcas-home {
+        margin-top: 10px;
+
         .marcas-cont {
             ul {
                 li {
-                    width: 50px;
+                    width: 65px;
                 }
             }
         }
@@ -1154,6 +1316,7 @@
         padding-left: 0;
         padding-right: 0;
         width: 100%;
+        padding-bottom: 0;
 
         /* Restore slider behavior (contained) to prevent wrapping/overflow issues */
         overflow-x: auto;
@@ -1161,7 +1324,7 @@
         /* Ensure flex context */
         flex-wrap: nowrap;
         /* Do not wrap, keep on one line */
-        justify-content: center;
+        justify-content: flex-start;
         /* Center the content */
 
         /* Hide scrollbar track for desktop too for consistent clean look */

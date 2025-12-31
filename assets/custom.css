@@ -5520,7 +5520,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
 
 /*Footer*/
 #footer-rico {
-  background-color: #1C1C1C;
+  background-color: #0B0B0C;
   color: #ffffff;
   margin-top: 100px;
   padding-bottom: 250px;
@@ -5780,7 +5780,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
 }
 
 .barra-autor {
-  background: rgba(28, 28, 28, 0.9);
+  background: #1C1C1C;
   padding: 10px 0 14px 0;
 }
 .barra-autor span {
@@ -5961,6 +5961,8 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   white-space: nowrap;
   overflow-x: auto;
   padding-bottom: 20px;
+  text-align: left;
+  /* Fix: Prevent items being pushed off-screen left due to centering */
   /*scrollbar-color: $negro;
   scrollbar-width: thin;
   --scrollbar-color-thumb: $negro;*/
@@ -5970,7 +5972,7 @@ ul.facets-layout-list--text li.facets__item:hover .facet-checkbox .facet-checkbo
   list-style: none;
   /*flex-basis: 25%;*/
   transition: all 200ms;
-  width: calc(14.28% - 22px);
+  width: 12.9%;
   aspect-ratio: 1/0.85;
   margin-right: 20px;
 }
@@ -6062,6 +6064,7 @@ h2.inline-richtext {
   font-weight: 400;
   margin-top: 0;
   font-family: "PP Neue Montreal";
+  color: #B5B5B5;
 }
 #tipos-jugador ul {
   margin-top: 50px;
@@ -6126,11 +6129,7 @@ h2.inline-richtext {
   margin-top: 50px;
   border-radius: 8px;
   border: 1px solid #1C1C1C;
-  background-color: #d9d9d9;
-  color: #1C1C1C;
   transition: all 200ms;
-}
-#tipos-jugador .button:hover, #tipos-jugador .button:focus {
   background-color: #1C1C1C;
   color: #ffffff;
 }

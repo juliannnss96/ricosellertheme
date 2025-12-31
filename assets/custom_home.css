@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #categorias-home {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -15,9 +16,22 @@
   white-space: initial;
   gap: 20px;
 }
+@media (max-width: 991px) {
+  #categorias-home .categorias-home-cont {
+    justify-content: flex-start;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #categorias-home .categorias-home-cont figure,
+  #categorias-home .categorias-home-cont .card-wrapper {
+    flex: 0 0 70vw !important;
+    /* Force wide items on mobile to scroll */
+    flex-basis: 70vw !important;
+  }
+}
 #categorias-home .categorias-home-cont figure,
 #categorias-home .categorias-home-cont .card-wrapper {
-  flex-basis: 31.33%;
+  flex-basis: 32.2%;
   display: inline-block;
   aspect-ratio: 0.72/1;
   margin: 0;
@@ -297,6 +311,10 @@
   list-style-type: none;
   white-space: nowrap;
   overflow-x: auto;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
   padding-bottom: 10px;
   display: inline-block;
   width: 100%;
@@ -304,6 +322,16 @@
   /* Full Bleed Logic */
   padding-left: 15px;
   padding-right: 15px;
+}
+#flash-home .cont-cont-flash .flash-home-cont::-webkit-scrollbar,
+#flash-home .cont-cont-flash .destacados-home-cont::-webkit-scrollbar,
+#flash-home .cont-cont-destacados .flash-home-cont::-webkit-scrollbar,
+#flash-home .cont-cont-destacados .destacados-home-cont::-webkit-scrollbar,
+#destacados-home .cont-cont-flash .flash-home-cont::-webkit-scrollbar,
+#destacados-home .cont-cont-flash .destacados-home-cont::-webkit-scrollbar,
+#destacados-home .cont-cont-destacados .flash-home-cont::-webkit-scrollbar,
+#destacados-home .cont-cont-destacados .destacados-home-cont::-webkit-scrollbar {
+  display: none;
 }
 @media (min-width: 576px) {
   #flash-home .cont-cont-flash .flash-home-cont,
@@ -428,14 +456,14 @@
 #flash-home .cont-pastilla-seleccion,
 #destacados-home .cont-pastilla-seleccion {
   --radio-switch-width: 250px;
-  --radio-switch-height: 40px;
+  --radio-switch-height: 50px;
   --radio-switch-padding: 2.5px;
   --radio-switch-radius: 50em;
   --radio-switch-animation-duration: 0.3s;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 26px;
+  top: 15px;
   /* utility classes */
 }
 #flash-home .cont-pastilla-seleccion .sr-only,
@@ -565,7 +593,14 @@
   /* Full Bleed Logic */
   padding-left: 15px;
   padding-right: 15px;
+  /* Hide Native Scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   /* Scrollbar aesthetics override: Hide track for cleaner look */
+}
+#signatures-home .signatures-home-cont::-webkit-scrollbar,
+#amigos-de-la-casa .signatures-home-cont::-webkit-scrollbar {
+  display: none;
 }
 @media (min-width: 576px) {
   #signatures-home .signatures-home-cont,
@@ -908,9 +943,9 @@
 #amigos-de-la-casa h3 {
   color: #ffffff;
   font-family: "PP Neue Montreal";
-  font-size: 24px;
+  font-size: 28px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 110%;
   /* 26.4px */
   letter-spacing: -0.36px;
@@ -929,7 +964,7 @@
   position: relative;
   border-radius: 10px;
   overflow: hidden;
-  width: 27%;
+  width: 33%;
   margin-right: 15px;
   white-space: initial;
   cursor: default;
@@ -939,11 +974,11 @@
   position: absolute;
   content: "";
   width: 100%;
-  height: 50%;
-  top: 50%;
+  height: 70%;
+  top: 30%;
   left: 0;
   border-radius: 10px;
-  background: linear-gradient(180deg, transparent 0%, #1C1C1C 100%);
+  background: linear-gradient(180deg, transparent 0%, #050505 100%);
 }
 #amigos-de-la-casa .signatures-home-cont figure:last-child {
   margin-right: 0;
@@ -976,18 +1011,18 @@
   padding: 20px;
   position: absolute;
   left: 0;
-  bottom: -10px;
+  bottom: 10px;
   z-index: 10;
 }
 #amigos-de-la-casa .signatures-home-cont figure a .cont-text p,
 #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text p {
   color: #ffffff;
   font-family: "PP Neue Montreal";
-  font-size: 18.89px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  letter-spacing: -0.189px;
+  letter-spacing: -1%;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -995,10 +1030,13 @@
 #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text span.autor {
   color: #ffffff;
   font-family: "PP Neue Montreal";
-  font-size: 13.493px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: normal;
+  margin-top: 8px;
+  display: inline-block;
+  opacity: 0.6;
 }
 #amigos-de-la-casa .signatures-home-cont figure a .cont-text span,
 #amigos-de-la-casa .signatures-home-cont figure .cont-cta .cont-text span {
@@ -1223,4 +1261,146 @@
   display: inline-block;
   z-index: 10;
   position: absolute;
+}
+
+/* Custom JS Scrollbar Styles for Destacados & Marcas */
+#flash-home .container-scrollbar,
+#destacados-home .container-scrollbar,
+#signatures-home .container-scrollbar,
+#amigos-de-la-casa .container-scrollbar,
+#marcas-home .container-scrollbar,
+#categorias-home .container-scrollbar {
+  padding-bottom: 20px;
+  /* Ensure space */
+  position: relative;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#flash-home .container-scrollbar.scrolling,
+#destacados-home .container-scrollbar.scrolling,
+#signatures-home .container-scrollbar.scrolling,
+#amigos-de-la-casa .container-scrollbar.scrolling,
+#marcas-home .container-scrollbar.scrolling,
+#categorias-home .container-scrollbar.scrolling {
+  opacity: 1;
+}
+
+/* Always visible on Desktop for Marcas */
+@media (min-width: 992px) {
+  #marcas-home .container-scrollbar {
+    opacity: 1 !important;
+  }
+  /* Hide scrollbar on desktop for Categorias (Items fit 100%) */
+  #categorias-home .container-scrollbar {
+    display: none !important;
+  }
+}
+/* Remove margin for signatures & marcas & categorias as requested/implied for consistency */
+#signatures-home .container-scrollbar,
+#amigos-de-la-casa .container-scrollbar,
+#marcas-home .container-scrollbar,
+#categorias-home .container-scrollbar {
+  margin-top: 0;
+}
+
+/* Visible on mobile for Categorías - removed opacity force to allow auto-hide */
+@media (max-width: 991px) {
+  #categorias-home .container-scrollbar {
+    /* opacity: 1 !important; -> Removed to allow auto-hide */
+    display: block !important;
+    /* Keep display block to ensure it exists */
+  }
+}
+#flash-home:hover .container-scrollbar,
+#destacados-home:hover .container-scrollbar,
+#signatures-home:hover .container-scrollbar,
+#amigos-de-la-casa:hover .container-scrollbar,
+#marcas-home:hover .container-scrollbar,
+#categorias-home:hover .container-scrollbar {
+  opacity: 1;
+}
+
+#flash-home .custom-scroll-track,
+#destacados-home .custom-scroll-track,
+#signatures-home .custom-scroll-track,
+#amigos-de-la-casa .custom-scroll-track,
+#marcas-home .custom-scroll-track,
+#categorias-home .custom-scroll-track {
+  width: 100%;
+  height: 6px;
+  /* Slightly thicker */
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  /* Safety */
+}
+
+#flash-home .custom-scroll-thumb,
+#destacados-home .custom-scroll-thumb,
+#signatures-home .custom-scroll-thumb,
+#amigos-de-la-casa .custom-scroll-thumb,
+#marcas-home .custom-scroll-thumb,
+#categorias-home .custom-scroll-thumb {
+  height: 100%;
+  width: 20%;
+  /* Will be set by JS */
+  background-color: #1C1C1C;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: grab;
+  touch-action: none;
+  z-index: 10;
+  display: block !important;
+  /* Force visibility */
+}
+#flash-home .custom-scroll-thumb:active,
+#destacados-home .custom-scroll-thumb:active,
+#signatures-home .custom-scroll-thumb:active,
+#amigos-de-la-casa .custom-scroll-thumb:active,
+#marcas-home .custom-scroll-thumb:active,
+#categorias-home .custom-scroll-thumb:active {
+  cursor: grabbing;
+  background-color: #000;
+}
+#flash-home .custom-scroll-thumb:hover,
+#destacados-home .custom-scroll-thumb:hover,
+#signatures-home .custom-scroll-thumb:hover,
+#amigos-de-la-casa .custom-scroll-thumb:hover,
+#marcas-home .custom-scroll-thumb:hover,
+#categorias-home .custom-scroll-thumb:hover {
+  background-color: #1a1a1a;
+}
+
+/* White Scrollbar for Amigos de la casa */
+#amigos-de-la-casa .custom-scroll-thumb {
+  background-color: #FFFFFF !important;
+}
+#amigos-de-la-casa .custom-scroll-thumb:active {
+  background-color: #f0f0f0 !important;
+}
+#amigos-de-la-casa .custom-scroll-thumb:hover {
+  background-color: #f0f0f0 !important;
+}
+
+#amigos-de-la-casa .custom-scroll-track {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Subtle track for white bg */
+}
+
+/* Hide native scrollbar for Amigos de la casa */
+#amigos-de-la-casa .scrollblanco-h,
+#marcas-home .scrollnegro-h,
+#categorias-home .categorias-home-cont {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#amigos-de-la-casa .scrollblanco-h::-webkit-scrollbar,
+#marcas-home .scrollnegro-h::-webkit-scrollbar,
+#categorias-home .categorias-home-cont::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=custom_home.css.map */

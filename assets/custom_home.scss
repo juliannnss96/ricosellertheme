@@ -21,6 +21,20 @@ $verde: #128A09;
         justify-content: center;
         align-items: center;
         gap: 20px;
+
+        @media (max-width: 991px) {
+            justify-content: flex-start;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            figure,
+            .card-wrapper {
+                flex: 0 0 70vw !important;
+                /* Force wide items on mobile to scroll */
+                flex-basis: 70vw !important;
+            }
+        }
+
         list-style-type: none;
         white-space: nowrap;
         overflow-x: auto;
@@ -29,7 +43,7 @@ $verde: #128A09;
 
         figure,
         .card-wrapper {
-            flex-basis: 31.33%;
+            flex-basis: 32.2%;
             display: inline-block;
             aspect-ratio: 0.72/1;
             margin: 0;
@@ -295,6 +309,15 @@ $verde: #128A09;
             list-style-type: none;
             white-space: nowrap;
             overflow-x: auto;
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
             padding-bottom: 10px;
             display: inline-block;
             width: 100%;
@@ -358,14 +381,14 @@ $verde: #128A09;
 
     .cont-pastilla-seleccion {
         --radio-switch-width: 250px;
-        --radio-switch-height: 40px;
+        --radio-switch-height: 50px;
         --radio-switch-padding: 2.5px;
         --radio-switch-radius: 50em;
         --radio-switch-animation-duration: 0.3s;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: 26px;
+        top: 15px;
 
         .sr-only {
             position: absolute;
@@ -498,6 +521,14 @@ $verde: #128A09;
         /* Full Bleed Logic */
         padding-left: 15px;
         padding-right: 15px;
+
+        /* Hide Native Scrollbar */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         @media (min-width: 576px) {
             padding-left: calc((100vw - 540px) / 2 + 15px);
@@ -838,9 +869,9 @@ $verde: #128A09;
     h3 {
         color: $blanco;
         font-family: "PP Neue Montreal";
-        font-size: 24px;
+        font-size: 28px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 110%;
         /* 26.4px */
         letter-spacing: -0.36px;
@@ -860,7 +891,7 @@ $verde: #128A09;
             position: relative;
             border-radius: 10px;
             overflow: hidden;
-            width: 27%;
+            width: 33%;
             margin-right: 15px;
             white-space: initial;
             cursor: default;
@@ -870,11 +901,11 @@ $verde: #128A09;
                 position: absolute;
                 content: '';
                 width: 100%;
-                height: 50%;
-                top: 50%;
+                height: 70%;
+                top: 30%;
                 left: 0;
                 border-radius: 10px;
-                background: linear-gradient(180deg, transparent 0%, $negro 100%);
+                background: linear-gradient(180deg, transparent 0%, #050505 100%);
             }
 
             &:last-child {
@@ -914,17 +945,17 @@ $verde: #128A09;
                     padding: 20px;
                     position: absolute;
                     left: 0;
-                    bottom: -10px;
+                    bottom: 10px;
                     z-index: 10;
 
                     p {
                         color: $blanco;
                         font-family: "PP Neue Montreal";
-                        font-size: 18.89px;
+                        font-size: 28px;
                         font-style: normal;
                         font-weight: 500;
                         line-height: normal;
-                        letter-spacing: -0.189px;
+                        letter-spacing: -1%;
                         margin-bottom: 0;
                         margin-top: 0;
                     }
@@ -932,10 +963,13 @@ $verde: #128A09;
                     span.autor {
                         color: $blanco;
                         font-family: "PP Neue Montreal";
-                        font-size: 13.493px;
+                        font-size: 20px;
                         font-style: normal;
-                        font-weight: 400;
+                        font-weight: 300;
                         line-height: normal;
+                        margin-top: 8px;
+                        display: inline-block;
+                        opacity: 0.6;
                     }
 
                     span {
@@ -1193,5 +1227,139 @@ $verde: #128A09;
                 }
             }
         }
+    }
+}
+
+/* Custom JS Scrollbar Styles for Destacados & Marcas */
+#flash-home .container-scrollbar,
+#destacados-home .container-scrollbar,
+#signatures-home .container-scrollbar,
+#amigos-de-la-casa .container-scrollbar,
+#marcas-home .container-scrollbar,
+#categorias-home .container-scrollbar {
+    padding-bottom: 20px;
+    /* Ensure space */
+    position: relative;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    &.scrolling {
+        opacity: 1;
+    }
+}
+
+/* Always visible on Desktop for Marcas */
+@media (min-width: 992px) {
+    #marcas-home .container-scrollbar {
+        opacity: 1 !important;
+    }
+
+    /* Hide scrollbar on desktop for Categorias (Items fit 100%) */
+    #categorias-home .container-scrollbar {
+        display: none !important;
+    }
+}
+
+/* Remove margin for signatures & marcas & categorias as requested/implied for consistency */
+#signatures-home .container-scrollbar,
+#amigos-de-la-casa .container-scrollbar,
+#marcas-home .container-scrollbar,
+#categorias-home .container-scrollbar {
+    margin-top: 0;
+}
+
+/* Visible on mobile for Categorías - removed opacity force to allow auto-hide */
+@media (max-width: 991px) {
+    #categorias-home .container-scrollbar {
+        /* opacity: 1 !important; -> Removed to allow auto-hide */
+        display: block !important;
+        /* Keep display block to ensure it exists */
+    }
+}
+
+#flash-home:hover .container-scrollbar,
+#destacados-home:hover .container-scrollbar,
+#signatures-home:hover .container-scrollbar,
+#amigos-de-la-casa:hover .container-scrollbar,
+#marcas-home:hover .container-scrollbar,
+#categorias-home:hover .container-scrollbar {
+    opacity: 1;
+}
+
+#flash-home .custom-scroll-track,
+#destacados-home .custom-scroll-track,
+#signatures-home .custom-scroll-track,
+#amigos-de-la-casa .custom-scroll-track,
+#marcas-home .custom-scroll-track,
+#categorias-home .custom-scroll-track {
+    width: 100%;
+    height: 6px;
+    /* Slightly thicker */
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    /* Safety */
+}
+
+#flash-home .custom-scroll-thumb,
+#destacados-home .custom-scroll-thumb,
+#signatures-home .custom-scroll-thumb,
+#amigos-de-la-casa .custom-scroll-thumb,
+#marcas-home .custom-scroll-thumb,
+#categorias-home .custom-scroll-thumb {
+    height: 100%;
+    width: 20%;
+    /* Will be set by JS */
+    background-color: #1C1C1C;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: grab;
+    touch-action: none;
+    z-index: 10;
+    display: block !important;
+    /* Force visibility */
+
+    &:active {
+        cursor: grabbing;
+        background-color: #000;
+    }
+
+    &:hover {
+        background-color: #1a1a1a;
+    }
+}
+
+/* White Scrollbar for Amigos de la casa */
+#amigos-de-la-casa .custom-scroll-thumb {
+    background-color: #FFFFFF !important;
+
+    &:active {
+        background-color: #f0f0f0 !important;
+    }
+
+    &:hover {
+        background-color: #f0f0f0 !important;
+    }
+}
+
+#amigos-de-la-casa .custom-scroll-track {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Subtle track for white bg */
+}
+
+/* Hide native scrollbar for Amigos de la casa */
+#amigos-de-la-casa .scrollblanco-h,
+#marcas-home .scrollnegro-h,
+#categorias-home .categorias-home-cont {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
     }
 }

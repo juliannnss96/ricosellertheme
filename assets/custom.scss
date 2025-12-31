@@ -2,6 +2,7 @@ $grisoscuro: #2c2c2c;
 $grisclaro: #6b6b6b;
 $blanco: #ffffff;
 $negro: #1C1C1C;
+$negroo: #0B0B0C;
 $negro10: rgba(28, 28, 28, 0.10);
 $negro45: rgba(28, 28, 28, 0.45);
 $negro30: rgba(28, 28, 28, 0.30);
@@ -6763,7 +6764,7 @@ ul.facets-layout-list--text {
 /*Footer*/
 
 #footer-rico {
-	background-color: $negro;
+	background-color: $negroo;
 	color: $blanco;
 	margin-top: 100px;
 	padding-bottom: 250px;
@@ -7081,7 +7082,7 @@ ul.facets-layout-list--text {
 }
 
 .barra-autor {
-	background: rgba(28, 28, 28, 0.90);
+	background: $negro;
 	padding: 10px 0 14px 0;
 
 	span {
@@ -7270,6 +7271,8 @@ ul.facets-layout-list--text {
 			white-space: nowrap;
 			overflow-x: auto;
 			padding-bottom: 20px;
+			text-align: left;
+			/* Fix: Prevent items being pushed off-screen left due to centering */
 			/*scrollbar-color: $negro;
 			scrollbar-width: thin;
 			--scrollbar-color-thumb: $negro;*/
@@ -7279,7 +7282,7 @@ ul.facets-layout-list--text {
 				list-style: none;
 				/*flex-basis: 25%;*/
 				transition: all 200ms;
-				width: calc(14.28% - 22px);
+				width: 12.9%;
 				aspect-ratio: 1/.85;
 				margin-right: 20px;
 
@@ -7384,6 +7387,7 @@ h2.inline-richtext {
 		font-weight: 400;
 		margin-top: 0;
 		font-family: "PP Neue Montreal";
+		color: #B5B5B5;
 	}
 
 	ul {
@@ -7457,15 +7461,12 @@ h2.inline-richtext {
 		margin-top: 50px;
 		border-radius: 8px;
 		border: 1px solid $negro;
-		background-color: #d9d9d9;
-		color: $negro;
 		transition: all 200ms;
+		background-color: $negro;
+		color: $blanco;
 
 		&:hover,
-		&:focus {
-			background-color: $negro;
-			color: $blanco;
-		}
+		&:focus {}
 
 		&:after {
 			display: none;
