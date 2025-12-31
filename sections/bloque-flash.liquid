@@ -22,42 +22,36 @@
                 </div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="cont-cont-flash">                    
-                    {% for collection in collections %}
-                        {%- assign collection_selected = collections[section.settings.collection_selected] %}
-                        {%- assign collection_cat1 = collections[section.settings.collection_cat1] %}
-                        {%- assign collection_cat2 = collections[section.settings.collection_cat2] %}
-                    {% endfor %}
-                    
-                    {% comment %} categoria 1 {% endcomment %}
-                    <div class="flash-home-cont grupo-cat-1 visible scrollnegro-h">
-                        {% for product in collection_selected.products %}
-                            {% for c in product.collections %}
-                                {% if c.handle == section.settings.collection_cat1 %}
-                                    {%- render 'card-product', card_product: product -%}
-                                {% endif %}
-                            {% endfor %}
-                        {% endfor %}
-                    </div>
-                    
-                    {% comment %} categoria 2 {% endcomment %}
-                    <div class="flash-home-cont grupo-cat-2 scrollnegro-h">
-                        {% for product in collection_selected.products %}
-                            {% for c in product.collections %}
-                                {% if c.handle == section.settings.collection_cat2 %}
-                                    {%- render 'card-product', card_product: product -%}
-                                {% endif %}
-                            {% endfor %}
-                        {% endfor %}
-                    </div>
-
-
-				</div>
-			</div>
-		</div>
-	</div>	
+	</div>
+    <div class="cont-cont-flash">                    
+        {% for collection in collections %}
+            {%- assign collection_selected = collections[section.settings.collection_selected] %}
+            {%- assign collection_cat1 = collections[section.settings.collection_cat1] %}
+            {%- assign collection_cat2 = collections[section.settings.collection_cat2] %}
+        {% endfor %}
+        
+        {% comment %} categoria 1 {% endcomment %}
+        <div class="flash-home-cont grupo-cat-1 visible scrollnegro-h">
+            {% for product in collection_selected.products %}
+                {% for c in product.collections %}
+                    {% if c.handle == section.settings.collection_cat1 %}
+                        {%- render 'card-product', card_product: product -%}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+        
+        {% comment %} categoria 2 {% endcomment %}
+        <div class="flash-home-cont grupo-cat-2 scrollnegro-h">
+            {% for product in collection_selected.products %}
+                {% for c in product.collections %}
+                    {% if c.handle == section.settings.collection_cat2 %}
+                        {%- render 'card-product', card_product: product -%}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>	
 </section>
 
 {% schema %}

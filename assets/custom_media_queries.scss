@@ -140,12 +140,6 @@
         }
     }
 
-    #categorias-home .categorias-home-cont figure a span.cta {
-        width: 35px;
-        height: 35px;
-        right: 14px;
-    }
-
     .product .product__media-wrapper .media-thumbs {
         width: 50px;
         left: -70px;
@@ -345,20 +339,20 @@
         .cont-cont-destacados {
             position: relative;
 
-            &:after {
-                content: '';
-                height: 100%;
-                width: 40px;
-                position: absolute;
-                right: -2px;
-                top: 0;
-                background: rgb(255, 255, 255);
-                background: -moz-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 254, 0) 100%);
-                background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 254, 0) 100%);
-                background: linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 254, 0) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#fcfcfe", GradientType=1);
-                z-index: 11;
-            }
+            // &:after {
+            //     content: '';
+            //     height: 100%;
+            //     width: 40px;
+            //     position: absolute;
+            //     right: -2px;
+            //     top: 0;
+            //     background: rgb(255, 255, 255);
+            //     background: -moz-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 254, 0) 100%);
+            //     background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 254, 0) 100%);
+            //     background: linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 254, 0) 100%);
+            //     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#fcfcfe", GradientType=1);
+            //     z-index: 11;
+            // }
 
             ul li:last-child,
             figure:last-child {
@@ -425,10 +419,7 @@
         font-size: 17px;
     }
 
-    #categorias-home .categorias-home-cont figure a span.cta {
-        width: 28px;
-        height: 28px;
-    }
+    #categorias-home .categorias-home-cont figure a span.cta {}
 
     #tipos-jugador {
         padding-bottom: 0;
@@ -468,8 +459,12 @@
             display: inline-block;
 
             figure {
-                width: calc(40% - 15px);
+                width: 55%;
                 margin-right: 11px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
     }
@@ -549,6 +544,16 @@
                 background-size: cover;
                 background-position: center;
                 ;
+            }
+        }
+    }
+
+    #signatures-home {
+        .signatures-home-cont {
+            display: inline-block;
+
+            figure {
+                width: 35%;
             }
         }
     }
@@ -777,7 +782,7 @@
     #signatures-home {
         .signatures-home-cont {
             figure {
-                margin-right: 7px;
+                margin-right: 15px;
             }
         }
     }
@@ -910,7 +915,7 @@
     #categorias-home {
         .categorias-home-cont {
             figure {
-                width: calc(80% - 15px);
+                width: calc(60% - 15px);
                 margin-right: 11px;
             }
         }
@@ -920,6 +925,19 @@
 @media(max-width: 450px) {
     #marcas-home {
         margin-top: 30px;
+
+        .marcas-cont {
+            ul {
+                li {
+                    width: 60px;
+                }
+            }
+
+            .scrollnegro-h {
+                margin: 0;
+                padding-bottom: 0;
+            }
+        }
     }
 
     #categorias-home {
@@ -977,7 +995,7 @@
         .marcas-cont {
             ul {
                 li {
-                    width: 32%;
+                    width: 50px;
                 }
             }
         }
@@ -986,7 +1004,7 @@
     #signatures-home {
         .signatures-home-cont {
             figure {
-                width: 55%;
+                width: 85%;
             }
         }
     }
@@ -1002,7 +1020,7 @@
     #amigos-de-la-casa {
         .signatures-home-cont {
             figure {
-                width: 57%;
+                width: 85%;
             }
         }
     }
@@ -1048,5 +1066,120 @@
                 height: 22px;
             }
         }
+    }
+}
+
+/* Full Bleed Logic for Categories and Brands on Mobile/Tablet */
+
+/* 
+   We wrap the content in .full-bleed-scroller (full width), 
+   but specific inner containers need to behave differently on Desktop vs Mobile. 
+*/
+
+/* Mobile/Tablet (< 1200px): Apply Full Bleed Padding and Scroll */
+@media (max-width: 1199px) {
+
+    #categorias-home .categorias-home-cont,
+    #marcas-home .marcas-cont ul {
+        /* Enable horizontal scroll */
+        // display: flex;
+        // flex-wrap: nowrap;
+        overflow-x: auto;
+        width: 100%;
+
+        /* Full Bleed Padding Logic (matching Signatures) */
+        padding-left: 15px;
+        padding-right: 15px;
+
+        /* Scrollbar aesthetics override: Hide track for cleaner look */
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        li a {
+
+            figure,
+            figure:hover,
+            figure:active {
+                border-color: transparent;
+                background-color: transparent;
+            }
+        }
+    }
+
+    /* Specific padding calculations for tablet breakpoints */
+    @media (min-width: 576px) {
+
+        #categorias-home .categorias-home-cont,
+        #marcas-home .marcas-cont ul {
+            padding-left: calc((100vw - 540px) / 2 + 15px);
+            padding-right: calc((100vw - 540px) / 2 + 15px);
+        }
+    }
+
+    @media (min-width: 768px) {
+
+        #categorias-home .categorias-home-cont,
+        #marcas-home .marcas-cont ul {
+            padding-left: calc((100vw - 720px) / 2 + 15px);
+            padding-right: calc((100vw - 720px) / 2 + 15px);
+        }
+    }
+
+    @media (min-width: 992px) {
+
+        #categorias-home .categorias-home-cont,
+        #marcas-home .marcas-cont ul {
+            padding-left: calc((100vw - 960px) / 2 + 15px);
+            padding-right: calc((100vw - 960px) / 2 + 15px);
+        }
+    }
+
+    /* Specific alignment */
+    #categorias-home .categorias-home-cont {
+        justify-content: flex-start;
+        /* Ensure scroll starts from left */
+    }
+}
+
+/* Desktop (>= 1200px): Restore Container Constraint */
+@media (min-width: 1200px) {
+
+    #categorias-home .categorias-home-cont,
+    #marcas-home .marcas-cont ul {
+        /* Re-center and constrain width to simulate .container */
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+
+        /* Restore slider behavior (contained) to prevent wrapping/overflow issues */
+        overflow-x: auto;
+        display: flex;
+        /* Ensure flex context */
+        flex-wrap: nowrap;
+        /* Do not wrap, keep on one line */
+        justify-content: center;
+        /* Center the content */
+
+        /* Hide scrollbar track for desktop too for consistent clean look */
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Ensure items don't shrink */
+        &>* {
+            flex-shrink: 0;
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+
+    #categorias-home .categorias-home-cont,
+    #marcas-home .marcas-cont ul {
+        max-width: 1320px;
     }
 }

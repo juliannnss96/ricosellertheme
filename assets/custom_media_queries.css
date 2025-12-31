@@ -84,11 +84,6 @@
   #tipos-jugador a.button {
     margin-left: 0;
   }
-  #categorias-home .categorias-home-cont figure a span.cta {
-    width: 35px;
-    height: 35px;
-    right: 14px;
-  }
   .product .product__media-wrapper .media-thumbs {
     width: 50px;
     left: -70px;
@@ -246,54 +241,6 @@
   #destacados-home .cont-cont-destacados {
     position: relative;
   }
-  #categorias-home .cont-cont-categorias-home:after,
-  #categorias-home .marcas-cont:after,
-  #categorias-home .cont-cont-signatures:after,
-  #categorias-home .cont-cont-flash:after,
-  #categorias-home .cont-cont-destacados:after,
-  #marcas-home .cont-cont-categorias-home:after,
-  #marcas-home .marcas-cont:after,
-  #marcas-home .cont-cont-signatures:after,
-  #marcas-home .cont-cont-flash:after,
-  #marcas-home .cont-cont-destacados:after,
-  #signatures-home .cont-cont-categorias-home:after,
-  #signatures-home .marcas-cont:after,
-  #signatures-home .cont-cont-signatures:after,
-  #signatures-home .cont-cont-flash:after,
-  #signatures-home .cont-cont-destacados:after,
-  #ultimos-contenidos .cont-cont-categorias-home:after,
-  #ultimos-contenidos .marcas-cont:after,
-  #ultimos-contenidos .cont-cont-signatures:after,
-  #ultimos-contenidos .cont-cont-flash:after,
-  #ultimos-contenidos .cont-cont-destacados:after,
-  #amigos-de-la-casa .cont-cont-categorias-home:after,
-  #amigos-de-la-casa .marcas-cont:after,
-  #amigos-de-la-casa .cont-cont-signatures:after,
-  #amigos-de-la-casa .cont-cont-flash:after,
-  #amigos-de-la-casa .cont-cont-destacados:after,
-  #flash-home .cont-cont-categorias-home:after,
-  #flash-home .marcas-cont:after,
-  #flash-home .cont-cont-signatures:after,
-  #flash-home .cont-cont-flash:after,
-  #flash-home .cont-cont-destacados:after,
-  #destacados-home .cont-cont-categorias-home:after,
-  #destacados-home .marcas-cont:after,
-  #destacados-home .cont-cont-signatures:after,
-  #destacados-home .cont-cont-flash:after,
-  #destacados-home .cont-cont-destacados:after {
-    content: "";
-    height: 100%;
-    width: 40px;
-    position: absolute;
-    right: -2px;
-    top: 0;
-    background: rgb(255, 255, 255);
-    background: -moz-linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(252, 252, 254, 0) 100%);
-    background: -webkit-linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(252, 252, 254, 0) 100%);
-    background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(252, 252, 254, 0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#fcfcfe", GradientType=1);
-    z-index: 11;
-  }
   #categorias-home .cont-cont-categorias-home ul li:last-child,
   #categorias-home .cont-cont-categorias-home figure:last-child,
   #categorias-home .marcas-cont ul li:last-child,
@@ -400,10 +347,6 @@
   #categorias-home .categorias-home-cont figure a h3 {
     font-size: 17px;
   }
-  #categorias-home .categorias-home-cont figure a span.cta {
-    width: 28px;
-    height: 28px;
-  }
   #tipos-jugador {
     padding-bottom: 0;
   }
@@ -429,8 +372,11 @@
     display: inline-block;
   }
   #categorias-home .categorias-home-cont figure {
-    width: calc(40% - 15px);
+    width: 55%;
     margin-right: 11px;
+  }
+  #categorias-home .categorias-home-cont figure:last-child {
+    margin-right: 0;
   }
   #signatures-home .signatures-home-cont figure {
     width: 33.33%;
@@ -474,6 +420,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+  }
+  #signatures-home .signatures-home-cont {
+    display: inline-block;
+  }
+  #signatures-home .signatures-home-cont figure {
+    width: 35%;
   }
   #flash-home .cont-titulo .h2home,
   #destacados-home .cont-titulo .h2home {
@@ -632,7 +584,7 @@
     background-size: contain;
   }
   #signatures-home .signatures-home-cont figure {
-    margin-right: 7px;
+    margin-right: 15px;
   }
   .banner--large:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
     min-height: 60vh !important;
@@ -712,13 +664,20 @@
     line-height: 50px;
   }
   #categorias-home .categorias-home-cont figure {
-    width: calc(80% - 15px);
+    width: calc(60% - 15px);
     margin-right: 11px;
   }
 }
 @media (max-width: 450px) {
   #marcas-home {
     margin-top: 30px;
+  }
+  #marcas-home .marcas-cont ul li {
+    width: 60px;
+  }
+  #marcas-home .marcas-cont .scrollnegro-h {
+    margin: 0;
+    padding-bottom: 0;
   }
   #categorias-home {
     margin-top: 25px;
@@ -756,16 +715,16 @@
 }
 @media (max-width: 420px) {
   #marcas-home .marcas-cont ul li {
-    width: 32%;
+    width: 50px;
   }
   #signatures-home .signatures-home-cont figure {
-    width: 55%;
+    width: 85%;
   }
   #ultimos-contenidos .signatures-home-cont figure {
     width: 50%;
   }
   #amigos-de-la-casa .signatures-home-cont figure {
-    width: 57%;
+    width: 85%;
   }
 }
 @media (max-width: 400px) {
@@ -795,5 +754,102 @@
   #tipos-jugador ul li:before {
     width: 30px;
     height: 22px;
+  }
+}
+/* Full Bleed Logic for Categories and Brands on Mobile/Tablet */
+/* 
+   We wrap the content in .full-bleed-scroller (full width), 
+   but specific inner containers need to behave differently on Desktop vs Mobile. 
+*/
+/* Mobile/Tablet (< 1200px): Apply Full Bleed Padding and Scroll */
+@media (max-width: 1199px) {
+  #categorias-home .categorias-home-cont,
+  #marcas-home .marcas-cont ul {
+    /* Enable horizontal scroll */
+    overflow-x: auto;
+    width: 100%;
+    /* Full Bleed Padding Logic (matching Signatures) */
+    padding-left: 15px;
+    padding-right: 15px;
+    /* Scrollbar aesthetics override: Hide track for cleaner look */
+  }
+  #categorias-home .categorias-home-cont::-webkit-scrollbar-track,
+  #marcas-home .marcas-cont ul::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #categorias-home .categorias-home-cont li a figure,
+  #categorias-home .categorias-home-cont li a figure:hover,
+  #categorias-home .categorias-home-cont li a figure:active,
+  #marcas-home .marcas-cont ul li a figure,
+  #marcas-home .marcas-cont ul li a figure:hover,
+  #marcas-home .marcas-cont ul li a figure:active {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  /* Specific padding calculations for tablet breakpoints */
+  /* Specific alignment */
+}
+@media (max-width: 1199px) and (min-width: 576px) {
+  #categorias-home .categorias-home-cont,
+  #marcas-home .marcas-cont ul {
+    padding-left: calc((100vw - 540px) / 2 + 15px);
+    padding-right: calc((100vw - 540px) / 2 + 15px);
+  }
+}
+@media (max-width: 1199px) and (min-width: 768px) {
+  #categorias-home .categorias-home-cont,
+  #marcas-home .marcas-cont ul {
+    padding-left: calc((100vw - 720px) / 2 + 15px);
+    padding-right: calc((100vw - 720px) / 2 + 15px);
+  }
+}
+@media (max-width: 1199px) and (min-width: 992px) {
+  #categorias-home .categorias-home-cont,
+  #marcas-home .marcas-cont ul {
+    padding-left: calc((100vw - 960px) / 2 + 15px);
+    padding-right: calc((100vw - 960px) / 2 + 15px);
+  }
+}
+@media (max-width: 1199px) {
+  #categorias-home .categorias-home-cont {
+    justify-content: flex-start;
+    /* Ensure scroll starts from left */
+  }
+}
+/* Desktop (>= 1200px): Restore Container Constraint */
+@media (min-width: 1200px) {
+  #categorias-home .categorias-home-cont,
+  #marcas-home .marcas-cont ul {
+    /* Re-center and constrain width to simulate .container */
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    /* Restore slider behavior (contained) to prevent wrapping/overflow issues */
+    overflow-x: auto;
+    display: flex;
+    /* Ensure flex context */
+    flex-wrap: nowrap;
+    /* Do not wrap, keep on one line */
+    justify-content: center;
+    /* Center the content */
+    /* Hide scrollbar track for desktop too for consistent clean look */
+    /* Ensure items don't shrink */
+  }
+  #categorias-home .categorias-home-cont::-webkit-scrollbar-track,
+  #marcas-home .marcas-cont ul::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #categorias-home .categorias-home-cont > *,
+  #marcas-home .marcas-cont ul > * {
+    flex-shrink: 0;
+  }
+}
+@media (min-width: 1400px) {
+  #categorias-home .categorias-home-cont,
+  #marcas-home .marcas-cont ul {
+    max-width: 1320px;
   }
 }/*# sourceMappingURL=custom_media_queries.css.map */

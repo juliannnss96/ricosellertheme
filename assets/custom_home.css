@@ -13,11 +13,11 @@
   padding-bottom: 30px;
   width: 100%;
   white-space: initial;
-  gap: 23px;
+  gap: 20px;
 }
 #categorias-home .categorias-home-cont figure,
 #categorias-home .categorias-home-cont .card-wrapper {
-  flex-basis: 33.33%;
+  flex-basis: 31.33%;
   display: inline-block;
   aspect-ratio: 0.72/1;
   margin: 0;
@@ -79,15 +79,15 @@
 }
 #categorias-home .categorias-home-cont figure a span,
 #categorias-home .categorias-home-cont .card-wrapper a span {
-  width: 47px;
-  height: 47px;
+  width: 15px;
+  height: 15px;
   display: inline-block;
-  background-image: url("cta-go.svg");
+  background-image: url("ir.svg");
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  right: 20px;
-  bottom: 13px;
+  right: 22px;
+  bottom: 20px;
 }
 #categorias-home .categorias-home-cont figure {
   width: calc(20% - 14px);
@@ -122,8 +122,8 @@
 }
 #categorias-home .categorias-home-cont figure a span.cta,
 #categorias-home .categorias-home-cont figure .cont-cta span.cta {
-  width: 35px;
-  height: 35px;
+  width: 15px;
+  height: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,9 +133,9 @@
   width: 35px;
 }
 #categorias-home .categorias-home-cont figure {
-  width: calc(33.33% - 23px);
+  width: calc(33.33% - 20px);
   margin-right: 0;
-  aspect-ratio: 1/1.4;
+  aspect-ratio: 85/124;
   border-radius: 10px;
 }
 #categorias-home .categorias-home-cont figure:after {
@@ -301,6 +301,84 @@
   display: inline-block;
   width: 100%;
   display: none;
+  /* Full Bleed Logic */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 576px) {
+  #flash-home .cont-cont-flash .flash-home-cont,
+  #flash-home .cont-cont-flash .destacados-home-cont,
+  #flash-home .cont-cont-destacados .flash-home-cont,
+  #flash-home .cont-cont-destacados .destacados-home-cont,
+  #destacados-home .cont-cont-flash .flash-home-cont,
+  #destacados-home .cont-cont-flash .destacados-home-cont,
+  #destacados-home .cont-cont-destacados .flash-home-cont,
+  #destacados-home .cont-cont-destacados .destacados-home-cont {
+    padding-left: calc((100vw - 540px) / 2 + 15px);
+    padding-right: calc((100vw - 540px) / 2 + 15px);
+  }
+}
+@media (min-width: 768px) {
+  #flash-home .cont-cont-flash .flash-home-cont,
+  #flash-home .cont-cont-flash .destacados-home-cont,
+  #flash-home .cont-cont-destacados .flash-home-cont,
+  #flash-home .cont-cont-destacados .destacados-home-cont,
+  #destacados-home .cont-cont-flash .flash-home-cont,
+  #destacados-home .cont-cont-flash .destacados-home-cont,
+  #destacados-home .cont-cont-destacados .flash-home-cont,
+  #destacados-home .cont-cont-destacados .destacados-home-cont {
+    padding-left: calc((100vw - 720px) / 2 + 15px);
+    padding-right: calc((100vw - 720px) / 2 + 15px);
+  }
+}
+@media (min-width: 992px) {
+  #flash-home .cont-cont-flash .flash-home-cont,
+  #flash-home .cont-cont-flash .destacados-home-cont,
+  #flash-home .cont-cont-destacados .flash-home-cont,
+  #flash-home .cont-cont-destacados .destacados-home-cont,
+  #destacados-home .cont-cont-flash .flash-home-cont,
+  #destacados-home .cont-cont-flash .destacados-home-cont,
+  #destacados-home .cont-cont-destacados .flash-home-cont,
+  #destacados-home .cont-cont-destacados .destacados-home-cont {
+    padding-left: calc((100vw - 960px) / 2 + 15px);
+    padding-right: calc((100vw - 960px) / 2 + 15px);
+  }
+}
+@media (min-width: 1200px) {
+  #flash-home .cont-cont-flash .flash-home-cont,
+  #flash-home .cont-cont-flash .destacados-home-cont,
+  #flash-home .cont-cont-destacados .flash-home-cont,
+  #flash-home .cont-cont-destacados .destacados-home-cont,
+  #destacados-home .cont-cont-flash .flash-home-cont,
+  #destacados-home .cont-cont-flash .destacados-home-cont,
+  #destacados-home .cont-cont-destacados .flash-home-cont,
+  #destacados-home .cont-cont-destacados .destacados-home-cont {
+    padding-left: calc((100vw - 1140px) / 2 + 15px);
+    padding-right: calc((100vw - 1140px) / 2 + 15px);
+  }
+}
+@media (min-width: 1400px) {
+  #flash-home .cont-cont-flash .flash-home-cont,
+  #flash-home .cont-cont-flash .destacados-home-cont,
+  #flash-home .cont-cont-destacados .flash-home-cont,
+  #flash-home .cont-cont-destacados .destacados-home-cont,
+  #destacados-home .cont-cont-flash .flash-home-cont,
+  #destacados-home .cont-cont-flash .destacados-home-cont,
+  #destacados-home .cont-cont-destacados .flash-home-cont,
+  #destacados-home .cont-cont-destacados .destacados-home-cont {
+    padding-left: calc((100vw - 1320px) / 2 + 15px);
+    padding-right: calc((100vw - 1320px) / 2 + 15px);
+  }
+}
+#flash-home .cont-cont-flash .flash-home-cont.scrollnegro-h::-webkit-scrollbar-track,
+#flash-home .cont-cont-flash .destacados-home-cont.scrollnegro-h::-webkit-scrollbar-track,
+#flash-home .cont-cont-destacados .flash-home-cont.scrollnegro-h::-webkit-scrollbar-track,
+#flash-home .cont-cont-destacados .destacados-home-cont.scrollnegro-h::-webkit-scrollbar-track,
+#destacados-home .cont-cont-flash .flash-home-cont.scrollnegro-h::-webkit-scrollbar-track,
+#destacados-home .cont-cont-flash .destacados-home-cont.scrollnegro-h::-webkit-scrollbar-track,
+#destacados-home .cont-cont-destacados .flash-home-cont.scrollnegro-h::-webkit-scrollbar-track,
+#destacados-home .cont-cont-destacados .destacados-home-cont.scrollnegro-h::-webkit-scrollbar-track {
+  background: transparent;
 }
 #flash-home .cont-cont-flash .flash-home-cont.visible,
 #flash-home .cont-cont-flash .destacados-home-cont.visible,
@@ -320,8 +398,8 @@
 #destacados-home .cont-cont-flash .destacados-home-cont .card-wrapper,
 #destacados-home .cont-cont-destacados .flash-home-cont .card-wrapper,
 #destacados-home .cont-cont-destacados .destacados-home-cont .card-wrapper {
-  width: calc(20% - 12px);
-  margin-right: 10px;
+  width: 33%;
+  margin-right: 15px;
   border-radius: 0;
   aspect-ratio: initial;
   overflow: visible;
@@ -464,29 +542,79 @@
   white-space: nowrap;
 }
 
-#signatures-home {
+#signatures-home,
+#amigos-de-la-casa {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-#signatures-home .signatures-home-cont {
+#signatures-home .signatures-home-cont,
+#amigos-de-la-casa .signatures-home-cont {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* Changed from inline-block to flex for better control */
+  justify-content: flex-start;
+  /* Ensure items start from left */
+  align-items: flex-start;
+  /* Align items to top */
   gap: 20px;
   list-style-type: none;
   white-space: nowrap;
   overflow-x: auto;
   width: 100%;
-  padding-bottom: 30px;
-  display: inline-block;
+  /* Full Bleed Logic */
+  padding-left: 15px;
+  padding-right: 15px;
+  /* Scrollbar aesthetics override: Hide track for cleaner look */
+}
+@media (min-width: 576px) {
+  #signatures-home .signatures-home-cont,
+  #amigos-de-la-casa .signatures-home-cont {
+    padding-left: calc((100vw - 540px) / 2 + 15px);
+    padding-right: calc((100vw - 540px) / 2 + 15px);
+  }
+}
+@media (min-width: 768px) {
+  #signatures-home .signatures-home-cont,
+  #amigos-de-la-casa .signatures-home-cont {
+    padding-left: calc((100vw - 720px) / 2 + 15px);
+    padding-right: calc((100vw - 720px) / 2 + 15px);
+  }
+}
+@media (min-width: 992px) {
+  #signatures-home .signatures-home-cont,
+  #amigos-de-la-casa .signatures-home-cont {
+    padding-left: calc((100vw - 960px) / 2 + 15px);
+    padding-right: calc((100vw - 960px) / 2 + 15px);
+  }
+}
+@media (min-width: 1200px) {
+  #signatures-home .signatures-home-cont,
+  #amigos-de-la-casa .signatures-home-cont {
+    padding-left: calc((100vw - 1140px) / 2 + 15px);
+    padding-right: calc((100vw - 1140px) / 2 + 15px);
+  }
+}
+@media (min-width: 1400px) {
+  #signatures-home .signatures-home-cont,
+  #amigos-de-la-casa .signatures-home-cont {
+    padding-left: calc((100vw - 1320px) / 2 + 15px);
+    padding-right: calc((100vw - 1320px) / 2 + 15px);
+  }
+}
+#signatures-home .signatures-home-cont.scrollnegro-h::-webkit-scrollbar-track,
+#amigos-de-la-casa .signatures-home-cont.scrollnegro-h::-webkit-scrollbar-track {
+  background: transparent;
 }
 #signatures-home .signatures-home-cont figure,
-#signatures-home .signatures-home-cont .card-wrapper {
-  flex-basis: 33.33%;
+#signatures-home .signatures-home-cont .card-wrapper,
+#amigos-de-la-casa .signatures-home-cont figure,
+#amigos-de-la-casa .signatures-home-cont .card-wrapper {
+  flex: 0 0 calc(33.33% - 14px);
+  /* Flex basis for sizing */
   display: inline-block;
-  aspect-ratio: 0.72/1;
+  /* Fallback */
+  aspect-ratio: 30/43;
   margin: 0;
   border-radius: 10px;
   background-position: center;
@@ -496,11 +624,15 @@
   overflow: hidden;
 }
 #signatures-home .signatures-home-cont figure:hover .cont-img,
-#signatures-home .signatures-home-cont .card-wrapper:hover .cont-img {
+#signatures-home .signatures-home-cont .card-wrapper:hover .cont-img,
+#amigos-de-la-casa .signatures-home-cont figure:hover .cont-img,
+#amigos-de-la-casa .signatures-home-cont .card-wrapper:hover .cont-img {
   transform: scale(1.05, 1.05);
 }
 #signatures-home .signatures-home-cont figure .cont-img,
-#signatures-home .signatures-home-cont .card-wrapper .cont-img {
+#signatures-home .signatures-home-cont .card-wrapper .cont-img,
+#amigos-de-la-casa .signatures-home-cont figure .cont-img,
+#amigos-de-la-casa .signatures-home-cont .card-wrapper .cont-img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -512,7 +644,9 @@
   transition: all 300ms;
 }
 #signatures-home .signatures-home-cont figure:after,
-#signatures-home .signatures-home-cont .card-wrapper:after {
+#signatures-home .signatures-home-cont .card-wrapper:after,
+#amigos-de-la-casa .signatures-home-cont figure:after,
+#amigos-de-la-casa .signatures-home-cont .card-wrapper:after {
   position: absolute;
   content: "";
   width: 100%;
@@ -523,7 +657,9 @@
   background: linear-gradient(180deg, transparent 0%, #1C1C1C 100%);
 }
 #signatures-home .signatures-home-cont figure a,
-#signatures-home .signatures-home-cont .card-wrapper a {
+#signatures-home .signatures-home-cont .card-wrapper a,
+#amigos-de-la-casa .signatures-home-cont figure a,
+#amigos-de-la-casa .signatures-home-cont .card-wrapper a {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -531,7 +667,9 @@
   z-index: 10;
 }
 #signatures-home .signatures-home-cont figure a h3,
-#signatures-home .signatures-home-cont .card-wrapper a h3 {
+#signatures-home .signatures-home-cont .card-wrapper a h3,
+#amigos-de-la-casa .signatures-home-cont figure a h3,
+#amigos-de-la-casa .signatures-home-cont .card-wrapper a h3 {
   color: #ffffff;
   position: absolute;
   left: 20px;
@@ -545,7 +683,9 @@
   letter-spacing: -0.24px;
 }
 #signatures-home .signatures-home-cont figure a span,
-#signatures-home .signatures-home-cont .card-wrapper a span {
+#signatures-home .signatures-home-cont .card-wrapper a span,
+#amigos-de-la-casa .signatures-home-cont figure a span,
+#amigos-de-la-casa .signatures-home-cont .card-wrapper a span {
   width: 47px;
   height: 47px;
   display: inline-block;
@@ -556,25 +696,24 @@
   right: 20px;
   bottom: 13px;
 }
-#signatures-home .signatures-home-cont figure {
+#signatures-home .signatures-home-cont figure,
+#amigos-de-la-casa .signatures-home-cont figure {
+  /* Styles merged and cleaned up */
   width: calc(20% - 14px);
-  margin-right: 13px;
-  overflow: hidden;
+  /* Default desktop width preference seems to be 20% from previous merged styles */
+  flex: 0 0 calc(20% - 14px);
+  margin-right: 0;
+  /* Gap handles spacing now */
+  /* Responsive adjustments if needed, though previously it was fixed */
 }
-#signatures-home .signatures-home-cont figure:hover .cont-img, #signatures-home .signatures-home-cont figure:focus .cont-img {
-  transform: scale(1.1, 1.1);
-}
-#signatures-home .signatures-home-cont figure .cont-img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  transition: all 300ms;
-}
-#signatures-home .signatures-home-cont figure:last-child {
-  margin-right: 23px;
+#signatures-home .signatures-home-cont figure:last-child,
+#amigos-de-la-casa .signatures-home-cont figure:last-child {
+  margin-right: 0;
 }
 #signatures-home .signatures-home-cont figure a h3,
-#signatures-home .signatures-home-cont figure .cont-cta h3 {
+#signatures-home .signatures-home-cont figure .cont-cta h3,
+#amigos-de-la-casa .signatures-home-cont figure a h3,
+#amigos-de-la-casa .signatures-home-cont figure .cont-cta h3 {
   font-family: "PP Neue Montreal";
   font-size: 17px;
   font-style: normal;
@@ -588,7 +727,9 @@
   white-space: initial;
 }
 #signatures-home .signatures-home-cont figure a span.cta,
-#signatures-home .signatures-home-cont figure .cont-cta span.cta {
+#signatures-home .signatures-home-cont figure .cont-cta span.cta,
+#amigos-de-la-casa .signatures-home-cont figure a span.cta,
+#amigos-de-la-casa .signatures-home-cont figure .cont-cta span.cta {
   width: 35px;
   height: 35px;
   background-image: none;
@@ -597,7 +738,9 @@
   align-items: center;
 }
 #signatures-home .signatures-home-cont figure a span.cta img,
-#signatures-home .signatures-home-cont figure .cont-cta span.cta img {
+#signatures-home .signatures-home-cont figure .cont-cta span.cta img,
+#amigos-de-la-casa .signatures-home-cont figure a span.cta img,
+#amigos-de-la-casa .signatures-home-cont figure .cont-cta span.cta img {
   width: 35px;
 }
 
@@ -782,14 +925,25 @@
 }
 #amigos-de-la-casa .signatures-home-cont figure {
   display: inline-block;
-  aspect-ratio: 0.78/1;
+  aspect-ratio: 5/6;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
-  width: calc(33.33% - 19px);
-  margin-right: 23px;
+  width: 27%;
+  margin-right: 15px;
   white-space: initial;
   cursor: default;
+  margin-left: 0;
+}
+#amigos-de-la-casa .signatures-home-cont figure:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  top: 50%;
+  left: 0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, transparent 0%, #1C1C1C 100%);
 }
 #amigos-de-la-casa .signatures-home-cont figure:last-child {
   margin-right: 0;

@@ -29,7 +29,7 @@ $verde: #128A09;
 
         figure,
         .card-wrapper {
-            flex-basis: 33.33%;
+            flex-basis: 31.33%;
             display: inline-block;
             aspect-ratio: 0.72/1;
             margin: 0;
@@ -91,15 +91,15 @@ $verde: #128A09;
                 }
 
                 span {
-                    width: 47px;
-                    height: 47px;
+                    width: 15px;
+                    height: 15px;
                     display: inline-block;
-                    background-image: url('cta-go.svg');
+                    background-image: url('ir.svg');
                     background-repeat: no-repeat;
                     background-size: cover;
                     position: absolute;
-                    right: 20px;
-                    bottom: 13px;
+                    right: 22px;
+                    bottom: 20px;
                 }
             }
         }
@@ -145,8 +145,8 @@ $verde: #128A09;
                 }
 
                 span.cta {
-                    width: 35px;
-                    height: 35px;
+                    width: 15px;
+                    height: 15px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -163,12 +163,12 @@ $verde: #128A09;
         white-space: initial;
         // overflow-x: auto; // Already defined
         // display: flex; // Already defined
-        gap: 23px; // Overrides previous 'gap: 20px'
+        gap: 20px; // Overrides previous 'gap: 20px'
 
         figure {
-            width: calc(33.33% - 23px);
+            width: calc(33.33% - 20px);
             margin-right: 0;
-            aspect-ratio: 1/1.4;
+            aspect-ratio: 85/124;
             border-radius: 10px;
 
             &:after {
@@ -300,13 +300,46 @@ $verde: #128A09;
             width: 100%;
             display: none;
 
+            /* Full Bleed Logic */
+            padding-left: 15px;
+            padding-right: 15px;
+
+            @media (min-width: 576px) {
+                padding-left: calc((100vw - 540px) / 2 + 15px);
+                padding-right: calc((100vw - 540px) / 2 + 15px);
+            }
+
+            @media (min-width: 768px) {
+                padding-left: calc((100vw - 720px) / 2 + 15px);
+                padding-right: calc((100vw - 720px) / 2 + 15px);
+            }
+
+            @media (min-width: 992px) {
+                padding-left: calc((100vw - 960px) / 2 + 15px);
+                padding-right: calc((100vw - 960px) / 2 + 15px);
+            }
+
+            @media (min-width: 1200px) {
+                padding-left: calc((100vw - 1140px) / 2 + 15px);
+                padding-right: calc((100vw - 1140px) / 2 + 15px);
+            }
+
+            @media (min-width: 1400px) {
+                padding-left: calc((100vw - 1320px) / 2 + 15px);
+                padding-right: calc((100vw - 1320px) / 2 + 15px);
+            }
+
+            &.scrollnegro-h::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
             &.visible {
                 display: inline-block;
             }
 
             .card-wrapper {
-                width: calc(20% - 12px);
-                margin-right: 10px;
+                width: 33%;
+                margin-right: 15px;
                 border-radius: 0;
                 aspect-ratio: initial;
                 overflow: visible;
@@ -442,27 +475,67 @@ $verde: #128A09;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#signatures-home {
+#signatures-home,
+#amigos-de-la-casa {
     margin-top: 50px;
     margin-bottom: 50px;
 
     .signatures-home-cont {
         padding-top: 10px;
-        padding-bottom: 10px;
+        padding-bottom: 30px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        /* Changed from inline-block to flex for better control */
+        justify-content: flex-start;
+        /* Ensure items start from left */
+        align-items: flex-start;
+        /* Align items to top */
         gap: 20px;
         list-style-type: none;
         white-space: nowrap;
         overflow-x: auto;
         width: 100%;
 
+        /* Full Bleed Logic */
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @media (min-width: 576px) {
+            padding-left: calc((100vw - 540px) / 2 + 15px);
+            padding-right: calc((100vw - 540px) / 2 + 15px);
+        }
+
+        @media (min-width: 768px) {
+            padding-left: calc((100vw - 720px) / 2 + 15px);
+            padding-right: calc((100vw - 720px) / 2 + 15px);
+        }
+
+        @media (min-width: 992px) {
+            padding-left: calc((100vw - 960px) / 2 + 15px);
+            padding-right: calc((100vw - 960px) / 2 + 15px);
+        }
+
+        @media (min-width: 1200px) {
+            padding-left: calc((100vw - 1140px) / 2 + 15px);
+            padding-right: calc((100vw - 1140px) / 2 + 15px);
+        }
+
+        @media (min-width: 1400px) {
+            padding-left: calc((100vw - 1320px) / 2 + 15px);
+            padding-right: calc((100vw - 1320px) / 2 + 15px);
+        }
+
+        /* Scrollbar aesthetics override: Hide track for cleaner look */
+        &.scrollnegro-h::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
         figure,
         .card-wrapper {
-            flex-basis: 33.33%;
+            flex: 0 0 calc(33.33% - 14px);
+            /* Flex basis for sizing */
             display: inline-block;
-            aspect-ratio: 0.72/1;
+            /* Fallback */
+            aspect-ratio: 30/43;
             margin: 0;
             border-radius: 10px;
             background-position: center;
@@ -535,31 +608,18 @@ $verde: #128A09;
             }
         }
 
-        // Merged from second block
-        padding-bottom: 30px; // Overrides previous '10px'
-        display: inline-block;
-
         figure {
+            /* Styles merged and cleaned up */
             width: calc(20% - 14px);
-            margin-right: 13px;
-            overflow: hidden;
+            /* Default desktop width preference seems to be 20% from previous merged styles */
+            flex: 0 0 calc(20% - 14px);
+            margin-right: 0;
+            /* Gap handles spacing now */
 
-            &:hover,
-            &:focus {
-                .cont-img {
-                    transform: scale(1.1, 1.1);
-                }
-            }
-
-            .cont-img {
-                width: 100%;
-                height: 100%;
-                background-size: cover;
-                transition: all 300ms;
-            }
+            /* Responsive adjustments if needed, though previously it was fixed */
 
             &:last-child {
-                margin-right: 23px;
+                margin-right: 0;
             }
 
             a,
@@ -796,14 +856,26 @@ $verde: #128A09;
 
         figure {
             display: inline-block;
-            aspect-ratio: 0.78/1;
+            aspect-ratio: 5/6;
             position: relative;
             border-radius: 10px;
             overflow: hidden;
-            width: calc(33.33% - 19px);
-            margin-right: 23px;
+            width: 27%;
+            margin-right: 15px;
             white-space: initial;
             cursor: default;
+            margin-left: 0;
+
+            &:after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 50%;
+                top: 50%;
+                left: 0;
+                border-radius: 10px;
+                background: linear-gradient(180deg, transparent 0%, $negro 100%);
+            }
 
             &:last-child {
                 margin-right: 0;

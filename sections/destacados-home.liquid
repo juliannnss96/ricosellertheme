@@ -8,23 +8,19 @@
                 </div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="cont-cont-destacados">                    
-                    {% for collection in collections %}
-                        {%- assign collection_selected = collections[section.settings.collection_selected] %}
-                    {% endfor %}
-                    
-                    <div class="destacados-home-cont visible scrollnegro-h">
-                        
-                        {% for product in collection_selected.products limit:section.settings.limite %}
-                            {%- render 'card-product', card_product: product -%}
-                        {% endfor %}
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>	
+	</div>
+    <div class="cont-cont-destacados">                    
+        {% for collection in collections %}
+            {%- assign collection_selected = collections[section.settings.collection_selected] %}
+        {% endfor %}
+        
+        <div class="destacados-home-cont visible scrollnegro-h">
+            
+            {% for product in collection_selected.products limit:section.settings.limite %}
+                {%- render 'card-product', card_product: product -%}
+            {% endfor %}
+        </div>
+    </div>	
 </section>
 
 {% schema %}

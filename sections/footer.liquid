@@ -32,26 +32,22 @@
           <h3>Amigos de la casa</h2>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="cont-cont-signatures">
-            <div class="signatures-home-cont scrollblanco-h">
-              {% for amigo in shop.metaobjects.amigos_de_la_casa.values %}
-              <figure class="categoria-destacada-item">
-                <div class="cont-img" style="background-image: url('{{ amigo.foto.value | image_url }}');"></div>
-                <div class="cont-cta">
-                  <div class="cont-text">
-                    <p>“{{ amigo.resena.value }}”</p>
-                    <span class="autor">{{ amigo.nombre.value }}</span>
-                  </div>
+      </div> <!-- Close container for title -->
+    
+    <div class="full-bleed-scroller">
+        <div class="signatures-home-cont scrollblanco-h">
+            {% for amigo in shop.metaobjects.amigos_de_la_casa.values %}<figure class="categoria-destacada-item">
+            <div class="cont-img" style="background-image: url('{{ amigo.foto.value | image_url }}');"></div>
+            <div class="cont-cta">
+                <div class="cont-text">
+                <p>“{{ amigo.resena.value }}”</p>
+                <span class="autor">{{ amigo.nombre.value }}</span>
                 </div>
-              </figure>
-              {% endfor %}
             </div>
-          </div>
+            </figure>{% endfor %}
         </div>
-      </div>
-    </div>  
+    </div>
+
   </section>
 
   <section class="por-que-elegirnos">

@@ -5,27 +5,23 @@
 				<h2 class="h2home">Signatures</h2>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="cont-cont-signatures">
-					<div class="signatures-home-cont scrollnegro-h">
-						{% for atleta in shop.metaobjects.atletas.values %}
-						<figure class="categoria-destacada-item">
-							<div class="cont-img" style="background-image: url('{{ atleta.foto.value  | image_url }}');">
-							</div>
-							<a href="collections/{{ atleta.nombre.value | replace: " ", "-" | downcase }}">
-								<h3>{{ atleta.nombre.value }}</h3>
-								
-								{% for marca in atleta.marcas_relacionadas.value limit:1 %}
-									<span class="cta"><img src="{{ marca.imagen_b.value  | image_url }}"></span>
-								{% endfor %}
-							</a>
-						</figure>
-						{% endfor %}
+    </div>
+		<div class="full-bleed-scroller">
+			<div class="signatures-home-cont scrollnegro-h">
+				{% for atleta in shop.metaobjects.atletas.values %}<figure class="categoria-destacada-item">
+					<div class="cont-img" style="background-image: url('{{ atleta.foto.value  | image_url }}');">
 					</div>
-				</div>
+					<a href="collections/{{ atleta.nombre.value | replace: " ", "-" | downcase }}">
+						<h3>{{ atleta.nombre.value }}</h3>
+						
+						{% for marca in atleta.marcas_relacionadas.value limit:1 %}
+							<span class="cta"><img src="{{ marca.imagen_b.value  | image_url }}"></span>
+						{% endfor %}
+					</a>
+				</figure>{% endfor %}
 			</div>
 		</div>
+		<div class="container"> <!-- Re-opening container to maintain structure consistency if needed, though this section ends right after -->
 	</div>	
 </section>
 
