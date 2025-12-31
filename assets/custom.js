@@ -76,7 +76,23 @@ $(document).ready(function () {
 		$realContainer.off('scroll.custom');
 		$realContainer.on('scroll.custom', function () {
 			var scrollLeft = $(this).scrollLeft();
+
+			// Recalculate maxScrollLeft on the fly in case content grew (lazy load)
+			// This prevents the ratio from exceeding 1 and pushing thumb out
+			var currentScrollWidth = this.scrollWidth;
+			var currentClientWidth = this.clientWidth;
+			if (currentScrollWidth !== scrollWidth) {
+				scrollWidth = currentScrollWidth;
+				clientWidth = currentClientWidth;
+				maxScrollLeft = scrollWidth - clientWidth;
+				// Update thumb width too if we want perfection, but clamping is critical
+				// For now, just ensuring ratio is correct
+			}
+
 			var scrollRatio = scrollLeft / maxScrollLeft;
+			if (scrollRatio > 1) scrollRatio = 1; // CLAMP FIX
+			if (scrollRatio < 0) scrollRatio = 0;
+
 			var thumbLeft = scrollRatio * maxThumbLeft;
 
 			// Allow GPU acceleration or simple css left
@@ -125,6 +141,81 @@ $(document).ready(function () {
 
 		// Initial Sync
 		$realContainer.trigger('scroll.custom');
+
+
+		// Sync: Start Drag on Content (Grab & Drag)
+		var isContentDragging = false;
+		var contentStartX;
+		var contentScrollLeft;
+		var velX = 0;
+		var lastX = 0;
+		var momentumID;
+
+		$realContainer.css({ 'cursor': 'grab', 'user-select': 'none' });
+
+		$realContainer.off('mousedown.drag touchstart.drag');
+		$realContainer.on('mousedown.drag touchstart.drag', function (e) {
+			isContentDragging = true;
+			cancelAnimationFrame(momentumID); // Stop previous momentum
+			$realContainer.css('cursor', 'grabbing');
+			var clientX = e.pageX || e.originalEvent.touches[0].pageX;
+			contentStartX = clientX;
+			lastX = clientX;
+			velX = 0;
+			contentScrollLeft = $realContainer.scrollLeft();
+		});
+
+		$realContainer.off('mouseleave.drag mouseup.drag touchend.drag');
+		$realContainer.on('mouseleave.drag mouseup.drag touchend.drag', function () {
+			isContentDragging = false;
+			$realContainer.css('cursor', 'grab');
+
+			// Begin Momentum
+			if (Math.abs(velX) > 1) {
+				function momentumLoop() {
+					if (isContentDragging) return; // Stop if user grabs again
+					$realContainer.scrollLeft($realContainer.scrollLeft() - velX);
+					velX *= 0.95; // Friction
+
+					if (Math.abs(velX) > 0.5) {
+						momentumID = requestAnimationFrame(momentumLoop);
+					}
+				}
+				momentumLoop();
+			}
+		});
+
+		$realContainer.off('mousemove.drag touchmove.drag');
+		$realContainer.on('mousemove.drag touchmove.drag', function (e) {
+			if (!isContentDragging) return;
+			e.preventDefault();
+			var clientX = e.pageX || e.originalEvent.touches[0].pageX;
+			var delta = clientX - lastX;
+			lastX = clientX;
+			velX = delta; // Calculate velocity per frame
+
+			var walk = (clientX - contentStartX) * 1.5;
+			// We update reference because scrollLeft is dynamic, but for direct drag we want 1:1 or 1:1.5 feel
+			// Actually pure scrollLeft tracking is better for momentum integration
+			$realContainer.scrollLeft($realContainer.scrollLeft() - (delta * 1.5));
+		});
+
+		// FIX: Prevent ALL native drag interactions (images, text, links) to avoid "ghost" dragging
+		$realContainer.on('dragstart', function (e) {
+			e.preventDefault();
+			return false;
+		});
+
+		// Prevent click on links if dragged
+		var wasDragging = false;
+		$realContainer.on('mousedown', function () { wasDragging = false; });
+		$realContainer.on('mousemove', function () { if (isContentDragging) wasDragging = true; });
+		$realContainer.find('a').on('click', function (e) {
+			if (wasDragging) {
+				e.preventDefault();
+				wasDragging = false;
+			}
+		});
 
 		// Auto-show on scroll (for mobile mostly)
 		var scrollTimeout;
