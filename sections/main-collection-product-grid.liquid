@@ -187,21 +187,19 @@
                   </ul>
 
                   <!-- Calculo "has visto" -->
-                  {% if paginate.pages > 1 %}
-                    {%- assign hasvisto = paginate.page_size -%}
-                  {% else %}
-                    {%- assign hasvisto = paginate.items -%}
-                  {% endif %}
+                  {%- assign current_offset = paginate.current_offset -%}
+                  {%- assign products_on_page = collection.products.size -%}
+                  {%- assign hasvisto = current_offset | plus: products_on_page -%}
 
-                  <div class="hasvisto">
-                    <span class="hasvisto-text">Has visto <span>{{ hasvisto }}</span> de {{ paginate.items }} productos</span>
-                    <progress class="barra-carga" value="{{ hasvisto }}" max="{{ paginate.items }}"></progress>
-                  </div>
-                  {%- if paginate.next -%}
-                    <div id="AjaxinatePagination">
-                      <a href="{{ paginate.next.url }}" class="button button--primary paginate-button">Ver más</a>
+                  <div id="AjaxinatePagination">
+                    <div class="hasvisto">
+                      <span class="hasvisto-text">Has visto <span>{{ hasvisto }}</span> de {{ paginate.items }} productos</span>
+                      <progress class="barra-carga" value="{{ hasvisto }}" max="{{ paginate.items }}"></progress>
                     </div>
-                  {%- endif -%}
+                    {%- if paginate.next -%}
+                        <a href="{{ paginate.next.url }}" class="button button--primary paginate-button">Ver más</a>
+                    {%- endif -%}
+                  </div>
 
                 </div>
               {%- endif -%}
@@ -224,7 +222,7 @@
     const endlessCollection = new Ajaxinate({
       container: '#product-grid',
       pagination: '#AjaxinatePagination',
-      method: "click"
+      method: "scroll"
     });
   });
 </script>
