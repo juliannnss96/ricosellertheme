@@ -17,10 +17,10 @@
         "subtitulo": "*Nos subimos hasta agotar stock*",
         "texto_boton": "Ver tienda",
         "url_boton": "shopify://collections/all",
-        "imagen_desktop": "https://cdn.shopify.com/videos/c/o/v/6ab51919e1c34867997d3144f39fc3f4.mp4",
-        "imagen_mobile": "https://cdn.shopify.com/videos/c/o/v/458a8f0bfc4d47aaa25b1f130cbda74b.mp4",
-        "video_desktop": "",
-        "video_mobile": ""
+        "imagen_desktop": "",
+        "imagen_mobile": "",
+        "video_desktop": "https://cdn.shopify.com/videos/c/o/v/6ab51919e1c34867997d3144f39fc3f4.mp4",
+        "video_mobile": "https://cdn.shopify.com/videos/c/o/v/458a8f0bfc4d47aaa25b1f130cbda74b.mp4"
       }
     },
     "marcas_slider_WwPfzX": {
