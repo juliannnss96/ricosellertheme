@@ -13,8 +13,8 @@
       "type": "banner-home",
       "name": "Banner home",
       "settings": {
-        "titulo": "No vino santa pero hay regalitos",
-        "subtitulo": "*Nos subimos hasta agotar stock*",
+        "titulo": "El stock más variado del país",
+        "subtitulo": "",
         "texto_boton": "Ver tienda",
         "url_boton": "shopify://collections/all",
         "imagen_desktop": "",
