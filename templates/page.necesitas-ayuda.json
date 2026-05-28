@@ -42,7 +42,7 @@
           "settings": {
             "heading": "¿De dónde son?",
             "icon": "box",
-            "row_content": "<p>Somos de Rosario, Santa Fe, Argentina. Realizamos envíos a todo el país <br/>sin excepción. No tenemos local físico, sólo trabajamos vía online.</p>",
+            "row_content": "<p>Somos de Rosario, Santa Fe, Argentina. Realizamos envíos a todo el país <br/>sin excepción.</p>",
             "page": ""
           }
         }
@@ -75,7 +75,7 @@
           "settings": {
             "heading": "¿Qué métodos de pago utilizan?",
             "icon": "clipboard",
-            "row_content": "<p>Los métodos de pago que admitimos son: Tarjeta de crédito y débito (en hasta 12 cuotas)<br/>Transferencia Bancaria<br/>Efectivo – SOLO en Rosario<br/>RapiPago – PagoFácil<br/>Criptomonedas estables</p>",
+            "row_content": "<p>Los métodos de pago que admitimos son: Tarjeta de crédito y débito (en hasta 3 cuotas sin interés sin monto mínimo)<br/>Transferencia Bancaria<br/>Efectivo – SOLO en Rosario<br/>RapiPago – PagoFácil<br/>Criptomonedas estables</p>",
             "page": ""
           }
         },
