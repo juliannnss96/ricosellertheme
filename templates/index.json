@@ -88,7 +88,7 @@
       "name": "Bloque destacados",
       "settings": {
         "titulo": "Los más vistos",
-        "collection_selected": "frontpage",
+        "collection_selected": "etnia-32",
         "limite": "8"
       }
     },
